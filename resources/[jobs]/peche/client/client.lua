@@ -4,6 +4,7 @@ local job = nil
 local enService = nil
 local ESX = nil
 local poissonQTE = 0
+local isfishing = true
 
 Citizen.CreateThread(function()
 	while ESX == nil do
@@ -103,6 +104,19 @@ function IsNearZonePeche()
     end
 end
 
+local function LocalPed()
+	return GetPlayerPed(-1)
+end
+
+function GetPed() return GetPlayerPed(-1) end
+function AttachEntityToPed(prop,bone_ID,x,y,z,RotX,RotY,RotZ)
+  BoneID = GetPedBoneIndex(GetPed(), bone_ID)
+  obj = CreateObject(GetHashKey(prop),  1729.73,  6403.90,  34.56,  true,  true,  true)
+  vX,vY,vZ = table.unpack(GetEntityCoords(GetPed()))
+  xRot, yRot, zRot = table.unpack(GetEntityRotation(GetPed(),2))
+  AttachEntityToEntity(obj,  GetPed(),  BoneID, x,y,z, RotX,RotY,RotZ,  false, false, false, false, 2, true)
+  return obj
+end
 
 
 
@@ -197,9 +211,42 @@ Citizen.CreateThread(function()
 
 		        	ShowInfo("Appuyez sur ~INPUT_CONTEXT~ pour ~b~pêcher~w~.", 0)
 		        	if(IsControlJustPressed(1,38))then
-		        		Citizen.Wait(3000)
-		        		TriggerServerEvent("job_peche_s:recolte")
-		        		DrawNotif("Vous avez reçu ~b~un poisson~w~.")
+		        		isfishing = true
+		        		Citizen.Wait(1000)
+		        		while((poissonQTE < 31) and (IsNearZonePeche()) and (isfishing)) do 
+		        		
+			        		Citizen.Wait(4000)
+			        		TriggerServerEvent("job_peche_s:recolte")
+
+			        		FishRod = AttachEntityToPed('prop_fishing_rod_02',60309, 0,0,0, 0,0,0)
+							local dict = "amb@world_human_stand_fishing@base"
+							local anim = "base"
+							RequestAnimDict(dict)
+
+							while not HasAnimDictLoaded(dict) do
+									Citizen.Wait(0)
+							end
+
+							local myPed = GetPlayerPed(-1)
+							local animation = anim
+							local flags = 16 -- only play the animation on the upper body
+
+							TaskPlayAnim(myPed, dict, animation, 8.0, -8, -1, flags, 0, 0, 0, 0)
+							Wait(5000)
+
+
+			        		DrawNotif("Vous avez reçu ~b~un poisson~w~.")
+			        		poissonQTE = poissonQTE +1
+							DeleteEntity(FishRod)
+			        		
+
+			        	end
+
+			        	if(poissonQTE==30)then
+			        		ShowInfo("Vous avez ~r~trop de poissons ~w~sur vous.", 0)
+			        		
+			        		isfishing = false
+			        	end
 
 		        	end
 
