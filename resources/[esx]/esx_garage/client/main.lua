@@ -29,7 +29,7 @@ AddEventHandler('esx_property:hasEnteredMarker', function(name, part, parking)
 				local spawnCoords  = {
 					x = garage.InteriorSpawnPoint.Pos.x,
 					y = garage.InteriorSpawnPoint.Pos.y,
-					z = garage.InteriorSpawnPoint.Pos.z
+					z = garage.InteriorSpawnPoint.Pos.z + Config.ZDiff
 				}
 
 				ESX.Game.DeleteVehicle(vehicle)
@@ -219,8 +219,9 @@ AddEventHandler('esx_property:hasEnteredMarker', function(name, part, parking)
 
 		local playerPed = GetPlayerPed(-1)
 		local garage    = Config.Garages[name]
+		local parkingPos = garage.Parkings[parking].Pos
 
-		if IsPedInAnyVehicle(playerPed,  false) then
+		if IsPedInAnyVehicle(playerPed,  false) and not IsAnyVehicleNearPoint(parkingPos.x,  parkingPos.y,  parkingPos.z,  1.0) then
 
 			local vehicle       = GetVehiclePedIsIn(playerPed,  false)
 			local vehicleProps  = ESX.Game.GetVehicleProperties(vehicle)
@@ -238,8 +239,10 @@ AddEventHandler('esx_property:hasExitedMarker', function(name, part, parking)
 	if part == 'Parking' then
 
 		local playerPed = GetPlayerPed(-1)
+		local garage     = Config.Garages[name]
+		local parkingPos = garage.Parkings[parking].Pos
 
-		if IsPedInAnyVehicle(playerPed,  false) then
+		if IsPedInAnyVehicle(playerPed,  false) and not IsAnyVehicleNearPoint(parkingPos.x,  parkingPos.y,  parkingPos.z,  1.0) then
 			TriggerServerEvent('esx_garage:setParking', name, parking, false)
 		end
 

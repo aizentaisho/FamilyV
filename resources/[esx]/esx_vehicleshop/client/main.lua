@@ -17,6 +17,7 @@ local HasAlreadyEnteredMarker = false
 local LastZone                = nil
 local PlayerData              = {}
 local CurrentAction           = nil
+local IsInShopMenu            = false
 local CurrentActionMsg        = ''
 local CurrentActionData       = {}
 local Categories              = {}
@@ -52,7 +53,7 @@ function DeleteShopInsideVehicles()
 end
 
 function OpenShopMenu()
-
+	IsInShopMenu = true
 	ESX.UI.Menu.CloseAll()
 
 	local playerPed = GetPlayerPed(-1)
@@ -150,6 +151,7 @@ function OpenShopMenu()
 
 									menu2.close()
 									menu.close()
+									IsInShopMenu = false
 
 									DeleteShopInsideVehicles()
 
@@ -767,6 +769,9 @@ AddEventHandler('esx_vehicleshop:hasEnteredMarker', function(zone)
 end)
 
 AddEventHandler('esx_vehicleshop:hasExitedMarker', function(zone)
+	if not IsInShopMenu then
+ 		ESX.UI.Menu.CloseAll()
+ 	end
 	CurrentAction = nil
 end)
 
