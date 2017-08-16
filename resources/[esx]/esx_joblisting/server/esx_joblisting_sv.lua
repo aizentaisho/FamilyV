@@ -22,5 +22,11 @@ RegisterServerEvent('esx_joblisting:setJob')
 AddEventHandler('esx_joblisting:setJob', function(job)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
-	xPlayer.setJob(job, 0)
+	if(job~="police")then
+		xPlayer.setJob(job, 0)
+	else
+		TriggerClientEvent('esx:showNotification', _source, "Ce métier est ~r~réservé ~w~.")
+	end
+
+
 end)
