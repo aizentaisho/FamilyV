@@ -3,6 +3,7 @@ local VoiturePrise = nil
 local job = nil
 local enService = nil
 local ESX = nil
+local poissonQTE = 0
 
 Citizen.CreateThread(function()
 	while ESX == nil do
@@ -195,6 +196,14 @@ Citizen.CreateThread(function()
 		        if(IsNearZonePeche())then
 
 		        	ShowInfo("Appuyez sur ~INPUT_CONTEXT~ pour ~b~pêcher~w~.", 0)
+		        	if(IsControlJustPressed(1,38))then
+		        		Citizen.Wait(3000)
+		        		TriggerServerEvent("job_peche_s:recolte")
+		        		DrawNotif("Vous avez reçu ~b~un poisson~w~.")
+
+		        	end
+
+
 
 		        end
 
