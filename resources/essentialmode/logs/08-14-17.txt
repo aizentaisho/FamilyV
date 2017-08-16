@@ -1,0 +1,4 @@
+-- Begin of log for 08-14-17 --
+== EssentialMode started, version 4.4.5 ==
+Version mismatch was detected, updater version: 4.4.3(4.4.5)
+== EssentialMode started, version 4.4.5 ==
