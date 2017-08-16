@@ -1,16 +1,21 @@
 local BateauPris = nil
 local VoiturePrise = nil
-local job = nil
 local enService = nil
 local ESX = nil
 local poissonQTE = 0
 local isfishing = true
+local PlayerData                = {}
 
 Citizen.CreateThread(function()
 	while ESX == nil do
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 		Citizen.Wait(0)
 	end
+end)
+
+RegisterNetEvent('esx:playerLoaded')
+AddEventHandler('esx:playerLoaded', function(xPlayer)
+	PlayerData = xPlayer
 end)
 
 
@@ -126,6 +131,7 @@ Citizen.CreateThread(function()
     Citizen.Wait(0)
 
     --Proche prise de service
+    if(PlayerData.job.name == 'taxi')then 
       if(IsNearZonePriseService())then
       	DrawMarker(Config.MarkerType,Config.Zones.PriseService.x,Config.Zones.PriseService.y,Config.Zones.PriseService.z,0,0,0,0,0,0,2.001,2.0001,0.5001,Config.MarkerColor.r,Config.MarkerColor.g,Config.MarkerColor.b,200,0,0,0,0)
      		if(enService)then
@@ -266,6 +272,8 @@ Citizen.CreateThread(function()
 
 
 
-
-     end
+	end
+  end
 end)
+
+
