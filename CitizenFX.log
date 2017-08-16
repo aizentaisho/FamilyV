@@ -9287,3 +9287,334 @@
 [    180453] Sending heartbeat to live-internal.fivem.net:30110
 [    180844] [SAVED] James Jebbia hellcase.com
 [    360578] Sending heartbeat to live-internal.fivem.net:30110
+[         0] Initializing Mono
+[       203] Initializing Mono completed
+[       282] Hello!
+[       578] Failed to get instance for guid a7242855-0350-4cb5-a0fe-61021e7eafaa and iid 567634c6-3bdd-4d0e-af39-7472aed479b7: System.InvalidOperationException: Sequence contains no matching element
+[       578]   at System.Linq.Enumerable.First[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] predicate) [0x00011] in <48501e5f32e8491e924f8b8beae3e4f6>:0 
+[       594]   at CitizenFX.Core.RuntimeManager.CreateObjectInstance (System.Guid guid, System.Guid iid) [0x00014] in C:\gl\builds\4ff63adb\0\cfx\fivem\code\client\clrcore\RuntimeManager.cs:39 
+[       610] Found new resource async in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//async
+[       703] Found new resource Citizen-V in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//Citizen-V
+[       703] Found new resource esplugin_mysql in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//esplugin_mysql
+[       719] Found new resource essentialmode in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//essentialmode
+[       750] Found new resource es_admin2 in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//es_admin2
+[       766] Found new resource fivem in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//fivem
+[       782] Found new resource fivem-awesome1501 in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//fivem-awesome1501
+[       797] Found new resource fivem-map-hipster in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//fivem-map-hipster
+[       797] Found new resource fivem-map-skater in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//fivem-map-skater
+[       813] Found new resource fxserver-es_extended in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//fxserver-es_extended
+[       828] Resource loading for fxserver-es_extended failed:
+[       828] Could not open resource metadata file C:/Users\charl\Desktop\GitFamily\FamilyV/resources//fxserver-es_extended/__resource.lua.
+[       844] Found new resource mysql-async in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//mysql-async
+[       844] Found new resource skinchanger in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//skinchanger
+[       860] Found new resource client_base in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[citizenv]/client_base
+[       875] Found new resource es_extended in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[essential]/es_extended
+[       907] Found new resource clotheshop in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/clotheshop
+[       922] Found new resource cron in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/cron
+[       922] Found new resource esx_addonaccount in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_addonaccount
+[       938] Found new resource esx_addoninventory in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_addoninventory
+[       953] Found new resource esx_ambulancejob in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_ambulancejob
+[       969] Found new resource esx_atm in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_atm
+[       985] Found new resource esx_bankerjob in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_bankerjob
+[       985] Found new resource esx_barbershop in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_barbershop
+[      1000] Found new resource esx_basicneeds in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_basicneeds
+[      1016] Found new resource esx_billing in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_billing
+[      1032] Found new resource esx_boiler in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_boiler
+[      1047] Found new resource esx_datastore in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_datastore
+[      1063] Found new resource esx_drugs in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_drugs
+[      1063] Found new resource esx_garage in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_garage
+[      1078] Found new resource esx_holdup in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_holdup
+[      1125] Found new resource esx_joblisting in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_joblisting
+[      1141] Found new resource esx_jobs in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_jobs
+[      1157] Found new resource esx_mask in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_mask
+[      1172] Found new resource esx_mecanojob in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_mecanojob
+[      1172] Found new resource esx_menu_default in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_menu_default
+[      1188] Found new resource esx_menu_dialog in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_menu_dialog
+[      1203] Found new resource esx_menu_list in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_menu_list
+[      1203] Found new resource esx_phone in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_phone
+[      1235] Found new resource esx_policejob in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_policejob
+[      1250] Found new resource esx_property in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_property
+[      1266] Found new resource esx_realestateagentjob in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_realestateagentjob
+[      1282] Found new resource esx_service in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_service
+[      1282] Found new resource esx_shops in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_shops
+[      1297] Found new resource esx_skin in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_skin
+[      1313] Found new resource esx_society in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_society
+[      1313] Found new resource esx_status in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_status
+[      1328] Found new resource esx_taxijob in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_taxijob
+[      1344] Found new resource esx_vehicleshop in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_vehicleshop
+[      1360] Found new resource esx_weashops in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_weashops
+[      1375] Found new resource instance in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/instance
+[      1375] Found new resource skinchange in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/skinchange
+[      1391] Found new resource race in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[gamemodes]/race
+[      1407] Found new resource race-test in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[gamemodes]/race-test
+[      1422] Found new resource channelfeed in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[gameplay]/channelfeed
+[      1438] Found new resource irc in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[gameplay]/irc
+[      1453] Found new resource obituary in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[gameplay]/obituary
+[      1469] Found new resource obituary-deaths in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[gameplay]/obituary-deaths
+[      1469] Found new resource peche in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[jobs]/peche
+[      1485] Found new resource mapmanager in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[managers]/mapmanager
+[      1500] Found new resource baseevents in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/baseevents
+[      1516] Found new resource chat in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/chat
+[      1532] Found new resource hardcap in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/hardcap
+[      1547] Found new resource loadipl in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/loadipl
+[      1563] Found new resource localization in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/localization
+[      1563] Found new resource motd in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/motd
+[      1578] Found new resource rconlog in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/rconlog
+[      1594] Found new resource sessionmanager in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/sessionmanager
+[      1610] Found new resource spawnmanager in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/spawnmanager
+[      1625] Found new resource whitelist in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/whitelist
+[      1625] Found new resource betaguns in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[test]/betaguns
+[      1641] Found new resource gameInit in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[test]/gameInit
+[      1657] Found new resource keks in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[test]/keks
+[      1797] Started resource sessionmanager
+[      2625] Loaded MySQLAsync.net, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null into ScriptDomain_1809392810
+[      2641] Instantiated instance of script MySQLAsync.MySQLAsync.
+[      2657] Started resource mysql-async
+[      2735] false
+[      2860] Started resource essentialmode
+[      3063] Started resource es_admin2
+[      3094] Started resource esplugin_mysql
+[         0] Initializing Mono
+[        16] Initializing Mono completed
+[        16] Hello!
+[       125] Failed to get instance for guid a7242855-0350-4cb5-a0fe-61021e7eafaa and iid 567634c6-3bdd-4d0e-af39-7472aed479b7: System.InvalidOperationException: Sequence contains no matching element
+[       125]   at System.Linq.Enumerable.First[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] predicate) [0x00011] in <48501e5f32e8491e924f8b8beae3e4f6>:0 
+[       125]   at CitizenFX.Core.RuntimeManager.CreateObjectInstance (System.Guid guid, System.Guid iid) [0x00014] in C:\gl\builds\4ff63adb\0\cfx\fivem\code\client\clrcore\RuntimeManager.cs:39 
+[       141] Found new resource async in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//async
+[       156] Found new resource Citizen-V in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//Citizen-V
+[       172] Found new resource esplugin_mysql in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//esplugin_mysql
+[       172] Found new resource essentialmode in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//essentialmode
+[       187] Found new resource es_admin2 in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//es_admin2
+[       187] Found new resource fivem in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//fivem
+[       203] Found new resource fivem-awesome1501 in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//fivem-awesome1501
+[       203] Found new resource fivem-map-hipster in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//fivem-map-hipster
+[       219] Found new resource fivem-map-skater in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//fivem-map-skater
+[       234] Found new resource fxserver-es_extended in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//fxserver-es_extended
+[       234] Resource loading for fxserver-es_extended failed:
+[       250] Could not open resource metadata file C:/Users\charl\Desktop\GitFamily\FamilyV/resources//fxserver-es_extended/__resource.lua.
+[       250] Found new resource mysql-async in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//mysql-async
+[       266] Found new resource skinchanger in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//skinchanger
+[       281] Found new resource client_base in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[citizenv]/client_base
+[       281] Found new resource es_extended in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[essential]/es_extended
+[       297] Found new resource clotheshop in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/clotheshop
+[       312] Found new resource cron in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/cron
+[       312] Found new resource esx_addonaccount in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_addonaccount
+[       328] Found new resource esx_addoninventory in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_addoninventory
+[       344] Found new resource esx_ambulancejob in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_ambulancejob
+[       344] Found new resource esx_atm in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_atm
+[       359] Found new resource esx_bankerjob in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_bankerjob
+[       375] Found new resource esx_barbershop in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_barbershop
+[       375] Found new resource esx_basicneeds in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_basicneeds
+[       391] Found new resource esx_billing in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_billing
+[       406] Found new resource esx_boiler in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_boiler
+[       406] Found new resource esx_datastore in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_datastore
+[       422] Found new resource esx_drugs in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_drugs
+[       422] Found new resource esx_garage in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_garage
+[       437] Found new resource esx_holdup in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_holdup
+[       453] Found new resource esx_joblisting in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_joblisting
+[       453] Found new resource esx_jobs in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_jobs
+[       469] Found new resource esx_mask in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_mask
+[       469] Found new resource esx_mecanojob in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_mecanojob
+[       484] Found new resource esx_menu_default in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_menu_default
+[       500] Found new resource esx_menu_dialog in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_menu_dialog
+[       500] Found new resource esx_menu_list in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_menu_list
+[       516] Found new resource esx_phone in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_phone
+[       531] Found new resource esx_policejob in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_policejob
+[       531] Found new resource esx_property in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_property
+[       547] Found new resource esx_realestateagentjob in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_realestateagentjob
+[       562] Found new resource esx_service in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_service
+[       562] Found new resource esx_shops in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_shops
+[       578] Found new resource esx_skin in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_skin
+[       578] Found new resource esx_society in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_society
+[       594] Found new resource esx_status in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_status
+[       609] Found new resource esx_taxijob in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_taxijob
+[       609] Found new resource esx_vehicleshop in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_vehicleshop
+[       625] Found new resource esx_weashops in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_weashops
+[       625] Found new resource instance in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/instance
+[       641] Found new resource skinchange in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/skinchange
+[       656] Found new resource race in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[gamemodes]/race
+[       656] Found new resource race-test in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[gamemodes]/race-test
+[       672] Found new resource channelfeed in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[gameplay]/channelfeed
+[       687] Found new resource irc in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[gameplay]/irc
+[       687] Found new resource obituary in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[gameplay]/obituary
+[       703] Found new resource obituary-deaths in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[gameplay]/obituary-deaths
+[       703] Found new resource peche in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[jobs]/peche
+[       719] Found new resource mapmanager in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[managers]/mapmanager
+[       734] Found new resource baseevents in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/baseevents
+[       734] Found new resource chat in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/chat
+[       750] Found new resource hardcap in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/hardcap
+[       750] Found new resource loadipl in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/loadipl
+[       766] Found new resource localization in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/localization
+[       781] Found new resource motd in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/motd
+[       781] Found new resource rconlog in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/rconlog
+[       797] Found new resource sessionmanager in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/sessionmanager
+[       812] Found new resource spawnmanager in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/spawnmanager
+[       812] Found new resource whitelist in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/whitelist
+[       828] Found new resource betaguns in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[test]/betaguns
+[       844] Found new resource gameInit in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[test]/gameInit
+[       844] Found new resource keks in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[test]/keks
+[       891] Started resource sessionmanager
+[      1516] Loaded MySQLAsync.net, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null into ScriptDomain_1857872019
+[      1531] Instantiated instance of script MySQLAsync.MySQLAsync.
+[      1547] Started resource mysql-async
+[      1578] false
+[      1594] Started resource essentialmode
+[      1625] Started resource es_admin2
+[      1641] Started resource esplugin_mysql
+[      1844] Started resource es_extended
+[      1969] Started resource esx_menu_default
+[         0] Initializing Mono
+[        16] Initializing Mono completed
+[        32] Hello!
+[       125] Failed to get instance for guid a7242855-0350-4cb5-a0fe-61021e7eafaa and iid 567634c6-3bdd-4d0e-af39-7472aed479b7: System.InvalidOperationException: Sequence contains no matching element
+[       125]   at System.Linq.Enumerable.First[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] predicate) [0x00011] in <48501e5f32e8491e924f8b8beae3e4f6>:0 
+[       141]   at CitizenFX.Core.RuntimeManager.CreateObjectInstance (System.Guid guid, System.Guid iid) [0x00014] in C:\gl\builds\4ff63adb\0\cfx\fivem\code\client\clrcore\RuntimeManager.cs:39 
+[       141] Found new resource async in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//async
+[       157] Found new resource Citizen-V in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//Citizen-V
+[       172] Found new resource esplugin_mysql in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//esplugin_mysql
+[       172] Found new resource essentialmode in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//essentialmode
+[       188] Found new resource es_admin2 in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//es_admin2
+[       188] Found new resource fivem in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//fivem
+[       203] Found new resource fivem-awesome1501 in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//fivem-awesome1501
+[       203] Found new resource fivem-map-hipster in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//fivem-map-hipster
+[       219] Found new resource fivem-map-skater in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//fivem-map-skater
+[       235] Found new resource fxserver-es_extended in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//fxserver-es_extended
+[       235] Resource loading for fxserver-es_extended failed:
+[       250] Could not open resource metadata file C:/Users\charl\Desktop\GitFamily\FamilyV/resources//fxserver-es_extended/__resource.lua.
+[       250] Found new resource mysql-async in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//mysql-async
+[       266] Found new resource skinchanger in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//skinchanger
+[       266] Found new resource client_base in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[citizenv]/client_base
+[       282] Found new resource es_extended in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[essential]/es_extended
+[       297] Found new resource clotheshop in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/clotheshop
+[       297] Found new resource cron in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/cron
+[       313] Found new resource esx_addonaccount in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_addonaccount
+[       313] Found new resource esx_addoninventory in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_addoninventory
+[       328] Found new resource esx_ambulancejob in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_ambulancejob
+[       344] Found new resource esx_atm in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_atm
+[       344] Found new resource esx_bankerjob in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_bankerjob
+[       360] Found new resource esx_barbershop in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_barbershop
+[       375] Found new resource esx_basicneeds in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_basicneeds
+[       375] Found new resource esx_billing in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_billing
+[       391] Found new resource esx_boiler in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_boiler
+[       407] Found new resource esx_datastore in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_datastore
+[       407] Found new resource esx_drugs in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_drugs
+[       422] Found new resource esx_garage in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_garage
+[       438] Found new resource esx_holdup in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_holdup
+[       438] Found new resource esx_joblisting in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_joblisting
+[       453] Found new resource esx_jobs in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_jobs
+[       453] Found new resource esx_mask in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_mask
+[       469] Found new resource esx_mecanojob in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_mecanojob
+[       485] Found new resource esx_menu_default in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_menu_default
+[       500] Found new resource esx_menu_dialog in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_menu_dialog
+[       500] Found new resource esx_menu_list in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_menu_list
+[       516] Found new resource esx_phone in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_phone
+[       532] Found new resource esx_policejob in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_policejob
+[       532] Found new resource esx_property in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_property
+[       547] Found new resource esx_realestateagentjob in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_realestateagentjob
+[       563] Found new resource esx_service in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_service
+[       578] Found new resource esx_shops in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_shops
+[       578] Found new resource esx_skin in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_skin
+[       594] Found new resource esx_society in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_society
+[       610] Found new resource esx_status in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_status
+[       625] Found new resource esx_taxijob in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_taxijob
+[       625] Found new resource esx_vehicleshop in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_vehicleshop
+[       641] Found new resource esx_weashops in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/esx_weashops
+[       657] Found new resource instance in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/instance
+[       672] Found new resource skinchange in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[esx]/skinchange
+[       688] Found new resource race in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[gamemodes]/race
+[       703] Found new resource race-test in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[gamemodes]/race-test
+[       719] Found new resource channelfeed in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[gameplay]/channelfeed
+[       735] Found new resource irc in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[gameplay]/irc
+[       750] Found new resource obituary in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[gameplay]/obituary
+[       766] Found new resource obituary-deaths in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[gameplay]/obituary-deaths
+[       782] Found new resource peche in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[jobs]/peche
+[       797] Found new resource mapmanager in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[managers]/mapmanager
+[       813] Found new resource baseevents in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/baseevents
+[       828] Found new resource chat in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/chat
+[       828] Found new resource hardcap in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/hardcap
+[       844] Found new resource loadipl in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/loadipl
+[       860] Found new resource localization in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/localization
+[       875] Found new resource motd in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/motd
+[       875] Found new resource rconlog in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/rconlog
+[       891] Found new resource sessionmanager in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/sessionmanager
+[       907] Found new resource spawnmanager in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/spawnmanager
+[       907] Found new resource whitelist in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[system]/whitelist
+[       922] Found new resource betaguns in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[test]/betaguns
+[       922] Found new resource gameInit in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[test]/gameInit
+[       938] Found new resource keks in C:/Users\charl\Desktop\GitFamily\FamilyV/resources//[test]/keks
+[       969] Started resource sessionmanager
+[      1563] Loaded MySQLAsync.net, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null into ScriptDomain_617238809
+[      1594] Instantiated instance of script MySQLAsync.MySQLAsync.
+[      1594] Started resource mysql-async
+[      1641] false
+[      1641] Started resource essentialmode
+[      1672] Started resource es_admin2
+[      1688] Started resource esplugin_mysql
+[      1719] Started resource es_extended
+[      1735] Started resource esx_menu_default
+[      1844] Started resource esx_menu_list
+[      1985] Started resource esx_menu_dialog
+[      2047] Started resource mapmanager
+[      2063] Started resource Citizen-V
+[      2250] Started resource client_base
+[      2782] Started resource chat
+[      2797] Started resource localization
+[      2828] Started resource spawnmanager
+[      2844] Started resource fivem
+[      2860] Started gametype Freeroam
+[      2875] Started resource hardcap
+[      2907] Started resource rconlog
+[      2969] Started resource motd
+[      3063] Started resource esx_atm
+[      3125] Started resource esx_addonaccount
+[      3188] Started resource esx_datastore
+[      3219] CRON STARTED [22:14]
+[      3235] Started resource cron
+[      3297] Started resource esx_billing
+[      3360] Started resource esx_society
+[      3453] Started resource esx_policejob
+[      3485] Started resource skinchange
+[      3578] Started resource esx_skin
+[      3703] Started resource baseevents
+[      3797] Started resource esx_ambulancejob
+[      3828] Started resource esx_service
+[      3907] Started resource instance
+[      3953] Started resource esx_addoninventory
+[      4032] Started resource esx_property
+[      4125] Started resource esx_realestateagentjob
+[      4157] Error parsing script locales/en.lua in resource esx_taxijob: locales/en.lua:14: '}' expected (to close '{' at line 1) near '['
+[      4157] Failed to load script locales/en.lua.
+[      4219] Started resource esx_taxijob
+[      4282] Started resource esx_shops
+[      4422] Started resource esx_vehicleshop
+[      4532] Started resource esx_bankerjob
+[      4610] Started resource esx_garage
+[      4750] Started resource esx_drugs
+[      4828] Started resource esx_status
+[      4891] Started resource esx_basicneeds
+[      5110] Started resource esx_phone
+[      5188] Started resource esx_holdup
+[      5282] Started resource esx_mecanojob
+[      5500] Started resource esx_jobs
+[      5563] Started resource esx_joblisting
+[      5594] Started resource esx_boiler
+[      5641] Started resource esx_mask
+[      5703] Started resource clotheshop
+[      5782] Started resource esx_barbershop
+[      5844] Started resource peche
+[      5875] Started resource loadipl
+[      5891] Started resource whitelist
+[      6000] Resolved live-internal.fivem.net:30110 to 151.80.44.223:30110
+[      6016] Sending heartbeat to live-internal.fivem.net:30110
+[      6016] 
+[      6016] Current version: 4.4.5
+[      6032] Updater version: 4.4.5
+[      6032] 
+[      6032] Everything is fine!
+[      6047] 
+[      6375] Started resource fivem-map-hipster
+[      6375] Started map fivem-map-hipster
+[      6578] Loaded MySqlConnector, Version=0.24.0.0, Culture=neutral, PublicKeyToken=null into ScriptDomain_617238809
+[     11485] Loaded System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51 into ScriptDomain_617238809
+[     12688] Loaded System.Buffers, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51 into ScriptDomain_617238809
+[     12953] hitch warning: frame time of 7000 milliseconds
