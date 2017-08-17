@@ -106,7 +106,8 @@ RegisterServerEvent('es_admin:set')
 AddEventHandler('es_admin:set', function(t, USER, GROUP)
 	local Source = source
 	TriggerEvent('es:getPlayerFromId', source, function(user)
-		if user.getGroup() == "superadmin" then
+		TriggerEvent('es:canGroupTarget', user.getGroup(), "superadmin", function(available)
+			if available then
 			if t == "group" then
 				if(GetPlayerName(USER) == nil)then
 					TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "Player not found")
@@ -164,9 +165,10 @@ AddEventHandler('es_admin:set', function(t, USER, GROUP)
 					end
 				end
 			end
-		else
-			TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "superadmin required to do this")
-		end
+			else
+				TriggerClientEvent('chatMessage', source, 'SYSTEM', {255, 0, 0}, "superadmin required to do this")
+			end
+		end)
 	end)	
 end)
 

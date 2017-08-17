@@ -55,7 +55,7 @@ end
 
 function logExists(date, cb)
 	Citizen.CreateThread(function()
-		local log = LoadResourceFile("essentialmode", "logs/" .. date .. ".txt")
+		local log = LoadResourceFile(GetCurrentResourceName(), "logs/" .. date .. ".txt")
 		if log then cb(true) else cb(false) end
 		return
 	end)
@@ -65,7 +65,7 @@ function doesLogExist(cb)
 	logExists(string.gsub(os.date('%x'), '(/)', '-'), function(exists)
 		Citizen.CreateThread(function()
 			if not exists then
-				local file = SaveResourceFile("essentialmode", "logs/" .. string.gsub(os.date('%x'), '(/)', '-') .. ".txt", '-- Begin of log for ' .. string.gsub(os.date('%x'), '(/)', '-') .. ' --\n', -1)
+				local file = SaveResourceFile(GetCurrentResourceName(), "logs/" .. string.gsub(os.date('%x'), '(/)', '-') .. ".txt", '-- Begin of log for ' .. string.gsub(os.date('%x'), '(/)', '-') .. ' --\n', -1)
 			end
 			cb(exists)
 
@@ -84,9 +84,9 @@ end)
 function log(log)
 	if settings.defaultSettings.enableLogging then
 		Citizen.CreateThread(function()
-			local file = LoadResourceFile("essentialmode", "logs/" .. string.gsub(os.date('%x'), '(/)', '-') .. ".txt")
+			local file = LoadResourceFile(GetCurrentResourceName(), "logs/" .. string.gsub(os.date('%x'), '(/)', '-') .. ".txt")
 			if file then
-				SaveResourceFile("essentialmode", "logs/" .. string.gsub(os.date('%x'), '(/)', '-') .. ".txt", file .. log .. "\n", -1)
+				SaveResourceFile(GetCurrentResourceName(), "logs/" .. string.gsub(os.date('%x'), '(/)', '-') .. ".txt", file .. log .. "\n", -1)
 				return
 			end
 		end)

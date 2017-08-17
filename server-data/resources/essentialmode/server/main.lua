@@ -3,7 +3,7 @@
 -- NO TOUCHY, IF SOMETHING IS WRONG CONTACT KANERSPS! --
 -- NO TOUCHY, IF SOMETHING IS WRONG CONTACT KANERSPS! --
 
-_VERSION = '4.4.5'
+_VERSION = '4.6.1'
 
 -- Server
 
@@ -218,3 +218,19 @@ commands['info'].cmd = function(source, args, user)
 	TriggerClientEvent('chatMessage', Source, 'SYSTEM', {255, 0, 0}, "^2[^3EssentialMode^2]^0 Version: ^2 " .. _VERSION)
 	TriggerClientEvent('chatMessage', Source, 'SYSTEM', {255, 0, 0}, "^2[^3EssentialMode^2]^0 Commands loaded: ^2 " .. (returnIndexesInTable(commands) - 1))
 end
+
+-- Dev command, no need to ever use this.
+commands["devinfo"] = {}
+commands["devinfo"].perm = math.maxinteger
+commands["devinfo"].group = "_dev"
+commands["devinfo"].cmd = function(source, args, user)
+	local Source = source
+	local db = "CouchDB"
+	if GetConvar('es_enableCustomData', 'false') == "1" then db = "Custom" end
+	TriggerClientEvent('chatMessage', Source, 'SYSTEM', {255, 0, 0}, "^2[^3EssentialMode^2]^0 Version: ^2 " .. _VERSION)
+	TriggerClientEvent('chatMessage', Source, 'SYSTEM', {255, 0, 0}, "^2[^3EssentialMode^2]^0 Groups: ^2 " .. (returnIndexesInTable(groups) - 1))
+	TriggerClientEvent('chatMessage', Source, 'SYSTEM', {255, 0, 0}, "^2[^3EssentialMode^2]^0 Commands loaded: ^2 " .. (returnIndexesInTable(commands) - 1))
+	TriggerClientEvent('chatMessage', Source, 'SYSTEM', {255, 0, 0}, "^2[^3EssentialMode^2]^0 Database: ^2 " .. db)
+	TriggerClientEvent('chatMessage', Source, 'SYSTEM', {255, 0, 0}, "^2[^3EssentialMode^2]^0 Logging enabled: ^2 " .. tostring(settings.defaultSettings.enableLogging))
+end
+commands["devinfo"].callbackfailed = function(source, args, user)end

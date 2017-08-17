@@ -41,5 +41,6 @@ server_exports {
 	'addAdminCommand',
 	'addCommand',
 	'addGroupCommand',
-	'addACECommand'
+	'addACECommand',
+	'canGroupTarget'
 }

