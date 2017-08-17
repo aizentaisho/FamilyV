@@ -1,10 +1,10 @@
 local Keys = {
-	["ESC"] = 322, ["F1"] = 288, ["F2"] = 289, ["F3"] = 170, ["F5"] = 166, ["F6"] = 167, ["F7"] = 168, ["F8"] = 169, ["F9"] = 56, ["F10"] = 57, 
-	["~"] = 243, ["1"] = 157, ["2"] = 158, ["3"] = 160, ["4"] = 164, ["5"] = 165, ["6"] = 159, ["7"] = 161, ["8"] = 162, ["9"] = 163, ["-"] = 84, ["="] = 83, ["BACKSPACE"] = 177, 
+	["ESC"] = 322, ["F1"] = 288, ["F2"] = 289, ["F3"] = 170, ["F5"] = 166, ["F6"] = 167, ["F7"] = 168, ["F8"] = 169, ["F9"] = 56, ["F10"] = 57,
+	["~"] = 243, ["1"] = 157, ["2"] = 158, ["3"] = 160, ["4"] = 164, ["5"] = 165, ["6"] = 159, ["7"] = 161, ["8"] = 162, ["9"] = 163, ["-"] = 84, ["="] = 83, ["BACKSPACE"] = 177,
 	["TAB"] = 37, ["Q"] = 44, ["W"] = 32, ["E"] = 38, ["R"] = 45, ["T"] = 245, ["Y"] = 246, ["U"] = 303, ["P"] = 199, ["["] = 39, ["]"] = 40, ["ENTER"] = 18,
 	["CAPS"] = 137, ["A"] = 34, ["S"] = 8, ["D"] = 9, ["F"] = 23, ["G"] = 47, ["H"] = 74, ["K"] = 311, ["L"] = 182,
 	["LEFTSHIFT"] = 21, ["Z"] = 20, ["X"] = 73, ["C"] = 26, ["V"] = 0, ["B"] = 29, ["N"] = 249, ["M"] = 244, [","] = 82, ["."] = 81,
-	["LEFTCTRL"] = 36, ["LEFTALT"] = 19, ["SPACE"] = 22, ["RIGHTCTRL"] = 70, 
+	["LEFTCTRL"] = 36, ["LEFTALT"] = 19, ["SPACE"] = 22, ["RIGHTCTRL"] = 70,
 	["HOME"] = 213, ["PAGEUP"] = 10, ["PAGEDOWN"] = 11, ["DELETE"] = 178,
 	["LEFT"] = 174, ["RIGHT"] = 175, ["TOP"] = 27, ["DOWN"] = 173,
 	["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
@@ -81,7 +81,7 @@ function OpenShopMenu()
 		local options          = {}
 
 		for j=1, #categoryVehicles, 1 do
-			
+
 			local vehicle = categoryVehicles[j]
 
 			if i == 1 and j == 1 then
@@ -160,7 +160,7 @@ function OpenShopMenu()
 										y = Config.Zones.ShopOutside.Pos.y,
 										z = Config.Zones.ShopOutside.Pos.z
 									}, -20.0, function(vehicle)
-										
+
 										TaskWarpPedIntoVehicle(playerPed, vehicle, -1)
 
 										local vehicleProps = ESX.Game.GetVehicleProperties(vehicle)
@@ -194,7 +194,7 @@ function OpenShopMenu()
 
 		end,
 		function(data, menu)
-			
+
 			menu.close()
 
 			DeleteShopInsideVehicles()
@@ -202,7 +202,7 @@ function OpenShopMenu()
 			local playerPed = GetPlayerPed(-1)
 
 			CurrentAction     = 'shop_menu'
-			CurrentActionMsg  = 'Appuez sur ~INPUT_CONTEXT~ pour accéder au menu'
+			CurrentActionMsg  = 'Appuyez sur ~INPUT_CONTEXT~ pour accéder au ~b~menu~w~.'
 			CurrentActionData = {}
 
 			FreezeEntityPosition(playerPed, false)
@@ -262,8 +262,8 @@ function OpenResellerMenu()
 		  	{label = 'Sortir véhicule',              value = 'pop_vehicle'},
 		  	{label = 'Rentrer véhicule',             value = 'depop_vehicle'},
 		  	{label = 'Créer facture',                value = 'create_bill'},
-		  	{label = 'Véhicules en location',        value = 'get_rented_vehicles'},	
-		  	{label = 'Attribuer véhicule [Vente]',   value = 'set_vehicle_owner_sell'},		
+		  	{label = 'Véhicules en location',        value = 'get_rented_vehicles'},
+		  	{label = 'Attribuer véhicule [Vente]',   value = 'set_vehicle_owner_sell'},
 		  	{label = 'Attribuer véhicule [Location]', value = 'set_vehicle_owner_rent'},
 			}
 		},
@@ -291,7 +291,7 @@ function OpenResellerMenu()
 						if amount == nil then
 							ESX.ShowNotification('Montant invalide')
 						else
-							
+
 							menu.close()
 
 							local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
@@ -347,7 +347,7 @@ function OpenResellerMenu()
 						if amount == nil then
 							ESX.ShowNotification('Montant invalide')
 						else
-							
+
 							menu.close()
 
 							local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
@@ -378,11 +378,11 @@ function OpenResellerMenu()
 
 		end,
 		function(data, menu)
-			
+
 			menu.close()
 
 			CurrentAction     = 'reseller_menu'
-			CurrentActionMsg  = 'Appuez sur ~INPUT_CONTEXT~ pour accéder au menu'
+			CurrentActionMsg  = 'Appuyez sur ~INPUT_CONTEXT~ pour accéder au ~b~menu~w~.'
 			CurrentActionData = {}
 
 		end
@@ -418,7 +418,7 @@ function OpenPersonnalVehicleMenu()
 				elements = elements
 			},
 			function(data, menu)
-					
+
 				local playerPed   = GetPlayerPed(-1)
 				local coords      = GetEntityCoords(playerPed)
 				local heading     = GetEntityHeading(playerPed)
@@ -472,7 +472,7 @@ function OpenPopVehicleMenu()
 					y = Config.Zones.ShopInside.Pos.y,
 					z = Config.Zones.ShopInside.Pos.z
 				}, 90.0, function(vehicle)
-					
+
 					table.insert(LastVehicles, vehicle)
 
 					for i=1, #Vehicles, 1 do
@@ -622,11 +622,11 @@ function OpenBossActionsMenu()
 
 		end,
 		function(data, menu)
-			
+
 			menu.close()
 
 			CurrentAction     = 'boss_actions_menu'
-			CurrentActionMsg  = 'Appuez sur ~INPUT_CONTEXT~ pour accéder au menu'
+			CurrentActionMsg  = 'Appuyez sur ~INPUT_CONTEXT~ pour accéder au ~b~menu~w~.'
 			CurrentActionData = {}
 
 		end
@@ -636,7 +636,7 @@ end
 
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
-	
+
 	PlayerData = xPlayer
 
 	if Config.EnablePlayerManagement then
@@ -660,7 +660,7 @@ end)
 
 RegisterNetEvent('esx:setJob')
 AddEventHandler('esx:setJob', function(job)
-	
+
 	PlayerData.job = job
 
 	if Config.EnablePlayerManagement then
@@ -695,14 +695,14 @@ AddEventHandler('esx_vehicleshop:hasEnteredMarker', function(zone)
 
 			if PlayerData.job ~= nil and PlayerData.job.name == 'cardealer' then
 				CurrentAction     = 'reseller_menu'
-				CurrentActionMsg  = 'Appuez sur ~INPUT_CONTEXT~ pour accéder au menu'
+				CurrentActionMsg  = 'Appuyez sur ~INPUT_CONTEXT~ pour accéder au ~b~menu~w~.'
 				CurrentActionData = {}
 			end
 
 		else
 
 			CurrentAction     = 'shop_menu'
-			CurrentActionMsg  = 'Appuez sur ~INPUT_CONTEXT~ pour accéder au menu'
+			CurrentActionMsg  = 'Appuyez sur ~INPUT_CONTEXT~ pour accéder au ~b~menu~w~.'
 			CurrentActionData = {}
 
 		end
@@ -714,12 +714,12 @@ AddEventHandler('esx_vehicleshop:hasEnteredMarker', function(zone)
 		local playerPed = GetPlayerPed(-1)
 
 		if IsPedInAnyVehicle(playerPed, false) then
-			
+
 			local vehicle = GetVehiclePedIsIn(playerPed, false)
 
 			CurrentAction     = 'give_back_vehicle'
-			CurrentActionMsg  = 'Appuez sur ~INPUT_CONTEXT~ pour rendre votre véhicule'
-			
+			CurrentActionMsg  = 'Appuyez sur ~INPUT_CONTEXT~ pour rendre votre ~b~véhicule~w~.'
+
 			CurrentActionData = {
 				vehicle = vehicle
 			}
@@ -747,8 +747,8 @@ AddEventHandler('esx_vehicleshop:hasEnteredMarker', function(zone)
 			local resellPrice = math.floor(vehicleData.price / 100 * Config.ResellPercentage)
 
 			CurrentAction     = 'resell_vehicle'
-			CurrentActionMsg  = 'Appuez sur ~INPUT_CONTEXT~ pour vendre ' .. vehicleData.name .. ' au prix de $' .. resellPrice
-			
+			CurrentActionMsg  = 'Appuyez sur ~INPUT_CONTEXT~ pour vendre ' .. vehicleData.name .. ' au prix de ~g~$' .. resellPrice .. '~w~.'
+
 			CurrentActionData = {
 				vehicle = vehicle,
 				price   = resellPrice
@@ -761,7 +761,7 @@ AddEventHandler('esx_vehicleshop:hasEnteredMarker', function(zone)
 	if zone == 'BossActions' and Config.EnablePlayerManagement and PlayerData.job ~= nil and PlayerData.job.name == 'cardealer' and PlayerData.job.grade_name == 'boss' then
 
 		CurrentAction     = 'boss_actions_menu'
-		CurrentActionMsg  = 'Appuez sur ~INPUT_CONTEXT~ pour accéder au menu'
+		CurrentActionMsg  = 'Appuyez sur ~INPUT_CONTEXT~ pour accéder au ~b~menu~w~.'
 		CurrentActionData = {}
 
 	end
@@ -794,7 +794,7 @@ end
 
 -- Create Blips
 Citizen.CreateThread(function()
-	
+
 	local blip = AddBlipForCoord(Config.Zones.ShopEntering.Pos.x, Config.Zones.ShopEntering.Pos.y, Config.Zones.ShopEntering.Pos.z)
 
 	SetBlipSprite (blip, 326)
@@ -811,11 +811,11 @@ end)
 -- Display markers
 Citizen.CreateThread(function()
 	while true do
-		
+
 		Wait(0)
-		
+
 		local coords = GetEntityCoords(GetPlayerPed(-1))
-		
+
 		for k,v in pairs(Config.Zones) do
 			if(v.Type ~= -1 and GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < Config.DrawDistance) then
 				DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
@@ -828,9 +828,9 @@ end)
 -- Enter / Exit marker events
 Citizen.CreateThread(function()
 	while true do
-		
+
 		Wait(0)
-		
+
 		local coords      = GetEntityCoords(GetPlayerPed(-1))
 		local isInMarker  = false
 		local currentZone = nil
@@ -869,7 +869,7 @@ Citizen.CreateThread(function()
 			DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 
 			if IsControlPressed(0, Keys['E']) and (GetGameTimer() - GUI.Time) > 300 then
-				
+
 				if CurrentAction == 'shop_menu' then
 					OpenShopMenu()
 				end
@@ -914,7 +914,7 @@ Citizen.CreateThread(function()
 
 				CurrentAction = nil
 				GUI.Time      = GetGameTimer()
-				
+
 			end
 
 		end

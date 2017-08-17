@@ -1,0 +1,176 @@
+[         0] Initializing Mono
+[         0] Initializing Mono completed
+[         0] Hello!
+[         0] Initializing Mono
+[         0] Initializing Mono completed
+[        16] Hello!
+[        63] Failed to get instance for guid a7242855-0350-4cb5-a0fe-61021e7eafaa and iid 567634c6-3bdd-4d0e-af39-7472aed479b7: System.InvalidOperationException: Sequence contains no matching element
+[        63]   at System.Linq.Enumerable.First[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] predicate) [0x00011] in <48501e5f32e8491e924f8b8beae3e4f6>:0 
+[        63]   at CitizenFX.Core.RuntimeManager.CreateObjectInstance (System.Guid guid, System.Guid iid) [0x00014] in C:\gl\builds\4ff63adb\0\cfx\fivem\code\client\clrcore\RuntimeManager.cs:39 
+[        79] Found new resource async in C:/FXServer2\FamilyV\server-data/resources//async
+[        79] Found new resource Citizen-V in C:/FXServer2\FamilyV\server-data/resources//Citizen-V
+[        79] Found new resource esplugin_mysql in C:/FXServer2\FamilyV\server-data/resources//esplugin_mysql
+[        79] Found new resource essentialmode in C:/FXServer2\FamilyV\server-data/resources//essentialmode
+[        79] Found new resource es_admin2 in C:/FXServer2\FamilyV\server-data/resources//es_admin2
+[        79] Found new resource fivem in C:/FXServer2\FamilyV\server-data/resources//fivem
+[        94] Found new resource fivem-awesome1501 in C:/FXServer2\FamilyV\server-data/resources//fivem-awesome1501
+[        94] Found new resource fivem-map-hipster in C:/FXServer2\FamilyV\server-data/resources//fivem-map-hipster
+[        94] Found new resource fivem-map-skater in C:/FXServer2\FamilyV\server-data/resources//fivem-map-skater
+[        94] Found new resource fxserver-es_extended in C:/FXServer2\FamilyV\server-data/resources//fxserver-es_extended
+[        94] Resource loading for fxserver-es_extended failed:
+[        94] Could not open resource metadata file C:/FXServer2\FamilyV\server-data/resources//fxserver-es_extended/__resource.lua.
+[       110] Found new resource mysql-async in C:/FXServer2\FamilyV\server-data/resources//mysql-async
+[       110] Found new resource skinchanger in C:/FXServer2\FamilyV\server-data/resources//skinchanger
+[       110] Found new resource client_base in C:/FXServer2\FamilyV\server-data/resources//[citizenv]/client_base
+[       110] Found new resource es_extended in C:/FXServer2\FamilyV\server-data/resources//[essential]/es_extended
+[       110] Found new resource clotheshop in C:/FXServer2\FamilyV\server-data/resources//[esx]/clotheshop
+[       110] Found new resource cron in C:/FXServer2\FamilyV\server-data/resources//[esx]/cron
+[       125] Found new resource esx_addonaccount in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_addonaccount
+[       125] Found new resource esx_addoninventory in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_addoninventory
+[       125] Found new resource esx_AdvancedFuel in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_AdvancedFuel
+[       125] Found new resource esx_ambulancejob in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_ambulancejob
+[       125] Found new resource esx_atm in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_atm
+[       141] Found new resource esx_bankerjob in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_bankerjob
+[       141] Found new resource esx_barbershop in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_barbershop
+[       141] Found new resource esx_basicneeds in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_basicneeds
+[       141] Found new resource esx_billing in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_billing
+[       141] Found new resource esx_boiler in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_boiler
+[       157] Found new resource esx_datastore in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_datastore
+[       157] Found new resource esx_drugs in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_drugs
+[       157] Found new resource esx_garage in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_garage
+[       157] Found new resource esx_holdup in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_holdup
+[       157] Found new resource esx_joblisting in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_joblisting
+[       157] Resource loading for esx_joblisting failed:
+[       157] Could not open resource metadata file C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_joblisting/__resource.lua.
+[       172] Found new resource esx_jobs in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_jobs
+[       172] Found new resource esx_lscustom in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_lscustom
+[       172] Found new resource esx_mask in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_mask
+[       172] Found new resource esx_mecanojob in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_mecanojob
+[       172] Found new resource esx_menu_default in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_menu_default
+[       172] Found new resource esx_menu_dialog in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_menu_dialog
+[       188] Found new resource esx_menu_list in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_menu_list
+[       188] Found new resource esx_phone in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_phone
+[       188] Found new resource esx_policejob in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_policejob
+[       188] Found new resource esx_property in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_property
+[       188] Found new resource esx_realestateagentjob in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_realestateagentjob
+[       204] Found new resource esx_service in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_service
+[       204] Found new resource esx_shops in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_shops
+[       204] Found new resource esx_skin in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_skin
+[       204] Found new resource esx_society in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_society
+[       204] Found new resource esx_status in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_status
+[       219] Found new resource esx_taxijob in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_taxijob
+[       219] Found new resource esx_vehicleshop in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_vehicleshop
+[       219] Found new resource esx_weashops in C:/FXServer2\FamilyV\server-data/resources//[esx]/esx_weashops
+[       219] Found new resource instance in C:/FXServer2\FamilyV\server-data/resources//[esx]/instance
+[       219] Found new resource skinchange in C:/FXServer2\FamilyV\server-data/resources//[esx]/skinchange
+[       219] Found new resource race in C:/FXServer2\FamilyV\server-data/resources//[gamemodes]/race
+[       235] Found new resource race-test in C:/FXServer2\FamilyV\server-data/resources//[gamemodes]/race-test
+[       235] Found new resource channelfeed in C:/FXServer2\FamilyV\server-data/resources//[gameplay]/channelfeed
+[       235] Found new resource heli in C:/FXServer2\FamilyV\server-data/resources//[gameplay]/heli
+[       235] Found new resource irc in C:/FXServer2\FamilyV\server-data/resources//[gameplay]/irc
+[       235] Found new resource obituary in C:/FXServer2\FamilyV\server-data/resources//[gameplay]/obituary
+[       250] Found new resource obituary-deaths in C:/FXServer2\FamilyV\server-data/resources//[gameplay]/obituary-deaths
+[       250] Found new resource peche in C:/FXServer2\FamilyV\server-data/resources//[jobs]/peche
+[       250] Found new resource mapmanager in C:/FXServer2\FamilyV\server-data/resources//[managers]/mapmanager
+[       250] Found new resource afkkick in C:/FXServer2\FamilyV\server-data/resources//[system]/afkkick
+[       250] Found new resource antigang in C:/FXServer2\FamilyV\server-data/resources//[system]/antigang
+[       250] Found new resource baseevents in C:/FXServer2\FamilyV\server-data/resources//[system]/baseevents
+[       266] Found new resource chat in C:/FXServer2\FamilyV\server-data/resources//[system]/chat
+[       266] Found new resource hardcap in C:/FXServer2\FamilyV\server-data/resources//[system]/hardcap
+[       266] Found new resource interiors in C:/FXServer2\FamilyV\server-data/resources//[system]/interiors
+[       266] Found new resource loadingscreen in C:/FXServer2\FamilyV\server-data/resources//[system]/loadingscreen
+[       266] Found new resource loadipl in C:/FXServer2\FamilyV\server-data/resources//[system]/loadipl
+[       266] Found new resource localization in C:/FXServer2\FamilyV\server-data/resources//[system]/localization
+[       282] Found new resource mellotrainer in C:/FXServer2\FamilyV\server-data/resources//[system]/mellotrainer
+[       282] Found new resource motd in C:/FXServer2\FamilyV\server-data/resources//[system]/motd
+[       282] Found new resource rconlog in C:/FXServer2\FamilyV\server-data/resources//[system]/rconlog
+[       282] Found new resource sessionmanager in C:/FXServer2\FamilyV\server-data/resources//[system]/sessionmanager
+[       282] Found new resource spawnmanager in C:/FXServer2\FamilyV\server-data/resources//[system]/spawnmanager
+[       297] Found new resource whitelist in C:/FXServer2\FamilyV\server-data/resources//[system]/whitelist
+[       297] Found new resource betaguns in C:/FXServer2\FamilyV\server-data/resources//[test]/betaguns
+[       297] Found new resource gameInit in C:/FXServer2\FamilyV\server-data/resources//[test]/gameInit
+[       297] Found new resource keks in C:/FXServer2\FamilyV\server-data/resources//[test]/keks
+[       313] Started resource sessionmanager
+[       594] Loaded MySQLAsync.net, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null into ScriptDomain_2029483209
+[       610] Instantiated instance of script MySQLAsync.MySQLAsync.
+[       610] Started resource mysql-async
+[       625] false
+[       625] Started resource essentialmode
+[       641] Started resource es_admin2
+[       657] Started resource esplugin_mysql
+[       672] Started resource es_extended
+[       672] Started resource esx_menu_default
+[       688] Started resource esx_menu_list
+[       688] Started resource esx_menu_dialog
+[       704] Started resource mapmanager
+[       704] Started resource Citizen-V
+[       704] Started resource client_base
+[       719] Started resource chat
+[       719] Started resource localization
+[       735] Started resource spawnmanager
+[       735] Started resource fivem
+[       735] Started gametype Freeroam
+[       735] Started resource hardcap
+[       750] Started resource rconlog
+[       750] Started resource esx_atm
+[       766] Started resource esx_addonaccount
+[       766] Started resource esx_datastore
+[       766] CRON STARTED [22:06]
+[       782] Started resource cron
+[       782] Started resource esx_billing
+[       797] Started resource esx_society
+[       797] Started resource esx_policejob
+[       797] Started resource skinchange
+[       813] Started resource esx_skin
+[       813] Started resource baseevents
+[       829] Started resource esx_ambulancejob
+[       829] Started resource esx_service
+[       844] Started resource esx_addoninventory
+[       844] Started resource instance
+[       860] Started resource esx_property
+[       860] Started resource esx_realestateagentjob
+[       875] Started resource esx_taxijob
+[       875] Started resource esx_shops
+[       891] Started resource esx_vehicleshop
+[       907] Started resource esx_bankerjob
+[       907] Started resource esx_garage
+[       922] Started resource esx_drugs
+[       922] Started resource esx_status
+[       938] Started resource esx_basicneeds
+[       954] Started resource esx_phone
+[       954] Started resource esx_holdup
+[       969] Started resource esx_mecanojob
+[       969] Started resource esx_jobs
+[       985] Started resource esx_joblisting
+[       985] Started resource esx_boiler
+[      1000] Started resource esx_mask
+[      1016] Started resource esx_AdvancedFuel
+[      1016] Started resource esx_lscustom
+[      1032] Started resource esx_weashops
+[      1032] Started resource clotheshop
+[      1047] Started resource esx_barbershop
+[      1047] Started resource peche
+[      1063] Started resource loadipl
+[      1063] Started resource whitelist
+[      1063] Started resource afkkick
+[      1079] Started resource antigang
+[      1204] Started resource loadingscreen
+[      1204] Started resource motd
+[      1219] Started resource mellotrainer
+[      1219] Started resource heli
+[      1235] Started resource interiors
+[      1375] Resolved live-internal.fivem.net:30110 to 151.80.44.223:30110
+[      1375] Sending heartbeat to live-internal.fivem.net:30110
+[      1375] Started resource fivem-map-hipster
+[      1391] Started map fivem-map-hipster
+[      1438] Loaded MySqlConnector, Version=0.24.0.0, Culture=neutral, PublicKeyToken=null into ScriptDomain_2029483209
+[      1485] Loaded System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51 into ScriptDomain_2029483209
+[      1594] Loaded System.Buffers, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51 into ScriptDomain_2029483209
+[      1704] hitch warning: frame time of 414 milliseconds
+[      1704] 
+[      1704] Current version: 4.4.5
+[      1704] Updater version: 4.6.1
+[      1704] 
+[      1704] 
+[      1704] Version mismatch, you are currently not using the newest stable version of essentialmode. Please update
+[      1704] 

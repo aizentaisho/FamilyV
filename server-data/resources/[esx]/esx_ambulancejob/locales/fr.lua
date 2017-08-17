@@ -5,8 +5,8 @@ Locales['fr'] = {
 		['ems_clothes_ems'] = 'Tenue Ambulancier',
 	--Vehicles
 		['veh_menu'] = 'véhicule',
-		['veh_spawn'] = 'appuyez sur ~INPUT_CONTEXT~ pour sortir un véhicule',
-		['store_veh'] = 'appuyez sur ~INPUT_CONTEXT~ pour ranger le véhicule',
+		['veh_spawn'] = 'Appuyez sur ~INPUT_CONTEXT~ pour sortir un ~b~véhicule~w~.',
+		['store_veh'] = 'Appuyez sur ~INPUT_CONTEXT~ pour ranger le ~b~véhicule~w~.',
 		['ambulance'] = 'ambulance',
 		['helicopter'] = 'hélicoptère',
 	--Action Menu
@@ -22,7 +22,7 @@ Locales['fr'] = {
 		['withdraw_society'] = 'retirer argent société',
 	--Misc
 		['invalid_amount'] = '~r~montant invalide',
-		['open_menu'] = 'appuyez sur ~INPUT_CONTEXT~ pour ouvrir le menu',
+		['open_menu'] = 'Appuyez sur ~INPUT_CONTEXT~ pour ouvrir le ~b~menu~w~.',
 		['deposit_amount'] = 'montant du dépôt',
 		['money_withdraw'] = 'montant du retrait',
 	-- F6 Menu

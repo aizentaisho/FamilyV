@@ -3,18 +3,18 @@ Locales['fr'] = {
 		['cloakroom'] = 'vestiaire',
 		['citizen_wear'] = 'tenue Civil',
 		['police_wear'] = 'tenue Policier',
-		['open_cloackroom'] = 'appuez sur ~INPUT_CONTEXT~ pour vous changer',
+		['open_cloackroom'] = 'Appuyez sur ~INPUT_CONTENT~ pour vous ~b~changer~w~.',
 	--Armory
 		['get_weapon'] = 'prendre Arme',
 		['put_weapon'] = 'déposer Arme',
 		['buy_weapons'] = 'acheter Armes',
 		['armory'] = 'armurerie',
-		['open_armory'] = 'appuez sur ~INPUT_CONTEXT~ pour accéder à l\'armurerie',
+		['open_armory'] = 'Appuyez sur ~INPUT_CONTEXT~ pour accéder à l\'~b~armurerie~w~.',
 	--Vehicles
 		['vehicle_menu'] = 'véhicule',
 		['vehicle_out'] = 'il y a déja un véhicule de sorti',
-		['vehicle_spawner'] = 'appuez sur ~INPUT_CONTEXT~ pour sortir un véhicule',
-		['store_vehicle'] = 'appuez sur ~INPUT_CONTEXT~ pour ranger le véhicule',
+		['vehicle_spawner'] = 'Appuyez sur ~INPUT_CONTEXT~ pour sortir un ~b~véhicule~w~.',
+		['store_vehicle'] = 'Appuyez sur ~INPUT_CONTEXT~ pour ranger le ~b~véhicule~w~.',
 		['service_max'] = 'Service complet : ',
 	--Action Menu
 		['citizen_interaction'] = 'interaction citoyen',
@@ -68,9 +68,9 @@ Locales['fr'] = {
 		['amount_of_withdrawal'] = 'montant du retrait',
 		['invalid_amount'] = 'montant invalide',
 		['amount_of_deposit'] = 'montant du dépôt',
-		['open_bossmenu'] = 'appuez sur ~INPUT_CONTEXT~ pour ouvrir le menu',
+		['open_bossmenu'] = 'Appuyez sur ~INPUT_CONTEXT~ pour ouvrir le ~b~menu~w~.',
 	--Misc
-		['remove_object'] = 'appuez sur ~INPUT_CONTEXT~ pour enlever l\'objet',
+		['remove_object'] = 'Appuyez sur ~INPUT_CONTEXT~ pour enlever l\'~b~objet~w~.',
 		['map_blip'] = 'Commissariat',
 	--Notifications
 		['from'] = '~s~ à ~b~',
