@@ -23,8 +23,6 @@ AddEventHandler('disclaimer:called', function()
   end)
 end)
 
-
-
 RegisterNetEvent('disclaimer:display')
 AddEventHandler('disclaimer:display', function(value)
   SendNUIMessage({
