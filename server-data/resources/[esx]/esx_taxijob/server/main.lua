@@ -11,7 +11,7 @@ AddEventHandler('esx_taxijob:success', function()
 
 	math.randomseed(os.time())
 
-  local xPlayer        = ESX.GetPlayerFromId(source)
+	local xPlayer        = ESX.GetPlayerFromId(source)
   local total          = math.random(Config.NPCJobEarnings.min, Config.NPCJobEarnings.max);
   local societyAccount = nil
 

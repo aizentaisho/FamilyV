@@ -365,6 +365,7 @@ AddEventHandler('esx_taxijob:hasEnteredMarker', function(zone)
 end)
 
 AddEventHandler('esx_taxijob:hasExitedMarker', function(zone)
+	ESX.UI.Menu.CloseAll()
 	CurrentAction = nil
 end)
 
@@ -573,8 +574,8 @@ Citizen.CreateThread(function()
 							end
 
 							if TargetCoords ~= nil then
- +								DrawMarker(1, TargetCoords.x, TargetCoords.y, TargetCoords.z - 1.0, 0, 0, 0, 0, 0, 0, 4.0, 4.0, 2.0, 178, 236, 93, 155, 0, 0, 2, 0, 0, 0, 0)
- +							end
+								DrawMarker(1, TargetCoords.x, TargetCoords.y, TargetCoords.z - 1.0, 0, 0, 0, 0, 0, 0, 4.0, 4.0, 2.0, 178, 236, 93, 155, 0, 0, 2, 0, 0, 0, 0)
+							end
 
 						else
 
