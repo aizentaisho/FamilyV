@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  jeu. 17 août 2017 à 22:50
+-- Généré le :  jeu. 17 août 2017 à 22:54
 -- Version du serveur :  5.7.17
 -- Version de PHP :  5.6.30
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `essentialmode`
 --
-CREATE DATABASE IF NOT EXISTS `essentialmode` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
-USE `essentialmode`;
 
 -- --------------------------------------------------------
 
@@ -342,6 +340,39 @@ INSERT INTO `items` (`id`, `name`, `label`, `limit`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `jobs`
+--
+
+CREATE TABLE `jobs` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `label` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Déchargement des données de la table `jobs`
+--
+
+INSERT INTO `jobs` (`id`, `name`, `label`) VALUES
+(1, 'unemployed', 'Chomeur'),
+(2, 'police', 'LSPD'),
+(3, 'ambulance', 'Ambulance'),
+(4, 'ambulance', 'Ambulance'),
+(5, 'taxi', 'Taxi'),
+(6, 'cardealer', 'Concessionnaire'),
+(7, 'banker', 'Banquier'),
+(8, 'mecano', 'Mécano'),
+(9, 'slaughterer', 'Abatteur'),
+(10, 'fisherman', 'Pêcheur'),
+(11, 'miner', 'Mineur'),
+(12, 'lumberjack', 'Bûcheron'),
+(13, 'fuel', 'Raffineur'),
+(14, 'reporter', 'Journaliste'),
+(15, 'textil', 'Couturier');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `job_grades`
 --
 
@@ -400,39 +431,6 @@ INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, 
 (37, 'textil', 0, 'interim', 'IntÃ©rimaire', 0, '{}', '{}'),
 (38, 'miner', 0, 'interim', 'IntÃ©rimaire', 0, '{}', '{}'),
 (39, 'slaughterer', 0, 'interim', 'IntÃ©rimaire', 0, '{}', '{}');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `jobs`
---
-
-CREATE TABLE `jobs` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_bin NOT NULL,
-  `label` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
---
--- Déchargement des données de la table `jobs`
---
-
-INSERT INTO `jobs` (`id`, `name`, `label`) VALUES
-(1, 'unemployed', 'Chomeur'),
-(2, 'police', 'LSPD'),
-(3, 'ambulance', 'Ambulance'),
-(4, 'ambulance', 'Ambulance'),
-(5, 'taxi', 'Taxi'),
-(6, 'cardealer', 'Concessionnaire'),
-(7, 'banker', 'Banquier'),
-(8, 'mecano', 'Mécano'),
-(9, 'slaughterer', 'Abatteur'),
-(10, 'fisherman', 'Pêcheur'),
-(11, 'miner', 'Mineur'),
-(12, 'lumberjack', 'Bûcheron'),
-(13, 'fuel', 'Raffineur'),
-(14, 'reporter', 'Journaliste'),
-(15, 'textil', 'Couturier');
 
 -- --------------------------------------------------------
 
@@ -599,6 +597,42 @@ CREATE TABLE `society_moneywash` (
   `society` varchar(60) COLLATE utf8mb4_bin NOT NULL,
   `amount` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
+--
+
+CREATE TABLE `users` (
+  `identifier` varchar(50) COLLATE utf8mb4_bin NOT NULL,
+  `money` int(11) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_bin DEFAULT '',
+  `skin` longtext COLLATE utf8mb4_bin,
+  `job` varchar(255) COLLATE utf8mb4_bin DEFAULT 'unemployed',
+  `job_grade` int(11) DEFAULT '0',
+  `loadout` longtext COLLATE utf8mb4_bin,
+  `position` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
+  `bank` int(11) DEFAULT NULL,
+  `permission_level` int(11) DEFAULT NULL,
+  `group` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
+  `status` longtext COLLATE utf8mb4_bin,
+  `phone_number` int(11) DEFAULT NULL,
+  `last_property` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
+  `DmvTest` varchar(50) COLLATE utf8mb4_bin NOT NULL DEFAULT 'Required'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`identifier`, `money`, `name`, `skin`, `job`, `job_grade`, `loadout`, `position`, `bank`, `permission_level`, `group`, `status`, `phone_number`, `last_property`, `DmvTest`) VALUES
+('steam:1100001015e828c', 485744, 'Steph Jay', '{\"chain_1\":0,\"ears_2\":0,\"decals_2\":0,\"makeup_2\":0,\"eyebrows_4\":0,\"hair_1\":0,\"beard_1\":0,\"eyebrows_3\":0,\"torso_2\":1,\"skin\":0,\"lipstick_1\":0,\"eyebrows_1\":0,\"glasses_1\":0,\"bags_2\":0,\"pants_2\":0,\"lipstick_2\":0,\"bags_1\":0,\"makeup_3\":0,\"tshirt_2\":0,\"torso_1\":22,\"beard_3\":0,\"hair_color_1\":0,\"age_2\":0,\"hair_color_2\":0,\"shoes_1\":0,\"lipstick_4\":0,\"age_1\":0,\"bproof_2\":0,\"face\":9,\"mask_1\":0,\"shoes_2\":0,\"ears_1\":0,\"helmet_1\":-1,\"beard_4\":0,\"chain_2\":0,\"decals_1\":0,\"beard_2\":0,\"pants_1\":0,\"hair_2\":0,\"lipstick_3\":0,\"arms\":0,\"eyebrows_2\":0,\"glasses_2\":0,\"mask_2\":0,\"makeup_1\":0,\"tshirt_1\":0,\"bproof_1\":0,\"helmet_2\":0,\"sex\":0,\"makeup_4\":0}', 'ambulance', 1, '[{\"label\":\"Couteau\",\"name\":\"WEAPON_KNIFE\",\"ammo\":0},{\"label\":\"Matraque\",\"name\":\"WEAPON_NIGHTSTICK\",\"ammo\":0},{\"label\":\"Marteau\",\"name\":\"WEAPON_HAMMER\",\"ammo\":0},{\"label\":\"Bat\",\"name\":\"WEAPON_BAT\",\"ammo\":0},{\"label\":\"Club de golfe\",\"name\":\"WEAPON_GOLFCLUB\",\"ammo\":0},{\"label\":\"Pied de biche\",\"name\":\"WEAPON_CROWBAR\",\"ammo\":0},{\"label\":\"Pistolet\",\"name\":\"WEAPON_PISTOL\",\"ammo\":250},{\"label\":\"Pistolet de combat\",\"name\":\"WEAPON_COMBATPISTOL\",\"ammo\":250},{\"label\":\"Pistolet automatique\",\"name\":\"WEAPON_APPISTOL\",\"ammo\":250},{\"label\":\"Pistolet calibre 50\",\"name\":\"WEAPON_PISTOL50\",\"ammo\":250},{\"label\":\"Micro smg\",\"name\":\"WEAPON_MICROSMG\",\"ammo\":250},{\"label\":\"Smg\",\"name\":\"WEAPON_SMG\",\"ammo\":250},{\"label\":\"Smg d\'assaut\",\"name\":\"WEAPON_ASSAULTSMG\",\"ammo\":250},{\"label\":\"Fusil d\'assaut\",\"name\":\"WEAPON_ASSAULTRIFLE\",\"ammo\":210},{\"label\":\"Carabine d\'assaut\",\"name\":\"WEAPON_CARBINERIFLE\",\"ammo\":210},{\"label\":\"Fusil avancé\",\"name\":\"WEAPON_ADVANCEDRIFLE\",\"ammo\":210},{\"label\":\"Mitrailleuse\",\"name\":\"WEAPON_MG\",\"ammo\":250},{\"label\":\"Mitrailleuse de combat\",\"name\":\"WEAPON_COMBATMG\",\"ammo\":250},{\"label\":\"Fusil à pompe\",\"name\":\"WEAPON_PUMPSHOTGUN\",\"ammo\":247},{\"label\":\"Carabine à canon scié\",\"name\":\"WEAPON_SAWNOFFSHOTGUN\",\"ammo\":247},{\"label\":\"Carabine d\'assaut\",\"name\":\"WEAPON_ASSAULTSHOTGUN\",\"ammo\":247},{\"label\":\"Carabine bullpup\",\"name\":\"WEAPON_BULLPUPSHOTGUN\",\"ammo\":247},{\"label\":\"Tazer\",\"name\":\"WEAPON_STUNGUN\",\"ammo\":250},{\"label\":\"Fusil de sniper\",\"name\":\"WEAPON_SNIPERRIFLE\",\"ammo\":250},{\"label\":\"Fusil de sniper lourd\",\"name\":\"WEAPON_HEAVYSNIPER\",\"ammo\":250},{\"label\":\"Lance-grenade\",\"name\":\"WEAPON_GRENADELAUNCHER\",\"ammo\":8},{\"label\":\"Lance-rocket\",\"name\":\"WEAPON_RPG\",\"ammo\":1},{\"label\":\"Lance-missile stinger\",\"name\":\"WEAPON_STINGER\",\"ammo\":0},{\"label\":\"Minigun\",\"name\":\"WEAPON_MINIGUN\",\"ammo\":250},{\"label\":\"Grenade\",\"name\":\"WEAPON_GRENADE\",\"ammo\":1},{\"label\":\"Bombe collante\",\"name\":\"WEAPON_STICKYBOMB\",\"ammo\":1},{\"label\":\"Grenade fumigène\",\"name\":\"WEAPON_SMOKEGRENADE\",\"ammo\":1},{\"label\":\"Grenade à gaz bz\",\"name\":\"WEAPON_BZGAS\",\"ammo\":1},{\"label\":\"Cocktail molotov\",\"name\":\"WEAPON_MOLOTOV\",\"ammo\":1},{\"label\":\"Extincteur\",\"name\":\"WEAPON_FIREEXTINGUISHER\",\"ammo\":2000},{\"label\":\"Jerrican d\'essence\",\"name\":\"WEAPON_PETROLCAN\",\"ammo\":4500},{\"label\":\"Pistolet sns\",\"name\":\"WEAPON_SNSPISTOL\",\"ammo\":250},{\"label\":\"Bouteille\",\"name\":\"WEAPON_BOTTLE\",\"ammo\":0},{\"label\":\"Balayeuse gusenberg\",\"name\":\"WEAPON_GUSENBERG\",\"ammo\":250},{\"label\":\"Carabine spéciale\",\"name\":\"WEAPON_SPECIALCARBINE\",\"ammo\":210},{\"label\":\"Pistolet lourd\",\"name\":\"WEAPON_HEAVYPISTOL\",\"ammo\":250},{\"label\":\"Fusil bullpup\",\"name\":\"WEAPON_BULLPUPRIFLE\",\"ammo\":210},{\"label\":\"Poignard\",\"name\":\"WEAPON_DAGGER\",\"ammo\":0},{\"label\":\"Pistolet vintage\",\"name\":\"WEAPON_VINTAGEPISTOL\",\"ammo\":250},{\"label\":\"Feu d\'artifice\",\"name\":\"WEAPON_FIREWORK\",\"ammo\":1},{\"label\":\"Mousquet\",\"name\":\"WEAPON_MUSKET\",\"ammo\":247},{\"label\":\"Fusil à pompe lourd\",\"name\":\"WEAPON_HEAVYSHOTGUN\",\"ammo\":247},{\"label\":\"Fusil marksman\",\"name\":\"WEAPON_MARKSMANRIFLE\",\"ammo\":250},{\"label\":\"Lance tête-chercheuse\",\"name\":\"WEAPON_HOMINGLAUNCHER\",\"ammo\":1},{\"label\":\"Mine de proximité\",\"name\":\"WEAPON_PROXMINE\",\"ammo\":1},{\"label\":\"Boule de neige\",\"name\":\"WEAPON_SNOWBALL\",\"ammo\":1},{\"label\":\"Lance fusée de détresse\",\"name\":\"WEAPON_FLAREGUN\",\"ammo\":1},{\"label\":\"Arme de défense personnelle\",\"name\":\"WEAPON_COMBATPDW\",\"ammo\":250},{\"label\":\"Pistolet marksman\",\"name\":\"WEAPON_MARKSMANPISTOL\",\"ammo\":250},{\"label\":\"Poing américain\",\"name\":\"WEAPON_KNUCKLE\",\"ammo\":0},{\"label\":\"Hachette\",\"name\":\"WEAPON_HATCHET\",\"ammo\":0},{\"label\":\"Canon éléctrique\",\"name\":\"WEAPON_RAILGUN\",\"ammo\":1},{\"label\":\"Machetta\",\"name\":\"WEAPON_MACHETE\",\"ammo\":0},{\"label\":\"Pistolet mitrailleur\",\"name\":\"WEAPON_MACHINEPISTOL\",\"ammo\":250},{\"label\":\"Couteau à cran d\'arrêt\",\"name\":\"WEAPON_SWITCHBLADE\",\"ammo\":0},{\"label\":\"Revolver\",\"name\":\"WEAPON_REVOLVER\",\"ammo\":250},{\"label\":\"Fusil à pompe double canon\",\"name\":\"WEAPON_DBSHOTGUN\",\"ammo\":247},{\"label\":\"Fusil compact\",\"name\":\"WEAPON_COMPACTRIFLE\",\"ammo\":210},{\"label\":\"Lampe torche\",\"name\":\"WEAPON_FLASHLIGHT\",\"ammo\":0}]', '{\"y\":-1346.5208740234,\"x\":258.34686279297,\"z\":24.5378074646}', 600, 0, 'user', '[{\"name\":\"hunger\",\"val\":819200},{\"name\":\"thirst\",\"val\":824000}]', 53187, NULL, 'Required'),
+('steam:110000106247f6e', 200, 'John Miller', '{\"decals_2\":0,\"lipstick_2\":0,\"helmet_1\":-1,\"age_1\":0,\"beard_4\":0,\"eyebrows_3\":0,\"beard_1\":0,\"ears_2\":0,\"mask_2\":0,\"glasses_2\":0,\"beard_2\":0,\"makeup_4\":0,\"bproof_1\":0,\"bags_1\":0,\"beard_3\":0,\"ears_1\":1,\"makeup_1\":0,\"chain_1\":0,\"hair_color_1\":3,\"lipstick_3\":0,\"lipstick_1\":0,\"shoes_1\":0,\"tshirt_1\":0,\"pants_1\":0,\"mask_1\":0,\"glasses_1\":0,\"makeup_2\":0,\"hair_2\":0,\"skin\":0,\"torso_2\":0,\"bproof_2\":0,\"decals_1\":0,\"eyebrows_2\":9,\"hair_color_2\":0,\"sex\":0,\"age_2\":0,\"tshirt_2\":0,\"eyebrows_1\":9,\"shoes_2\":0,\"face\":0,\"helmet_2\":0,\"arms\":0,\"makeup_3\":0,\"pants_2\":0,\"hair_1\":19,\"eyebrows_4\":0,\"torso_1\":0,\"chain_2\":0,\"lipstick_4\":0,\"bags_2\":0}', 'unemployed', 0, '[]', '{\"z\":57.697570800781,\"x\":-1715.4284667969,\"y\":-197.68785095215}', 0, 0, 'user', '[{\"name\":\"hunger\",\"val\":889600},{\"name\":\"thirst\",\"val\":862000}]', 62649, NULL, 'Required'),
+('steam:11000010a6c0398', 233, 'Sam Rick', NULL, 'mecano', 1, '[]', '{\"z\":35.957256317139,\"x\":-393.78820800781,\"y\":-213.88035583496}', 0, 0, 'user', '[{\"name\":\"hunger\",\"val\":444800},{\"name\":\"thirst\",\"val\":506000}]', 90634, NULL, 'Required'),
+('steam:11000010e8ac2df', 468324, 'Kendrick Jebbia', '{\"decals_2\":0,\"lipstick_2\":0,\"bags_1\":44,\"age_1\":0,\"beard_4\":0,\"arms\":0,\"lipstick_3\":0,\"chain_2\":5,\"mask_2\":1,\"glasses_2\":0,\"eyebrows_2\":10,\"ears_2\":0,\"bags_2\":0,\"makeup_1\":0,\"beard_3\":0,\"ears_1\":23,\"age_2\":0,\"sex\":0,\"hair_color_1\":0,\"beard_2\":10,\"lipstick_1\":0,\"shoes_1\":24,\"pants_2\":0,\"beard_1\":6,\"eyebrows_4\":0,\"shoes_2\":0,\"eyebrows_3\":0,\"hair_2\":0,\"makeup_3\":0,\"torso_2\":0,\"bproof_2\":0,\"decals_1\":0,\"skin\":3,\"hair_color_2\":0,\"lipstick_4\":0,\"hair_1\":50,\"tshirt_2\":0,\"eyebrows_1\":16,\"helmet_1\":5,\"chain_1\":6,\"glasses_1\":0,\"helmet_2\":0,\"makeup_2\":0,\"face\":2,\"bproof_1\":0,\"tshirt_1\":54,\"torso_1\":0,\"makeup_4\":0,\"pants_1\":31,\"mask_1\":51}', 'police', 1, '[{\"name\":\"WEAPON_KNIFE\",\"label\":\"Couteau\",\"ammo\":0},{\"name\":\"WEAPON_NIGHTSTICK\",\"label\":\"Matraque\",\"ammo\":0},{\"name\":\"WEAPON_HAMMER\",\"label\":\"Marteau\",\"ammo\":0},{\"name\":\"WEAPON_BAT\",\"label\":\"Bat\",\"ammo\":0},{\"name\":\"WEAPON_GOLFCLUB\",\"label\":\"Club de golfe\",\"ammo\":0},{\"name\":\"WEAPON_CROWBAR\",\"label\":\"Pied de biche\",\"ammo\":0},{\"name\":\"WEAPON_PISTOL\",\"label\":\"Pistolet\",\"ammo\":227},{\"name\":\"WEAPON_COMBATPISTOL\",\"label\":\"Pistolet de combat\",\"ammo\":227},{\"name\":\"WEAPON_APPISTOL\",\"label\":\"Pistolet automatique\",\"ammo\":227},{\"name\":\"WEAPON_PISTOL50\",\"label\":\"Pistolet calibre 50\",\"ammo\":227},{\"name\":\"WEAPON_MICROSMG\",\"label\":\"Micro smg\",\"ammo\":250},{\"name\":\"WEAPON_SMG\",\"label\":\"Smg\",\"ammo\":250},{\"name\":\"WEAPON_ASSAULTSMG\",\"label\":\"Smg d\'assaut\",\"ammo\":250},{\"name\":\"WEAPON_ASSAULTRIFLE\",\"label\":\"Fusil d\'assaut\",\"ammo\":250},{\"name\":\"WEAPON_CARBINERIFLE\",\"label\":\"Carabine d\'assaut\",\"ammo\":250},{\"name\":\"WEAPON_ADVANCEDRIFLE\",\"label\":\"Fusil avancé\",\"ammo\":250},{\"name\":\"WEAPON_MG\",\"label\":\"Mitrailleuse\",\"ammo\":250},{\"name\":\"WEAPON_COMBATMG\",\"label\":\"Mitrailleuse de combat\",\"ammo\":250},{\"name\":\"WEAPON_PUMPSHOTGUN\",\"label\":\"Fusil à pompe\",\"ammo\":250},{\"name\":\"WEAPON_SAWNOFFSHOTGUN\",\"label\":\"Carabine à canon scié\",\"ammo\":250},{\"name\":\"WEAPON_ASSAULTSHOTGUN\",\"label\":\"Carabine d\'assaut\",\"ammo\":250},{\"name\":\"WEAPON_BULLPUPSHOTGUN\",\"label\":\"Carabine bullpup\",\"ammo\":250},{\"name\":\"WEAPON_STUNGUN\",\"label\":\"Tazer\",\"ammo\":-1},{\"name\":\"WEAPON_SNIPERRIFLE\",\"label\":\"Fusil de sniper\",\"ammo\":250},{\"name\":\"WEAPON_HEAVYSNIPER\",\"label\":\"Fusil de sniper lourd\",\"ammo\":250},{\"name\":\"WEAPON_GRENADELAUNCHER\",\"label\":\"Lance-grenade\",\"ammo\":20},{\"name\":\"WEAPON_RPG\",\"label\":\"Lance-rocket\",\"ammo\":4},{\"name\":\"WEAPON_STINGER\",\"label\":\"Lance-missile stinger\",\"ammo\":4},{\"name\":\"WEAPON_MINIGUN\",\"label\":\"Minigun\",\"ammo\":250},{\"name\":\"WEAPON_GRENADE\",\"label\":\"Grenade\",\"ammo\":4},{\"name\":\"WEAPON_STICKYBOMB\",\"label\":\"Bombe collante\",\"ammo\":-1},{\"name\":\"WEAPON_SMOKEGRENADE\",\"label\":\"Grenade fumigène\",\"ammo\":4},{\"name\":\"WEAPON_BZGAS\",\"label\":\"Grenade à gaz bz\",\"ammo\":4},{\"name\":\"WEAPON_MOLOTOV\",\"label\":\"Cocktail molotov\",\"ammo\":4},{\"name\":\"WEAPON_FIREEXTINGUISHER\",\"label\":\"Extincteur\",\"ammo\":-1},{\"name\":\"WEAPON_PETROLCAN\",\"label\":\"Jerrican d\'essence\",\"ammo\":4500},{\"name\":\"WEAPON_BALL\",\"label\":\"Balle\",\"ammo\":1},{\"name\":\"WEAPON_SNSPISTOL\",\"label\":\"Pistolet sns\",\"ammo\":227},{\"name\":\"WEAPON_BOTTLE\",\"label\":\"Bouteille\",\"ammo\":0},{\"name\":\"WEAPON_GUSENBERG\",\"label\":\"Balayeuse gusenberg\",\"ammo\":250},{\"name\":\"WEAPON_SPECIALCARBINE\",\"label\":\"Carabine spéciale\",\"ammo\":250},{\"name\":\"WEAPON_HEAVYPISTOL\",\"label\":\"Pistolet lourd\",\"ammo\":227},{\"name\":\"WEAPON_BULLPUPRIFLE\",\"label\":\"Fusil bullpup\",\"ammo\":250},{\"name\":\"WEAPON_DAGGER\",\"label\":\"Poignard\",\"ammo\":0},{\"name\":\"WEAPON_VINTAGEPISTOL\",\"label\":\"Pistolet vintage\",\"ammo\":227},{\"name\":\"WEAPON_FIREWORK\",\"label\":\"Feu d\'artifice\",\"ammo\":4},{\"name\":\"WEAPON_MUSKET\",\"label\":\"Mousquet\",\"ammo\":250},{\"name\":\"WEAPON_HEAVYSHOTGUN\",\"label\":\"Fusil à pompe lourd\",\"ammo\":250},{\"name\":\"WEAPON_MARKSMANRIFLE\",\"label\":\"Fusil marksman\",\"ammo\":250},{\"name\":\"WEAPON_HOMINGLAUNCHER\",\"label\":\"Lance tête-chercheuse\",\"ammo\":4},{\"name\":\"WEAPON_PROXMINE\",\"label\":\"Mine de proximité\",\"ammo\":4},{\"name\":\"WEAPON_SNOWBALL\",\"label\":\"Boule de neige\",\"ammo\":4},{\"name\":\"WEAPON_FLAREGUN\",\"label\":\"Lance fusée de détresse\",\"ammo\":4},{\"name\":\"WEAPON_COMBATPDW\",\"label\":\"Arme de défense personnelle\",\"ammo\":250},{\"name\":\"WEAPON_MARKSMANPISTOL\",\"label\":\"Pistolet marksman\",\"ammo\":227},{\"name\":\"WEAPON_KNUCKLE\",\"label\":\"Poing américain\",\"ammo\":0},{\"name\":\"WEAPON_HATCHET\",\"label\":\"Hachette\",\"ammo\":0},{\"name\":\"WEAPON_RAILGUN\",\"label\":\"Canon éléctrique\",\"ammo\":4},{\"name\":\"WEAPON_MACHETE\",\"label\":\"Machetta\",\"ammo\":0},{\"name\":\"WEAPON_MACHINEPISTOL\",\"label\":\"Pistolet mitrailleur\",\"ammo\":250},{\"name\":\"WEAPON_SWITCHBLADE\",\"label\":\"Couteau à cran d\'arrêt\",\"ammo\":0},{\"name\":\"WEAPON_REVOLVER\",\"label\":\"Revolver\",\"ammo\":227},{\"name\":\"WEAPON_DBSHOTGUN\",\"label\":\"Fusil à pompe double canon\",\"ammo\":250},{\"name\":\"WEAPON_COMPACTRIFLE\",\"label\":\"Fusil compact\",\"ammo\":250},{\"name\":\"WEAPON_FLASHLIGHT\",\"label\":\"Lampe torche\",\"ammo\":0},{\"name\":\"GADGET_PARACHUTE\",\"label\":\"Parachute\",\"ammo\":0}]', '{\"z\":38.060878753662,\"x\":-360.45489501953,\"y\":-132.72468566895}', 0, 0, 'user', '[{\"name\":\"hunger\",\"val\":790200},{\"name\":\"thirst\",\"val\":762750}]', 41525, NULL, 'Required'),
+('steam:11000010f7ee687', 0, 'Krusty', NULL, 'unemployed', 0, '[]', '{\"x\":3000.8156738281,\"y\":5293.0668945313,\"z\":112.04779052734}', 0, 0, 'user', '[{\"val\":975800,\"name\":\"hunger\"},{\"val\":969750,\"name\":\"thirst\"}]', 82784, NULL, 'Required'),
+('steam:11000010fe01cf0', 441740, 'James Jebbia hellcase.com', '{\"chain_1\":0,\"ears_2\":8,\"ears_1\":6,\"makeup_2\":10,\"eyebrows_4\":2,\"hair_1\":2,\"beard_2\":10,\"eyebrows_3\":3,\"torso_2\":0,\"skin\":0,\"lipstick_1\":8,\"eyebrows_1\":10,\"helmet_2\":0,\"bags_2\":0,\"pants_2\":0,\"lipstick_2\":10,\"bags_1\":0,\"makeup_3\":4,\"tshirt_2\":2,\"torso_1\":3,\"decals_1\":0,\"hair_color_1\":3,\"tshirt_1\":10,\"hair_color_2\":1,\"shoes_1\":0,\"glasses_1\":0,\"beard_3\":8,\"bproof_2\":0,\"face\":0,\"beard_4\":9,\"age_2\":0,\"makeup_4\":2,\"helmet_1\":-1,\"bproof_1\":0,\"decals_2\":0,\"chain_2\":0,\"age_1\":0,\"pants_1\":0,\"hair_2\":0,\"lipstick_3\":3,\"arms\":0,\"eyebrows_2\":4,\"glasses_2\":0,\"mask_2\":0,\"makeup_1\":6,\"mask_1\":0,\"beard_1\":10,\"sex\":0,\"shoes_2\":0,\"lipstick_4\":0}', 'ambulance', 1, '[{\"name\":\"WEAPON_KNIFE\",\"label\":\"Couteau\",\"ammo\":0},{\"name\":\"WEAPON_NIGHTSTICK\",\"label\":\"Matraque\",\"ammo\":0},{\"name\":\"WEAPON_HAMMER\",\"label\":\"Marteau\",\"ammo\":0},{\"name\":\"WEAPON_BAT\",\"label\":\"Bat\",\"ammo\":0},{\"name\":\"WEAPON_GOLFCLUB\",\"label\":\"Club de golfe\",\"ammo\":0},{\"name\":\"WEAPON_CROWBAR\",\"label\":\"Pied de biche\",\"ammo\":0},{\"name\":\"WEAPON_PISTOL\",\"label\":\"Pistolet\",\"ammo\":250},{\"name\":\"WEAPON_COMBATPISTOL\",\"label\":\"Pistolet de combat\",\"ammo\":250},{\"name\":\"WEAPON_APPISTOL\",\"label\":\"Pistolet automatique\",\"ammo\":250},{\"name\":\"WEAPON_PISTOL50\",\"label\":\"Pistolet calibre 50\",\"ammo\":250},{\"name\":\"WEAPON_MICROSMG\",\"label\":\"Micro smg\",\"ammo\":250},{\"name\":\"WEAPON_SMG\",\"label\":\"Smg\",\"ammo\":250},{\"name\":\"WEAPON_ASSAULTSMG\",\"label\":\"Smg d\'assaut\",\"ammo\":250},{\"name\":\"WEAPON_ASSAULTRIFLE\",\"label\":\"Fusil d\'assaut\",\"ammo\":250},{\"name\":\"WEAPON_CARBINERIFLE\",\"label\":\"Carabine d\'assaut\",\"ammo\":250},{\"name\":\"WEAPON_ADVANCEDRIFLE\",\"label\":\"Fusil avancé\",\"ammo\":250},{\"name\":\"WEAPON_MG\",\"label\":\"Mitrailleuse\",\"ammo\":250},{\"name\":\"WEAPON_COMBATMG\",\"label\":\"Mitrailleuse de combat\",\"ammo\":250},{\"name\":\"WEAPON_PUMPSHOTGUN\",\"label\":\"Fusil à pompe\",\"ammo\":250},{\"name\":\"WEAPON_SAWNOFFSHOTGUN\",\"label\":\"Carabine à canon scié\",\"ammo\":250},{\"name\":\"WEAPON_ASSAULTSHOTGUN\",\"label\":\"Carabine d\'assaut\",\"ammo\":250},{\"name\":\"WEAPON_BULLPUPSHOTGUN\",\"label\":\"Carabine bullpup\",\"ammo\":250},{\"name\":\"WEAPON_STUNGUN\",\"label\":\"Tazer\",\"ammo\":250},{\"name\":\"WEAPON_SNIPERRIFLE\",\"label\":\"Fusil de sniper\",\"ammo\":250},{\"name\":\"WEAPON_HEAVYSNIPER\",\"label\":\"Fusil de sniper lourd\",\"ammo\":250},{\"name\":\"WEAPON_GRENADELAUNCHER\",\"label\":\"Lance-grenade\",\"ammo\":20},{\"name\":\"WEAPON_RPG\",\"label\":\"Lance-rocket\",\"ammo\":20},{\"name\":\"WEAPON_STINGER\",\"label\":\"Lance-missile stinger\",\"ammo\":20},{\"name\":\"WEAPON_MINIGUN\",\"label\":\"Minigun\",\"ammo\":250},{\"name\":\"WEAPON_GRENADE\",\"label\":\"Grenade\",\"ammo\":25},{\"name\":\"WEAPON_STICKYBOMB\",\"label\":\"Bombe collante\",\"ammo\":25},{\"name\":\"WEAPON_SMOKEGRENADE\",\"label\":\"Grenade fumigène\",\"ammo\":25},{\"name\":\"WEAPON_BZGAS\",\"label\":\"Grenade à gaz bz\",\"ammo\":25},{\"name\":\"WEAPON_MOLOTOV\",\"label\":\"Cocktail molotov\",\"ammo\":25},{\"name\":\"WEAPON_FIREEXTINGUISHER\",\"label\":\"Extincteur\",\"ammo\":2000},{\"name\":\"WEAPON_PETROLCAN\",\"label\":\"Jerrican d\'essence\",\"ammo\":4500},{\"name\":\"WEAPON_BALL\",\"label\":\"Balle\",\"ammo\":1},{\"name\":\"WEAPON_SNSPISTOL\",\"label\":\"Pistolet sns\",\"ammo\":250},{\"name\":\"WEAPON_BOTTLE\",\"label\":\"Bouteille\",\"ammo\":0},{\"name\":\"WEAPON_GUSENBERG\",\"label\":\"Balayeuse gusenberg\",\"ammo\":250},{\"name\":\"WEAPON_SPECIALCARBINE\",\"label\":\"Carabine spéciale\",\"ammo\":250},{\"name\":\"WEAPON_HEAVYPISTOL\",\"label\":\"Pistolet lourd\",\"ammo\":250},{\"name\":\"WEAPON_BULLPUPRIFLE\",\"label\":\"Fusil bullpup\",\"ammo\":250},{\"name\":\"WEAPON_DAGGER\",\"label\":\"Poignard\",\"ammo\":0},{\"name\":\"WEAPON_VINTAGEPISTOL\",\"label\":\"Pistolet vintage\",\"ammo\":250},{\"name\":\"WEAPON_FIREWORK\",\"label\":\"Feu d\'artifice\",\"ammo\":20},{\"name\":\"WEAPON_MUSKET\",\"label\":\"Mousquet\",\"ammo\":250},{\"name\":\"WEAPON_HEAVYSHOTGUN\",\"label\":\"Fusil à pompe lourd\",\"ammo\":250},{\"name\":\"WEAPON_MARKSMANRIFLE\",\"label\":\"Fusil marksman\",\"ammo\":250},{\"name\":\"WEAPON_HOMINGLAUNCHER\",\"label\":\"Lance tête-chercheuse\",\"ammo\":10},{\"name\":\"WEAPON_PROXMINE\",\"label\":\"Mine de proximité\",\"ammo\":5},{\"name\":\"WEAPON_SNOWBALL\",\"label\":\"Boule de neige\",\"ammo\":10},{\"name\":\"WEAPON_FLAREGUN\",\"label\":\"Lance fusée de détresse\",\"ammo\":20},{\"name\":\"WEAPON_COMBATPDW\",\"label\":\"Arme de défense personnelle\",\"ammo\":250},{\"name\":\"WEAPON_MARKSMANPISTOL\",\"label\":\"Pistolet marksman\",\"ammo\":250},{\"name\":\"WEAPON_KNUCKLE\",\"label\":\"Poing américain\",\"ammo\":0},{\"name\":\"WEAPON_HATCHET\",\"label\":\"Hachette\",\"ammo\":0},{\"name\":\"WEAPON_RAILGUN\",\"label\":\"Canon éléctrique\",\"ammo\":20},{\"name\":\"WEAPON_MACHETE\",\"label\":\"Machetta\",\"ammo\":0},{\"name\":\"WEAPON_MACHINEPISTOL\",\"label\":\"Pistolet mitrailleur\",\"ammo\":250},{\"name\":\"WEAPON_SWITCHBLADE\",\"label\":\"Couteau à cran d\'arrêt\",\"ammo\":0},{\"name\":\"WEAPON_REVOLVER\",\"label\":\"Revolver\",\"ammo\":250},{\"name\":\"WEAPON_DBSHOTGUN\",\"label\":\"Fusil à pompe double canon\",\"ammo\":250},{\"name\":\"WEAPON_COMPACTRIFLE\",\"label\":\"Fusil compact\",\"ammo\":250},{\"name\":\"WEAPON_FLASHLIGHT\",\"label\":\"Lampe torche\",\"ammo\":0},{\"name\":\"GADGET_PARACHUTE\",\"label\":\"Parachute\",\"ammo\":0}]', '{\"z\":38.68510055542,\"x\":-371.00823974609,\"y\":-134.32118225098}', 0, 4, 'superadmin', '[{\"name\":\"hunger\",\"val\":250200},{\"name\":\"thirst\",\"val\":176750}]', 27396, NULL, 'Required');
 
 -- --------------------------------------------------------
 
@@ -880,71 +914,6 @@ CREATE TABLE `user_parkings` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
---
-
-CREATE TABLE `users` (
-  `identifier` varchar(50) COLLATE utf8mb4_bin NOT NULL,
-  `money` int(11) DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb4_bin DEFAULT '',
-  `skin` longtext COLLATE utf8mb4_bin,
-  `job` varchar(255) COLLATE utf8mb4_bin DEFAULT 'unemployed',
-  `job_grade` int(11) DEFAULT '0',
-  `loadout` longtext COLLATE utf8mb4_bin,
-  `position` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
-  `bank` int(11) DEFAULT NULL,
-  `permission_level` int(11) DEFAULT NULL,
-  `group` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
-  `status` longtext COLLATE utf8mb4_bin,
-  `phone_number` int(11) DEFAULT NULL,
-  `last_property` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
---
--- Déchargement des données de la table `users`
---
-
-INSERT INTO `users` (`identifier`, `money`, `name`, `skin`, `job`, `job_grade`, `loadout`, `position`, `bank`, `permission_level`, `group`, `status`, `phone_number`, `last_property`) VALUES
-('steam:1100001015e828c', 485744, 'Steph Jay', '{\"chain_1\":0,\"ears_2\":0,\"decals_2\":0,\"makeup_2\":0,\"eyebrows_4\":0,\"hair_1\":0,\"beard_1\":0,\"eyebrows_3\":0,\"torso_2\":1,\"skin\":0,\"lipstick_1\":0,\"eyebrows_1\":0,\"glasses_1\":0,\"bags_2\":0,\"pants_2\":0,\"lipstick_2\":0,\"bags_1\":0,\"makeup_3\":0,\"tshirt_2\":0,\"torso_1\":22,\"beard_3\":0,\"hair_color_1\":0,\"age_2\":0,\"hair_color_2\":0,\"shoes_1\":0,\"lipstick_4\":0,\"age_1\":0,\"bproof_2\":0,\"face\":9,\"mask_1\":0,\"shoes_2\":0,\"ears_1\":0,\"helmet_1\":-1,\"beard_4\":0,\"chain_2\":0,\"decals_1\":0,\"beard_2\":0,\"pants_1\":0,\"hair_2\":0,\"lipstick_3\":0,\"arms\":0,\"eyebrows_2\":0,\"glasses_2\":0,\"mask_2\":0,\"makeup_1\":0,\"tshirt_1\":0,\"bproof_1\":0,\"helmet_2\":0,\"sex\":0,\"makeup_4\":0}', 'ambulance', 1, '[{\"label\":\"Couteau\",\"name\":\"WEAPON_KNIFE\",\"ammo\":0},{\"label\":\"Matraque\",\"name\":\"WEAPON_NIGHTSTICK\",\"ammo\":0},{\"label\":\"Marteau\",\"name\":\"WEAPON_HAMMER\",\"ammo\":0},{\"label\":\"Bat\",\"name\":\"WEAPON_BAT\",\"ammo\":0},{\"label\":\"Club de golfe\",\"name\":\"WEAPON_GOLFCLUB\",\"ammo\":0},{\"label\":\"Pied de biche\",\"name\":\"WEAPON_CROWBAR\",\"ammo\":0},{\"label\":\"Pistolet\",\"name\":\"WEAPON_PISTOL\",\"ammo\":250},{\"label\":\"Pistolet de combat\",\"name\":\"WEAPON_COMBATPISTOL\",\"ammo\":250},{\"label\":\"Pistolet automatique\",\"name\":\"WEAPON_APPISTOL\",\"ammo\":250},{\"label\":\"Pistolet calibre 50\",\"name\":\"WEAPON_PISTOL50\",\"ammo\":250},{\"label\":\"Micro smg\",\"name\":\"WEAPON_MICROSMG\",\"ammo\":250},{\"label\":\"Smg\",\"name\":\"WEAPON_SMG\",\"ammo\":250},{\"label\":\"Smg d\'assaut\",\"name\":\"WEAPON_ASSAULTSMG\",\"ammo\":250},{\"label\":\"Fusil d\'assaut\",\"name\":\"WEAPON_ASSAULTRIFLE\",\"ammo\":210},{\"label\":\"Carabine d\'assaut\",\"name\":\"WEAPON_CARBINERIFLE\",\"ammo\":210},{\"label\":\"Fusil avancé\",\"name\":\"WEAPON_ADVANCEDRIFLE\",\"ammo\":210},{\"label\":\"Mitrailleuse\",\"name\":\"WEAPON_MG\",\"ammo\":250},{\"label\":\"Mitrailleuse de combat\",\"name\":\"WEAPON_COMBATMG\",\"ammo\":250},{\"label\":\"Fusil à pompe\",\"name\":\"WEAPON_PUMPSHOTGUN\",\"ammo\":247},{\"label\":\"Carabine à canon scié\",\"name\":\"WEAPON_SAWNOFFSHOTGUN\",\"ammo\":247},{\"label\":\"Carabine d\'assaut\",\"name\":\"WEAPON_ASSAULTSHOTGUN\",\"ammo\":247},{\"label\":\"Carabine bullpup\",\"name\":\"WEAPON_BULLPUPSHOTGUN\",\"ammo\":247},{\"label\":\"Tazer\",\"name\":\"WEAPON_STUNGUN\",\"ammo\":250},{\"label\":\"Fusil de sniper\",\"name\":\"WEAPON_SNIPERRIFLE\",\"ammo\":250},{\"label\":\"Fusil de sniper lourd\",\"name\":\"WEAPON_HEAVYSNIPER\",\"ammo\":250},{\"label\":\"Lance-grenade\",\"name\":\"WEAPON_GRENADELAUNCHER\",\"ammo\":8},{\"label\":\"Lance-rocket\",\"name\":\"WEAPON_RPG\",\"ammo\":1},{\"label\":\"Lance-missile stinger\",\"name\":\"WEAPON_STINGER\",\"ammo\":0},{\"label\":\"Minigun\",\"name\":\"WEAPON_MINIGUN\",\"ammo\":250},{\"label\":\"Grenade\",\"name\":\"WEAPON_GRENADE\",\"ammo\":1},{\"label\":\"Bombe collante\",\"name\":\"WEAPON_STICKYBOMB\",\"ammo\":1},{\"label\":\"Grenade fumigène\",\"name\":\"WEAPON_SMOKEGRENADE\",\"ammo\":1},{\"label\":\"Grenade à gaz bz\",\"name\":\"WEAPON_BZGAS\",\"ammo\":1},{\"label\":\"Cocktail molotov\",\"name\":\"WEAPON_MOLOTOV\",\"ammo\":1},{\"label\":\"Extincteur\",\"name\":\"WEAPON_FIREEXTINGUISHER\",\"ammo\":2000},{\"label\":\"Jerrican d\'essence\",\"name\":\"WEAPON_PETROLCAN\",\"ammo\":4500},{\"label\":\"Pistolet sns\",\"name\":\"WEAPON_SNSPISTOL\",\"ammo\":250},{\"label\":\"Bouteille\",\"name\":\"WEAPON_BOTTLE\",\"ammo\":0},{\"label\":\"Balayeuse gusenberg\",\"name\":\"WEAPON_GUSENBERG\",\"ammo\":250},{\"label\":\"Carabine spéciale\",\"name\":\"WEAPON_SPECIALCARBINE\",\"ammo\":210},{\"label\":\"Pistolet lourd\",\"name\":\"WEAPON_HEAVYPISTOL\",\"ammo\":250},{\"label\":\"Fusil bullpup\",\"name\":\"WEAPON_BULLPUPRIFLE\",\"ammo\":210},{\"label\":\"Poignard\",\"name\":\"WEAPON_DAGGER\",\"ammo\":0},{\"label\":\"Pistolet vintage\",\"name\":\"WEAPON_VINTAGEPISTOL\",\"ammo\":250},{\"label\":\"Feu d\'artifice\",\"name\":\"WEAPON_FIREWORK\",\"ammo\":1},{\"label\":\"Mousquet\",\"name\":\"WEAPON_MUSKET\",\"ammo\":247},{\"label\":\"Fusil à pompe lourd\",\"name\":\"WEAPON_HEAVYSHOTGUN\",\"ammo\":247},{\"label\":\"Fusil marksman\",\"name\":\"WEAPON_MARKSMANRIFLE\",\"ammo\":250},{\"label\":\"Lance tête-chercheuse\",\"name\":\"WEAPON_HOMINGLAUNCHER\",\"ammo\":1},{\"label\":\"Mine de proximité\",\"name\":\"WEAPON_PROXMINE\",\"ammo\":1},{\"label\":\"Boule de neige\",\"name\":\"WEAPON_SNOWBALL\",\"ammo\":1},{\"label\":\"Lance fusée de détresse\",\"name\":\"WEAPON_FLAREGUN\",\"ammo\":1},{\"label\":\"Arme de défense personnelle\",\"name\":\"WEAPON_COMBATPDW\",\"ammo\":250},{\"label\":\"Pistolet marksman\",\"name\":\"WEAPON_MARKSMANPISTOL\",\"ammo\":250},{\"label\":\"Poing américain\",\"name\":\"WEAPON_KNUCKLE\",\"ammo\":0},{\"label\":\"Hachette\",\"name\":\"WEAPON_HATCHET\",\"ammo\":0},{\"label\":\"Canon éléctrique\",\"name\":\"WEAPON_RAILGUN\",\"ammo\":1},{\"label\":\"Machetta\",\"name\":\"WEAPON_MACHETE\",\"ammo\":0},{\"label\":\"Pistolet mitrailleur\",\"name\":\"WEAPON_MACHINEPISTOL\",\"ammo\":250},{\"label\":\"Couteau à cran d\'arrêt\",\"name\":\"WEAPON_SWITCHBLADE\",\"ammo\":0},{\"label\":\"Revolver\",\"name\":\"WEAPON_REVOLVER\",\"ammo\":250},{\"label\":\"Fusil à pompe double canon\",\"name\":\"WEAPON_DBSHOTGUN\",\"ammo\":247},{\"label\":\"Fusil compact\",\"name\":\"WEAPON_COMPACTRIFLE\",\"ammo\":210},{\"label\":\"Lampe torche\",\"name\":\"WEAPON_FLASHLIGHT\",\"ammo\":0}]', '{\"y\":-1346.5208740234,\"x\":258.34686279297,\"z\":24.5378074646}', 600, 0, 'user', '[{\"name\":\"hunger\",\"val\":819200},{\"name\":\"thirst\",\"val\":824000}]', 53187, NULL),
-('steam:110000106247f6e', 200, 'John Miller', '{\"decals_2\":0,\"lipstick_2\":0,\"helmet_1\":-1,\"age_1\":0,\"beard_4\":0,\"eyebrows_3\":0,\"beard_1\":0,\"ears_2\":0,\"mask_2\":0,\"glasses_2\":0,\"beard_2\":0,\"makeup_4\":0,\"bproof_1\":0,\"bags_1\":0,\"beard_3\":0,\"ears_1\":1,\"makeup_1\":0,\"chain_1\":0,\"hair_color_1\":3,\"lipstick_3\":0,\"lipstick_1\":0,\"shoes_1\":0,\"tshirt_1\":0,\"pants_1\":0,\"mask_1\":0,\"glasses_1\":0,\"makeup_2\":0,\"hair_2\":0,\"skin\":0,\"torso_2\":0,\"bproof_2\":0,\"decals_1\":0,\"eyebrows_2\":9,\"hair_color_2\":0,\"sex\":0,\"age_2\":0,\"tshirt_2\":0,\"eyebrows_1\":9,\"shoes_2\":0,\"face\":0,\"helmet_2\":0,\"arms\":0,\"makeup_3\":0,\"pants_2\":0,\"hair_1\":19,\"eyebrows_4\":0,\"torso_1\":0,\"chain_2\":0,\"lipstick_4\":0,\"bags_2\":0}', 'unemployed', 0, '[]', '{\"z\":57.697570800781,\"x\":-1715.4284667969,\"y\":-197.68785095215}', 0, 0, 'user', '[{\"name\":\"hunger\",\"val\":889600},{\"name\":\"thirst\",\"val\":862000}]', 62649, NULL),
-('steam:11000010a6c0398', 233, 'Sam Rick', NULL, 'mecano', 1, '[]', '{\"z\":35.957256317139,\"x\":-393.78820800781,\"y\":-213.88035583496}', 0, 0, 'user', '[{\"name\":\"hunger\",\"val\":444800},{\"name\":\"thirst\",\"val\":506000}]', 90634, NULL),
-('steam:11000010e8ac2df', 468324, 'Kendrick Jebbia', '{\"decals_2\":0,\"lipstick_2\":0,\"bags_1\":44,\"age_1\":0,\"beard_4\":0,\"arms\":0,\"lipstick_3\":0,\"chain_2\":5,\"mask_2\":1,\"glasses_2\":0,\"eyebrows_2\":10,\"ears_2\":0,\"bags_2\":0,\"makeup_1\":0,\"beard_3\":0,\"ears_1\":23,\"age_2\":0,\"sex\":0,\"hair_color_1\":0,\"beard_2\":10,\"lipstick_1\":0,\"shoes_1\":24,\"pants_2\":0,\"beard_1\":6,\"eyebrows_4\":0,\"shoes_2\":0,\"eyebrows_3\":0,\"hair_2\":0,\"makeup_3\":0,\"torso_2\":0,\"bproof_2\":0,\"decals_1\":0,\"skin\":3,\"hair_color_2\":0,\"lipstick_4\":0,\"hair_1\":50,\"tshirt_2\":0,\"eyebrows_1\":16,\"helmet_1\":5,\"chain_1\":6,\"glasses_1\":0,\"helmet_2\":0,\"makeup_2\":0,\"face\":2,\"bproof_1\":0,\"tshirt_1\":54,\"torso_1\":0,\"makeup_4\":0,\"pants_1\":31,\"mask_1\":51}', 'police', 1, '[{\"name\":\"WEAPON_KNIFE\",\"label\":\"Couteau\",\"ammo\":0},{\"name\":\"WEAPON_NIGHTSTICK\",\"label\":\"Matraque\",\"ammo\":0},{\"name\":\"WEAPON_HAMMER\",\"label\":\"Marteau\",\"ammo\":0},{\"name\":\"WEAPON_BAT\",\"label\":\"Bat\",\"ammo\":0},{\"name\":\"WEAPON_GOLFCLUB\",\"label\":\"Club de golfe\",\"ammo\":0},{\"name\":\"WEAPON_CROWBAR\",\"label\":\"Pied de biche\",\"ammo\":0},{\"name\":\"WEAPON_PISTOL\",\"label\":\"Pistolet\",\"ammo\":227},{\"name\":\"WEAPON_COMBATPISTOL\",\"label\":\"Pistolet de combat\",\"ammo\":227},{\"name\":\"WEAPON_APPISTOL\",\"label\":\"Pistolet automatique\",\"ammo\":227},{\"name\":\"WEAPON_PISTOL50\",\"label\":\"Pistolet calibre 50\",\"ammo\":227},{\"name\":\"WEAPON_MICROSMG\",\"label\":\"Micro smg\",\"ammo\":250},{\"name\":\"WEAPON_SMG\",\"label\":\"Smg\",\"ammo\":250},{\"name\":\"WEAPON_ASSAULTSMG\",\"label\":\"Smg d\'assaut\",\"ammo\":250},{\"name\":\"WEAPON_ASSAULTRIFLE\",\"label\":\"Fusil d\'assaut\",\"ammo\":250},{\"name\":\"WEAPON_CARBINERIFLE\",\"label\":\"Carabine d\'assaut\",\"ammo\":250},{\"name\":\"WEAPON_ADVANCEDRIFLE\",\"label\":\"Fusil avancé\",\"ammo\":250},{\"name\":\"WEAPON_MG\",\"label\":\"Mitrailleuse\",\"ammo\":250},{\"name\":\"WEAPON_COMBATMG\",\"label\":\"Mitrailleuse de combat\",\"ammo\":250},{\"name\":\"WEAPON_PUMPSHOTGUN\",\"label\":\"Fusil à pompe\",\"ammo\":250},{\"name\":\"WEAPON_SAWNOFFSHOTGUN\",\"label\":\"Carabine à canon scié\",\"ammo\":250},{\"name\":\"WEAPON_ASSAULTSHOTGUN\",\"label\":\"Carabine d\'assaut\",\"ammo\":250},{\"name\":\"WEAPON_BULLPUPSHOTGUN\",\"label\":\"Carabine bullpup\",\"ammo\":250},{\"name\":\"WEAPON_STUNGUN\",\"label\":\"Tazer\",\"ammo\":-1},{\"name\":\"WEAPON_SNIPERRIFLE\",\"label\":\"Fusil de sniper\",\"ammo\":250},{\"name\":\"WEAPON_HEAVYSNIPER\",\"label\":\"Fusil de sniper lourd\",\"ammo\":250},{\"name\":\"WEAPON_GRENADELAUNCHER\",\"label\":\"Lance-grenade\",\"ammo\":20},{\"name\":\"WEAPON_RPG\",\"label\":\"Lance-rocket\",\"ammo\":4},{\"name\":\"WEAPON_STINGER\",\"label\":\"Lance-missile stinger\",\"ammo\":4},{\"name\":\"WEAPON_MINIGUN\",\"label\":\"Minigun\",\"ammo\":250},{\"name\":\"WEAPON_GRENADE\",\"label\":\"Grenade\",\"ammo\":4},{\"name\":\"WEAPON_STICKYBOMB\",\"label\":\"Bombe collante\",\"ammo\":-1},{\"name\":\"WEAPON_SMOKEGRENADE\",\"label\":\"Grenade fumigène\",\"ammo\":4},{\"name\":\"WEAPON_BZGAS\",\"label\":\"Grenade à gaz bz\",\"ammo\":4},{\"name\":\"WEAPON_MOLOTOV\",\"label\":\"Cocktail molotov\",\"ammo\":4},{\"name\":\"WEAPON_FIREEXTINGUISHER\",\"label\":\"Extincteur\",\"ammo\":-1},{\"name\":\"WEAPON_PETROLCAN\",\"label\":\"Jerrican d\'essence\",\"ammo\":4500},{\"name\":\"WEAPON_BALL\",\"label\":\"Balle\",\"ammo\":1},{\"name\":\"WEAPON_SNSPISTOL\",\"label\":\"Pistolet sns\",\"ammo\":227},{\"name\":\"WEAPON_BOTTLE\",\"label\":\"Bouteille\",\"ammo\":0},{\"name\":\"WEAPON_GUSENBERG\",\"label\":\"Balayeuse gusenberg\",\"ammo\":250},{\"name\":\"WEAPON_SPECIALCARBINE\",\"label\":\"Carabine spéciale\",\"ammo\":250},{\"name\":\"WEAPON_HEAVYPISTOL\",\"label\":\"Pistolet lourd\",\"ammo\":227},{\"name\":\"WEAPON_BULLPUPRIFLE\",\"label\":\"Fusil bullpup\",\"ammo\":250},{\"name\":\"WEAPON_DAGGER\",\"label\":\"Poignard\",\"ammo\":0},{\"name\":\"WEAPON_VINTAGEPISTOL\",\"label\":\"Pistolet vintage\",\"ammo\":227},{\"name\":\"WEAPON_FIREWORK\",\"label\":\"Feu d\'artifice\",\"ammo\":4},{\"name\":\"WEAPON_MUSKET\",\"label\":\"Mousquet\",\"ammo\":250},{\"name\":\"WEAPON_HEAVYSHOTGUN\",\"label\":\"Fusil à pompe lourd\",\"ammo\":250},{\"name\":\"WEAPON_MARKSMANRIFLE\",\"label\":\"Fusil marksman\",\"ammo\":250},{\"name\":\"WEAPON_HOMINGLAUNCHER\",\"label\":\"Lance tête-chercheuse\",\"ammo\":4},{\"name\":\"WEAPON_PROXMINE\",\"label\":\"Mine de proximité\",\"ammo\":4},{\"name\":\"WEAPON_SNOWBALL\",\"label\":\"Boule de neige\",\"ammo\":4},{\"name\":\"WEAPON_FLAREGUN\",\"label\":\"Lance fusée de détresse\",\"ammo\":4},{\"name\":\"WEAPON_COMBATPDW\",\"label\":\"Arme de défense personnelle\",\"ammo\":250},{\"name\":\"WEAPON_MARKSMANPISTOL\",\"label\":\"Pistolet marksman\",\"ammo\":227},{\"name\":\"WEAPON_KNUCKLE\",\"label\":\"Poing américain\",\"ammo\":0},{\"name\":\"WEAPON_HATCHET\",\"label\":\"Hachette\",\"ammo\":0},{\"name\":\"WEAPON_RAILGUN\",\"label\":\"Canon éléctrique\",\"ammo\":4},{\"name\":\"WEAPON_MACHETE\",\"label\":\"Machetta\",\"ammo\":0},{\"name\":\"WEAPON_MACHINEPISTOL\",\"label\":\"Pistolet mitrailleur\",\"ammo\":250},{\"name\":\"WEAPON_SWITCHBLADE\",\"label\":\"Couteau à cran d\'arrêt\",\"ammo\":0},{\"name\":\"WEAPON_REVOLVER\",\"label\":\"Revolver\",\"ammo\":227},{\"name\":\"WEAPON_DBSHOTGUN\",\"label\":\"Fusil à pompe double canon\",\"ammo\":250},{\"name\":\"WEAPON_COMPACTRIFLE\",\"label\":\"Fusil compact\",\"ammo\":250},{\"name\":\"WEAPON_FLASHLIGHT\",\"label\":\"Lampe torche\",\"ammo\":0},{\"name\":\"GADGET_PARACHUTE\",\"label\":\"Parachute\",\"ammo\":0}]', '{\"z\":38.060878753662,\"x\":-360.45489501953,\"y\":-132.72468566895}', 0, 0, 'user', '[{\"name\":\"hunger\",\"val\":790200},{\"name\":\"thirst\",\"val\":762750}]', 41525, NULL),
-('steam:11000010f7ee687', 0, 'Krusty', NULL, 'unemployed', 0, '[]', '{\"x\":3000.8156738281,\"y\":5293.0668945313,\"z\":112.04779052734}', 0, 0, 'user', '[{\"val\":975800,\"name\":\"hunger\"},{\"val\":969750,\"name\":\"thirst\"}]', 82784, NULL),
-('steam:11000010fe01cf0', 441740, 'James Jebbia hellcase.com', '{\"chain_1\":0,\"ears_2\":8,\"ears_1\":6,\"makeup_2\":10,\"eyebrows_4\":2,\"hair_1\":2,\"beard_2\":10,\"eyebrows_3\":3,\"torso_2\":0,\"skin\":0,\"lipstick_1\":8,\"eyebrows_1\":10,\"helmet_2\":0,\"bags_2\":0,\"pants_2\":0,\"lipstick_2\":10,\"bags_1\":0,\"makeup_3\":4,\"tshirt_2\":2,\"torso_1\":3,\"decals_1\":0,\"hair_color_1\":3,\"tshirt_1\":10,\"hair_color_2\":1,\"shoes_1\":0,\"glasses_1\":0,\"beard_3\":8,\"bproof_2\":0,\"face\":0,\"beard_4\":9,\"age_2\":0,\"makeup_4\":2,\"helmet_1\":-1,\"bproof_1\":0,\"decals_2\":0,\"chain_2\":0,\"age_1\":0,\"pants_1\":0,\"hair_2\":0,\"lipstick_3\":3,\"arms\":0,\"eyebrows_2\":4,\"glasses_2\":0,\"mask_2\":0,\"makeup_1\":6,\"mask_1\":0,\"beard_1\":10,\"sex\":0,\"shoes_2\":0,\"lipstick_4\":0}', 'ambulance', 1, '[{\"name\":\"WEAPON_KNIFE\",\"label\":\"Couteau\",\"ammo\":0},{\"name\":\"WEAPON_NIGHTSTICK\",\"label\":\"Matraque\",\"ammo\":0},{\"name\":\"WEAPON_HAMMER\",\"label\":\"Marteau\",\"ammo\":0},{\"name\":\"WEAPON_BAT\",\"label\":\"Bat\",\"ammo\":0},{\"name\":\"WEAPON_GOLFCLUB\",\"label\":\"Club de golfe\",\"ammo\":0},{\"name\":\"WEAPON_CROWBAR\",\"label\":\"Pied de biche\",\"ammo\":0},{\"name\":\"WEAPON_PISTOL\",\"label\":\"Pistolet\",\"ammo\":250},{\"name\":\"WEAPON_COMBATPISTOL\",\"label\":\"Pistolet de combat\",\"ammo\":250},{\"name\":\"WEAPON_APPISTOL\",\"label\":\"Pistolet automatique\",\"ammo\":250},{\"name\":\"WEAPON_PISTOL50\",\"label\":\"Pistolet calibre 50\",\"ammo\":250},{\"name\":\"WEAPON_MICROSMG\",\"label\":\"Micro smg\",\"ammo\":250},{\"name\":\"WEAPON_SMG\",\"label\":\"Smg\",\"ammo\":250},{\"name\":\"WEAPON_ASSAULTSMG\",\"label\":\"Smg d\'assaut\",\"ammo\":250},{\"name\":\"WEAPON_ASSAULTRIFLE\",\"label\":\"Fusil d\'assaut\",\"ammo\":250},{\"name\":\"WEAPON_CARBINERIFLE\",\"label\":\"Carabine d\'assaut\",\"ammo\":250},{\"name\":\"WEAPON_ADVANCEDRIFLE\",\"label\":\"Fusil avancé\",\"ammo\":250},{\"name\":\"WEAPON_MG\",\"label\":\"Mitrailleuse\",\"ammo\":250},{\"name\":\"WEAPON_COMBATMG\",\"label\":\"Mitrailleuse de combat\",\"ammo\":250},{\"name\":\"WEAPON_PUMPSHOTGUN\",\"label\":\"Fusil à pompe\",\"ammo\":250},{\"name\":\"WEAPON_SAWNOFFSHOTGUN\",\"label\":\"Carabine à canon scié\",\"ammo\":250},{\"name\":\"WEAPON_ASSAULTSHOTGUN\",\"label\":\"Carabine d\'assaut\",\"ammo\":250},{\"name\":\"WEAPON_BULLPUPSHOTGUN\",\"label\":\"Carabine bullpup\",\"ammo\":250},{\"name\":\"WEAPON_STUNGUN\",\"label\":\"Tazer\",\"ammo\":250},{\"name\":\"WEAPON_SNIPERRIFLE\",\"label\":\"Fusil de sniper\",\"ammo\":250},{\"name\":\"WEAPON_HEAVYSNIPER\",\"label\":\"Fusil de sniper lourd\",\"ammo\":250},{\"name\":\"WEAPON_GRENADELAUNCHER\",\"label\":\"Lance-grenade\",\"ammo\":20},{\"name\":\"WEAPON_RPG\",\"label\":\"Lance-rocket\",\"ammo\":20},{\"name\":\"WEAPON_STINGER\",\"label\":\"Lance-missile stinger\",\"ammo\":20},{\"name\":\"WEAPON_MINIGUN\",\"label\":\"Minigun\",\"ammo\":250},{\"name\":\"WEAPON_GRENADE\",\"label\":\"Grenade\",\"ammo\":25},{\"name\":\"WEAPON_STICKYBOMB\",\"label\":\"Bombe collante\",\"ammo\":25},{\"name\":\"WEAPON_SMOKEGRENADE\",\"label\":\"Grenade fumigène\",\"ammo\":25},{\"name\":\"WEAPON_BZGAS\",\"label\":\"Grenade à gaz bz\",\"ammo\":25},{\"name\":\"WEAPON_MOLOTOV\",\"label\":\"Cocktail molotov\",\"ammo\":25},{\"name\":\"WEAPON_FIREEXTINGUISHER\",\"label\":\"Extincteur\",\"ammo\":2000},{\"name\":\"WEAPON_PETROLCAN\",\"label\":\"Jerrican d\'essence\",\"ammo\":4500},{\"name\":\"WEAPON_BALL\",\"label\":\"Balle\",\"ammo\":1},{\"name\":\"WEAPON_SNSPISTOL\",\"label\":\"Pistolet sns\",\"ammo\":250},{\"name\":\"WEAPON_BOTTLE\",\"label\":\"Bouteille\",\"ammo\":0},{\"name\":\"WEAPON_GUSENBERG\",\"label\":\"Balayeuse gusenberg\",\"ammo\":250},{\"name\":\"WEAPON_SPECIALCARBINE\",\"label\":\"Carabine spéciale\",\"ammo\":250},{\"name\":\"WEAPON_HEAVYPISTOL\",\"label\":\"Pistolet lourd\",\"ammo\":250},{\"name\":\"WEAPON_BULLPUPRIFLE\",\"label\":\"Fusil bullpup\",\"ammo\":250},{\"name\":\"WEAPON_DAGGER\",\"label\":\"Poignard\",\"ammo\":0},{\"name\":\"WEAPON_VINTAGEPISTOL\",\"label\":\"Pistolet vintage\",\"ammo\":250},{\"name\":\"WEAPON_FIREWORK\",\"label\":\"Feu d\'artifice\",\"ammo\":20},{\"name\":\"WEAPON_MUSKET\",\"label\":\"Mousquet\",\"ammo\":250},{\"name\":\"WEAPON_HEAVYSHOTGUN\",\"label\":\"Fusil à pompe lourd\",\"ammo\":250},{\"name\":\"WEAPON_MARKSMANRIFLE\",\"label\":\"Fusil marksman\",\"ammo\":250},{\"name\":\"WEAPON_HOMINGLAUNCHER\",\"label\":\"Lance tête-chercheuse\",\"ammo\":10},{\"name\":\"WEAPON_PROXMINE\",\"label\":\"Mine de proximité\",\"ammo\":5},{\"name\":\"WEAPON_SNOWBALL\",\"label\":\"Boule de neige\",\"ammo\":10},{\"name\":\"WEAPON_FLAREGUN\",\"label\":\"Lance fusée de détresse\",\"ammo\":20},{\"name\":\"WEAPON_COMBATPDW\",\"label\":\"Arme de défense personnelle\",\"ammo\":250},{\"name\":\"WEAPON_MARKSMANPISTOL\",\"label\":\"Pistolet marksman\",\"ammo\":250},{\"name\":\"WEAPON_KNUCKLE\",\"label\":\"Poing américain\",\"ammo\":0},{\"name\":\"WEAPON_HATCHET\",\"label\":\"Hachette\",\"ammo\":0},{\"name\":\"WEAPON_RAILGUN\",\"label\":\"Canon éléctrique\",\"ammo\":20},{\"name\":\"WEAPON_MACHETE\",\"label\":\"Machetta\",\"ammo\":0},{\"name\":\"WEAPON_MACHINEPISTOL\",\"label\":\"Pistolet mitrailleur\",\"ammo\":250},{\"name\":\"WEAPON_SWITCHBLADE\",\"label\":\"Couteau à cran d\'arrêt\",\"ammo\":0},{\"name\":\"WEAPON_REVOLVER\",\"label\":\"Revolver\",\"ammo\":250},{\"name\":\"WEAPON_DBSHOTGUN\",\"label\":\"Fusil à pompe double canon\",\"ammo\":250},{\"name\":\"WEAPON_COMPACTRIFLE\",\"label\":\"Fusil compact\",\"ammo\":250},{\"name\":\"WEAPON_FLASHLIGHT\",\"label\":\"Lampe torche\",\"ammo\":0},{\"name\":\"GADGET_PARACHUTE\",\"label\":\"Parachute\",\"ammo\":0}]', '{\"z\":38.68510055542,\"x\":-371.00823974609,\"y\":-134.32118225098}', 0, 4, 'superadmin', '[{\"name\":\"hunger\",\"val\":250200},{\"name\":\"thirst\",\"val\":176750}]', 27396, NULL);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `vehicle_categories`
---
-
-CREATE TABLE `vehicle_categories` (
-  `id` int(11) NOT NULL,
-  `name` varchar(60) COLLATE utf8mb4_bin NOT NULL,
-  `label` varchar(60) COLLATE utf8mb4_bin NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
---
--- Déchargement des données de la table `vehicle_categories`
---
-
-INSERT INTO `vehicle_categories` (`id`, `name`, `label`) VALUES
-(1, 'compacts', 'Compacts'),
-(2, 'coupes', 'Coupés'),
-(3, 'sedans', 'Sedans'),
-(4, 'sports', 'Sports'),
-(5, 'sportsclassics', 'Sports Classics'),
-(6, 'super', 'Super'),
-(7, 'muscle', 'Muscle'),
-(8, 'offroad', 'Off Road'),
-(9, 'suvs', 'SUVs'),
-(10, 'vans', 'Vans'),
-(11, 'sedans', 'Sedans'),
-(12, 'motorcycles', 'Motos');
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `vehicles`
 --
 
@@ -1176,6 +1145,36 @@ INSERT INTO `vehicles` (`id`, `name`, `model`, `price`, `category`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `vehicle_categories`
+--
+
+CREATE TABLE `vehicle_categories` (
+  `id` int(11) NOT NULL,
+  `name` varchar(60) COLLATE utf8mb4_bin NOT NULL,
+  `label` varchar(60) COLLATE utf8mb4_bin NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Déchargement des données de la table `vehicle_categories`
+--
+
+INSERT INTO `vehicle_categories` (`id`, `name`, `label`) VALUES
+(1, 'compacts', 'Compacts'),
+(2, 'coupes', 'Coupés'),
+(3, 'sedans', 'Sedans'),
+(4, 'sports', 'Sports'),
+(5, 'sportsclassics', 'Sports Classics'),
+(6, 'super', 'Super'),
+(7, 'muscle', 'Muscle'),
+(8, 'offroad', 'Off Road'),
+(9, 'suvs', 'SUVs'),
+(10, 'vans', 'Vans'),
+(11, 'sedans', 'Sedans'),
+(12, 'motorcycles', 'Motos');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `weashops`
 --
 
@@ -1280,15 +1279,15 @@ ALTER TABLE `items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `job_grades`
---
-ALTER TABLE `job_grades`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Index pour la table `jobs`
 --
 ALTER TABLE `jobs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `job_grades`
+--
+ALTER TABLE `job_grades`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1328,6 +1327,12 @@ ALTER TABLE `society_moneywash`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`identifier`);
+
+--
 -- Index pour la table `user_accounts`
 --
 ALTER TABLE `user_accounts`
@@ -1352,21 +1357,15 @@ ALTER TABLE `user_parkings`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `users`
+-- Index pour la table `vehicles`
 --
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`identifier`);
+ALTER TABLE `vehicles`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `vehicle_categories`
 --
 ALTER TABLE `vehicle_categories`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `vehicles`
---
-ALTER TABLE `vehicles`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1436,15 +1435,15 @@ ALTER TABLE `fine_types`
 ALTER TABLE `items`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
--- AUTO_INCREMENT pour la table `job_grades`
---
-ALTER TABLE `job_grades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
---
 -- AUTO_INCREMENT pour la table `jobs`
 --
 ALTER TABLE `jobs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT pour la table `job_grades`
+--
+ALTER TABLE `job_grades`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 --
 -- AUTO_INCREMENT pour la table `owned_properties`
 --
@@ -1496,1164 +1495,22 @@ ALTER TABLE `user_inventory`
 ALTER TABLE `user_parkings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT pour la table `vehicle_categories`
---
-ALTER TABLE `vehicle_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
---
 -- AUTO_INCREMENT pour la table `vehicles`
 --
 ALTER TABLE `vehicles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=212;
 --
+-- AUTO_INCREMENT pour la table `vehicle_categories`
+--
+ALTER TABLE `vehicle_categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
 -- AUTO_INCREMENT pour la table `weashops`
 --
 ALTER TABLE `weashops`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;--
--- Base de données :  `gta5_gamemode_essential`
---
-CREATE DATABASE IF NOT EXISTS `gta5_gamemode_essential` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `gta5_gamemode_essential`;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `bans`
---
-
-CREATE TABLE `bans` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `banned` varchar(50) CHARACTER SET utf8mb4 NOT NULL DEFAULT '0',
-  `banner` varchar(50) CHARACTER SET utf8mb4 NOT NULL,
-  `reason` varchar(150) CHARACTER SET utf8mb4 NOT NULL DEFAULT '0',
-  `expires` datetime NOT NULL,
-  `timestamp` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `coffre`
---
-
-CREATE TABLE `coffre` (
-  `id` varchar(25) NOT NULL,
-  `nom` varchar(25) NOT NULL,
-  `x` varchar(25) NOT NULL,
-  `y` varchar(25) NOT NULL,
-  `z` varchar(25) NOT NULL,
-  `solde` varchar(25) NOT NULL,
-  `solde_sale` varchar(25) NOT NULL,
-  `lasttransfert` varchar(25) NOT NULL,
-  `identifier` varchar(25) NOT NULL,
-  `job` varchar(25) DEFAULT NULL,
-  `job2` varchar(25) DEFAULT NULL,
-  `job3` varchar(25) DEFAULT NULL,
-  `job4` varchar(25) DEFAULT NULL,
-  `job5` varchar(25) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `coffre`
---
-
-INSERT INTO `coffre` (`id`, `nom`, `x`, `y`, `z`, `solde`, `solde_sale`, `lasttransfert`, `identifier`, `job`, `job2`, `job3`, `job4`, `job5`) VALUES
-('1', 'LSPD', '452.953', '-973.321', '30.15', '0', '0', '5', 'steam:11000010fe01cf0', '10', '8', '100', '100', '100'),
-('2', 'Pecheur', '3817.11', '4440.94', '2.450', '50015', '1', '1', 'steam:11000010fe01cf0', '14', '100', '100', '100', '100'),
-('3', 'Depanneur', '479.629', '-1326.28', '28.450', '0', '0', '0', '0', '16', '100', '100', '100', '100'),
-('4', 'Taxi', '886.599', '-173.171', '77.1102', '0', '0', '0', '0', '5', '100', '100', '100', '100'),
-('5', 'Brinks', '262.497', '220.629', '100.780', '-1', '0', '1', 'steam:11000010fe01cf0', '15', '100', '100', '100', '100');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `coffre_items`
---
-
-CREATE TABLE `coffre_items` (
-  `id_coffre` varchar(50) NOT NULL,
-  `id_item` varchar(50) NOT NULL,
-  `quantite` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `coffre_items`
---
-
-INSERT INTO `coffre_items` (`id_coffre`, `id_item`, `quantite`) VALUES
-('1', '1', 5);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `coordinates`
---
-
-CREATE TABLE `coordinates` (
-  `identifier` varchar(30) CHARACTER SET utf8mb4 NOT NULL,
-  `x` double DEFAULT NULL,
-  `y` double DEFAULT NULL,
-  `z` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `coordinates`
---
-
-INSERT INTO `coordinates` (`identifier`, `x`, `y`, `z`) VALUES
-('steam:1100001015e828c', 247.75863647460938, -1371.768310546875, 39.534385681152344),
-('steam:110000103606e04', -850.27880859375, -2601.09228515625, 13.441924095153809),
-('steam:110000106247f6e', 297.17767333984375, -1431.9306640625, -23.287508010864258),
-('steam:11000010881fdbb', 254.8240203857422, 218.2005157470703, 106.28682708740234),
-('steam:11000010a6c0398', 349.535888671875, -1341.9346923828125, 31.619043350219727),
-('steam:11000010a7ff44b', -347.7336120605469, -35.908504486083984, 47.489925384521484),
-('steam:11000010cabc803', -791.8617553710938, -1638.2421875, 15.619486808776855),
-('steam:11000010fe01cf0', 277.50897216796875, -1420.50244140625, 11.039400100708008),
-('steam:1100001109f4ca8', -1037.9271240234375, -2738.060546875, 20.16922950744629),
-('steam:1100001177d08b1', -617.8307495117188, -168.09152221679688, 37.366878509521484);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `depanneur`
---
-
-CREATE TABLE `depanneur` (
-  `identifier` varchar(255) NOT NULL,
-  `rank` varchar(255) NOT NULL DEFAULT 'Recrue'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `entreprise_compte`
---
-
-CREATE TABLE `entreprise_compte` (
-  `id` varchar(25) NOT NULL,
-  `nom` varchar(25) NOT NULL,
-  `solde` varchar(25) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `entreprise_compte`
---
-
-INSERT INTO `entreprise_compte` (`id`, `nom`, `solde`) VALUES
-('1', 'Compte LSPD', '0'),
-('2', 'Compte Depanneur', '0'),
-('3', 'Compte taxi', '0'),
-('4', 'Compte Pecheur', '0'),
-('5', 'Compte Brinks', '0');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `fbi`
---
-
-CREATE TABLE `fbi` (
-  `identifier` varchar(50) NOT NULL,
-  `rank` varchar(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `items`
---
-
-CREATE TABLE `items` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `libelle` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `value` int(11) NOT NULL DEFAULT '0',
-  `type` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `items`
---
-
-INSERT INTO `items` (`id`, `libelle`, `value`, `type`) VALUES
-(1, 'Bouteille d\'eau', 20, 1),
-(2, 'Sandwich', 20, 2),
-(3, 'Filet Mignon', 20, 2),
-(4, 'Cannabis', 0, 0),
-(5, 'Cannabis roulé', 0, 0),
-(6, 'Feuille Coka', 0, 0),
-(7, 'Coka', 0, 0),
-(8, 'Coka', 0, 0),
-(9, 'Ephedrine ', 0, 0),
-(10, 'Matière illégale', 0, 0),
-(11, 'Matière illégale', 0, 0),
-(12, 'Meth', 0, 0),
-(13, 'Organe', 0, 0),
-(14, 'Organe emballé', 0, 0),
-(15, 'Organe analysé', 0, 0),
-(16, 'Organe livrable', 0, 0),
-(17, 'Cuivre', 0, 0),
-(18, 'Fer', 0, 0),
-(19, 'Diamants', 0, 0),
-(20, 'Cuivre traité', 0, 0),
-(21, 'Fer traité', 0, 0),
-(22, 'Diamants traité', 0, 0),
-(23, 'Roche', 0, 0),
-(24, 'Roche traitée', 0, 0),
-(25, 'Poisson', 5, 2),
-(26, 'Corps', 0, 0),
-(27, 'Corps traité', 0, 0),
-(28, 'Poisson propre', 0, 0);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `jobs`
---
-
-CREATE TABLE `jobs` (
-  `job_id` int(11) NOT NULL,
-  `job_name` varchar(40) CHARACTER SET utf8mb4 NOT NULL,
-  `salary` int(11) NOT NULL DEFAULT '500'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `jobs`
---
-
-INSERT INTO `jobs` (`job_id`, `job_name`, `salary`) VALUES
-(1, 'Sans Emploi', 0),
-(2, 'Nettoyeur de piscine', 0),
-(3, 'Éboueur', 0),
-(4, 'Mineur', 0),
-(5, 'Chauffeur de taxi', 50),
-(6, 'Livreur de bois', 0),
-(7, 'Livreur de citerne', 0),
-(8, 'Livreur de conteneur', 0),
-(9, 'Livreur de médicament', 0),
-(10, 'Policier', 0),
-(11, 'Fossoyeur', 0),
-(12, 'Préposé à la morgue', 0),
-(13, 'Ambulancier', 50),
-(14, 'Pecheur', 50),
-(15, 'Brinks', 500),
-(16, 'Depanneur', 500),
-(17, 'Pompiste', 500),
-(18, 'FBI', 500),
-(19, 'Gouverneur', 500);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `outfits`
---
-
-CREATE TABLE `outfits` (
-  `identifier` varchar(30) CHARACTER SET utf8mb4 NOT NULL,
-  `skin` varchar(30) CHARACTER SET utf8mb4 NOT NULL DEFAULT 'mp_m_freemode_01',
-  `face` int(11) NOT NULL DEFAULT '0',
-  `face_text` int(11) NOT NULL DEFAULT '0',
-  `hair` int(11) NOT NULL DEFAULT '0',
-  `hair_text` int(11) NOT NULL DEFAULT '0',
-  `pants` int(11) NOT NULL DEFAULT '0',
-  `pants_text` int(11) NOT NULL DEFAULT '0',
-  `shoes` int(11) NOT NULL DEFAULT '0',
-  `shoes_text` int(11) NOT NULL DEFAULT '0',
-  `torso` int(11) NOT NULL DEFAULT '0',
-  `torso_text` int(11) NOT NULL DEFAULT '0',
-  `shirt` int(11) NOT NULL DEFAULT '0',
-  `shirt_text` int(11) NOT NULL DEFAULT '0',
-  `three` int(11) NOT NULL DEFAULT '0',
-  `three_text` int(11) NOT NULL DEFAULT '0',
-  `seven` int(11) NOT NULL DEFAULT '0',
-  `seven_text` int(11) NOT NULL DEFAULT '0',
-  `haircolor` int(11) NOT NULL DEFAULT '0',
-  `haircolor_text` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `outfits`
---
-
-INSERT INTO `outfits` (`identifier`, `skin`, `face`, `face_text`, `hair`, `hair_text`, `pants`, `pants_text`, `shoes`, `shoes_text`, `torso`, `torso_text`, `shirt`, `shirt_text`, `three`, `three_text`, `seven`, `seven_text`, `haircolor`, `haircolor_text`) VALUES
-('steam:1100001015e828c', 'mp_m_freemode_01', 0, 0, 4, 0, 7, 15, 1, 1, 7, 1, 1, 0, 6, 0, 0, 0, 2, 0),
-('steam:110000103606e04', 'mp_m_freemode_01', 0, 0, -1, -1, 24, 5, 18, 0, 29, 5, 31, 0, 12, 0, 29, 2, 0, 0),
-('steam:110000106247f6e', 'mp_m_freemode_01', 0, 0, 4, 0, 7, 15, 1, 1, 7, 1, 1, 0, 6, 0, 0, 0, 2, 0),
-('steam:11000010881fdbb', 'mp_m_freemode_01', 0, 0, -1, -1, 7, 15, 1, 1, 7, 1, 1, 0, 6, 0, 0, 0, 0, 0),
-('steam:11000010a6c0398', 'mp_m_freemode_01', 0, 0, 4, 0, 7, 15, 1, 1, 7, 1, 1, 0, 6, 0, 0, 0, 2, 0),
-('steam:11000010a7ff44b', 'mp_m_freemode_01', 0, 0, 4, 0, 7, 15, 1, 1, 7, 1, 1, 0, 6, 0, 0, 0, 2, 0),
-('steam:11000010cabc803', 'mp_m_freemode_01', 4, 0, 4, 0, 7, 15, 1, 1, 7, 1, 1, 0, 6, 0, 0, 0, 2, 0),
-('steam:11000010fe01cf0', 'mp_m_freemode_01', 0, 0, 4, 0, 7, 15, 1, 1, 7, 1, 1, 0, 6, 0, 0, 0, 2, 0),
-('steam:1100001109f4ca8', 'mp_m_freemode_01', 0, 0, -1, -1, 24, 5, 18, 0, 29, 5, 31, 0, 12, 0, 29, 2, 0, 0),
-('steam:1100001177d08b1', 'mp_m_freemode_01', 0, 0, 4, 3, 7, 15, 1, 1, 7, 1, 1, 0, 6, 0, 0, 0, 2, 0);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `permis`
---
-
-CREATE TABLE `permis` (
-  `id` varchar(5) NOT NULL,
-  `nom` varchar(50) NOT NULL,
-  `prix` varchar(10) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `phone_messages`
---
-
-CREATE TABLE `phone_messages` (
-  `id` int(11) NOT NULL,
-  `transmitter` varchar(10) NOT NULL,
-  `receiver` varchar(10) NOT NULL,
-  `message` varchar(255) NOT NULL DEFAULT '0',
-  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `isRead` int(11) NOT NULL DEFAULT '0',
-  `owner` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `phone_users_contacts`
---
-
-CREATE TABLE `phone_users_contacts` (
-  `id` int(11) NOT NULL,
-  `identifier` varchar(255) NOT NULL,
-  `number` varchar(10) NOT NULL,
-  `display` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `phonebook`
---
-
-CREATE TABLE `phonebook` (
-  `id` int(11) NOT NULL,
-  `pidentifier` varchar(30) CHARACTER SET utf8mb4 DEFAULT '',
-  `phonenumber` varchar(30) CHARACTER SET utf8mb4 DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `police`
---
-
-CREATE TABLE `police` (
-  `police_id` int(11) NOT NULL,
-  `police_name` varchar(40) CHARACTER SET utf8mb4 NOT NULL,
-  `salary` int(11) NOT NULL DEFAULT '500'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `police`
---
-
-INSERT INTO `police` (`police_id`, `police_name`, `salary`) VALUES
-(1, 'Cadet', 500),
-(2, 'Officier', 500),
-(3, 'Sergent', 500),
-(4, 'Lieutenant', 500),
-(5, 'Capitaine', 500),
-(6, 'Commandant', 500),
-(7, 'Colonel', 500),
-(8, 'Rien', 0),
-(9, 'FBI', 500);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `user_beard`
---
-
-CREATE TABLE `user_beard` (
-  `identifier` varchar(25) NOT NULL,
-  `beard` varchar(2) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `user_beard`
---
-
-INSERT INTO `user_beard` (`identifier`, `beard`) VALUES
-('steam:11000010fe01cf0', '-1'),
-('steam:11000010a6c0398', '-1'),
-('steam:1100001109f4ca8', '-1'),
-('steam:11000010a7ff44b', '-1'),
-('steam:11000010cabc803', '-1'),
-('steam:110000103606e04', '-1'),
-('steam:1100001177d08b1', '-1'),
-('steam:11000010881fdbb', '-1'),
-('steam:110000106247f6e', '-1'),
-('steam:1100001015e828c', '-1');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `user_chefentreprise`
---
-
-CREATE TABLE `user_chefentreprise` (
-  `identifier` varchar(25) NOT NULL,
-  `value` varchar(25) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `user_chefentreprise`
---
-
-INSERT INTO `user_chefentreprise` (`identifier`, `value`) VALUES
-('steam:11000010fe01cf0', '1'),
-('steam:11000010881fdbb', '1');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `user_inventory`
---
-
-CREATE TABLE `user_inventory` (
-  `user_id` varchar(30) CHARACTER SET utf8mb4 NOT NULL DEFAULT '',
-  `item_id` int(11) UNSIGNED NOT NULL,
-  `quantity` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `user_inventory`
---
-
-INSERT INTO `user_inventory` (`user_id`, `item_id`, `quantity`) VALUES
-('steam:1100001015e828c', 1, 0),
-('steam:1100001015e828c', 2, 0),
-('steam:1100001015e828c', 3, 0),
-('steam:1100001015e828c', 4, 1),
-('steam:1100001015e828c', 5, 0),
-('steam:1100001015e828c', 6, 0),
-('steam:1100001015e828c', 7, 0),
-('steam:1100001015e828c', 8, 0),
-('steam:1100001015e828c', 9, 0),
-('steam:1100001015e828c', 10, 0),
-('steam:1100001015e828c', 11, 0),
-('steam:1100001015e828c', 12, 0),
-('steam:1100001015e828c', 13, 0),
-('steam:1100001015e828c', 14, 0),
-('steam:1100001015e828c', 15, 0),
-('steam:1100001015e828c', 16, 0),
-('steam:1100001015e828c', 17, 0),
-('steam:1100001015e828c', 18, 0),
-('steam:1100001015e828c', 19, 0),
-('steam:1100001015e828c', 20, 0),
-('steam:1100001015e828c', 21, 0),
-('steam:1100001015e828c', 22, 0),
-('steam:1100001015e828c', 23, 0),
-('steam:1100001015e828c', 24, 0),
-('steam:1100001015e828c', 25, 0),
-('steam:1100001015e828c', 26, 0),
-('steam:1100001015e828c', 27, 0),
-('steam:1100001015e828c', 28, 0),
-('steam:110000103606e04', 1, 0),
-('steam:110000103606e04', 2, 0),
-('steam:110000103606e04', 3, 0),
-('steam:110000103606e04', 4, 0),
-('steam:110000103606e04', 5, 0),
-('steam:110000103606e04', 6, 0),
-('steam:110000103606e04', 7, 0),
-('steam:110000103606e04', 8, 0),
-('steam:110000103606e04', 9, 0),
-('steam:110000103606e04', 10, 0),
-('steam:110000103606e04', 11, 0),
-('steam:110000103606e04', 12, 0),
-('steam:110000103606e04', 13, 0),
-('steam:110000103606e04', 14, 0),
-('steam:110000103606e04', 15, 0),
-('steam:110000103606e04', 16, 0),
-('steam:110000103606e04', 17, 0),
-('steam:110000103606e04', 18, 0),
-('steam:110000103606e04', 19, 0),
-('steam:110000103606e04', 20, 0),
-('steam:110000103606e04', 21, 0),
-('steam:110000103606e04', 22, 0),
-('steam:110000103606e04', 23, 0),
-('steam:110000103606e04', 24, 0),
-('steam:110000103606e04', 25, 0),
-('steam:110000103606e04', 26, 0),
-('steam:110000103606e04', 27, 0),
-('steam:110000103606e04', 28, 0),
-('steam:110000106247f6e', 1, 0),
-('steam:110000106247f6e', 2, 0),
-('steam:110000106247f6e', 3, 0),
-('steam:110000106247f6e', 4, 0),
-('steam:110000106247f6e', 5, 0),
-('steam:110000106247f6e', 6, 0),
-('steam:110000106247f6e', 7, 0),
-('steam:110000106247f6e', 8, 0),
-('steam:110000106247f6e', 9, 0),
-('steam:110000106247f6e', 10, 0),
-('steam:110000106247f6e', 11, 0),
-('steam:110000106247f6e', 12, 0),
-('steam:110000106247f6e', 13, 0),
-('steam:110000106247f6e', 14, 0),
-('steam:110000106247f6e', 15, 0),
-('steam:110000106247f6e', 16, 0),
-('steam:110000106247f6e', 17, 0),
-('steam:110000106247f6e', 18, 0),
-('steam:110000106247f6e', 19, 0),
-('steam:110000106247f6e', 20, 0),
-('steam:110000106247f6e', 21, 0),
-('steam:110000106247f6e', 22, 0),
-('steam:110000106247f6e', 23, 0),
-('steam:110000106247f6e', 24, 0),
-('steam:110000106247f6e', 25, 0),
-('steam:110000106247f6e', 26, 0),
-('steam:110000106247f6e', 27, 0),
-('steam:110000106247f6e', 28, 0),
-('steam:11000010881fdbb', 1, 0),
-('steam:11000010881fdbb', 2, 0),
-('steam:11000010881fdbb', 3, 0),
-('steam:11000010881fdbb', 4, 0),
-('steam:11000010881fdbb', 5, 0),
-('steam:11000010881fdbb', 6, 0),
-('steam:11000010881fdbb', 7, 0),
-('steam:11000010881fdbb', 8, 0),
-('steam:11000010881fdbb', 9, 0),
-('steam:11000010881fdbb', 10, 0),
-('steam:11000010881fdbb', 11, 0),
-('steam:11000010881fdbb', 12, 0),
-('steam:11000010881fdbb', 13, 0),
-('steam:11000010881fdbb', 14, 0),
-('steam:11000010881fdbb', 15, 0),
-('steam:11000010881fdbb', 16, 0),
-('steam:11000010881fdbb', 17, 0),
-('steam:11000010881fdbb', 18, 0),
-('steam:11000010881fdbb', 19, 0),
-('steam:11000010881fdbb', 20, 0),
-('steam:11000010881fdbb', 21, 0),
-('steam:11000010881fdbb', 22, 0),
-('steam:11000010881fdbb', 23, 0),
-('steam:11000010881fdbb', 24, 0),
-('steam:11000010881fdbb', 25, 0),
-('steam:11000010881fdbb', 26, 0),
-('steam:11000010881fdbb', 27, 0),
-('steam:11000010881fdbb', 28, 0),
-('steam:11000010a6c0398', 1, 0),
-('steam:11000010a6c0398', 2, 0),
-('steam:11000010a6c0398', 3, 0),
-('steam:11000010a6c0398', 4, 0),
-('steam:11000010a6c0398', 5, 0),
-('steam:11000010a6c0398', 6, 0),
-('steam:11000010a6c0398', 7, 0),
-('steam:11000010a6c0398', 8, 0),
-('steam:11000010a6c0398', 9, 0),
-('steam:11000010a6c0398', 10, 0),
-('steam:11000010a6c0398', 11, 0),
-('steam:11000010a6c0398', 12, 0),
-('steam:11000010a6c0398', 13, 0),
-('steam:11000010a6c0398', 14, 0),
-('steam:11000010a6c0398', 15, 0),
-('steam:11000010a6c0398', 16, 0),
-('steam:11000010a6c0398', 17, 0),
-('steam:11000010a6c0398', 18, 0),
-('steam:11000010a6c0398', 19, 0),
-('steam:11000010a6c0398', 20, 0),
-('steam:11000010a6c0398', 21, 0),
-('steam:11000010a6c0398', 22, 0),
-('steam:11000010a6c0398', 23, 0),
-('steam:11000010a6c0398', 24, 0),
-('steam:11000010a6c0398', 25, 0),
-('steam:11000010a6c0398', 26, 0),
-('steam:11000010a6c0398', 27, 0),
-('steam:11000010a6c0398', 28, 0),
-('steam:11000010a7ff44b', 1, 0),
-('steam:11000010a7ff44b', 2, 0),
-('steam:11000010a7ff44b', 3, 0),
-('steam:11000010a7ff44b', 4, 0),
-('steam:11000010a7ff44b', 5, 0),
-('steam:11000010a7ff44b', 6, 0),
-('steam:11000010a7ff44b', 7, 0),
-('steam:11000010a7ff44b', 8, 0),
-('steam:11000010a7ff44b', 9, 0),
-('steam:11000010a7ff44b', 10, 0),
-('steam:11000010a7ff44b', 11, 0),
-('steam:11000010a7ff44b', 12, 0),
-('steam:11000010a7ff44b', 13, 0),
-('steam:11000010a7ff44b', 14, 0),
-('steam:11000010a7ff44b', 15, 0),
-('steam:11000010a7ff44b', 16, 0),
-('steam:11000010a7ff44b', 17, 0),
-('steam:11000010a7ff44b', 18, 0),
-('steam:11000010a7ff44b', 19, 0),
-('steam:11000010a7ff44b', 20, 0),
-('steam:11000010a7ff44b', 21, 0),
-('steam:11000010a7ff44b', 22, 0),
-('steam:11000010a7ff44b', 23, 0),
-('steam:11000010a7ff44b', 24, 0),
-('steam:11000010a7ff44b', 25, 0),
-('steam:11000010a7ff44b', 26, 0),
-('steam:11000010a7ff44b', 27, 0),
-('steam:11000010a7ff44b', 28, 0),
-('steam:11000010cabc803', 1, 0),
-('steam:11000010cabc803', 2, 0),
-('steam:11000010cabc803', 3, 0),
-('steam:11000010cabc803', 4, 0),
-('steam:11000010cabc803', 5, 0),
-('steam:11000010cabc803', 6, 0),
-('steam:11000010cabc803', 7, 0),
-('steam:11000010cabc803', 8, 0),
-('steam:11000010cabc803', 9, 0),
-('steam:11000010cabc803', 10, 0),
-('steam:11000010cabc803', 11, 0),
-('steam:11000010cabc803', 12, 0),
-('steam:11000010cabc803', 13, 0),
-('steam:11000010cabc803', 14, 0),
-('steam:11000010cabc803', 15, 0),
-('steam:11000010cabc803', 16, 0),
-('steam:11000010cabc803', 17, 0),
-('steam:11000010cabc803', 18, 0),
-('steam:11000010cabc803', 19, 0),
-('steam:11000010cabc803', 20, 0),
-('steam:11000010cabc803', 21, 0),
-('steam:11000010cabc803', 22, 0),
-('steam:11000010cabc803', 23, 0),
-('steam:11000010cabc803', 24, 0),
-('steam:11000010cabc803', 25, 0),
-('steam:11000010cabc803', 26, 0),
-('steam:11000010cabc803', 27, 0),
-('steam:11000010cabc803', 28, 0),
-('steam:11000010fe01cf0', 1, 0),
-('steam:11000010fe01cf0', 2, 0),
-('steam:11000010fe01cf0', 3, 0),
-('steam:11000010fe01cf0', 4, 0),
-('steam:11000010fe01cf0', 5, 0),
-('steam:11000010fe01cf0', 6, 0),
-('steam:11000010fe01cf0', 7, 0),
-('steam:11000010fe01cf0', 8, 0),
-('steam:11000010fe01cf0', 9, 0),
-('steam:11000010fe01cf0', 10, 0),
-('steam:11000010fe01cf0', 11, 0),
-('steam:11000010fe01cf0', 12, 0),
-('steam:11000010fe01cf0', 13, 0),
-('steam:11000010fe01cf0', 14, 0),
-('steam:11000010fe01cf0', 15, 0),
-('steam:11000010fe01cf0', 16, 0),
-('steam:11000010fe01cf0', 17, 0),
-('steam:11000010fe01cf0', 18, 0),
-('steam:11000010fe01cf0', 19, 0),
-('steam:11000010fe01cf0', 20, 0),
-('steam:11000010fe01cf0', 21, 0),
-('steam:11000010fe01cf0', 22, 0),
-('steam:11000010fe01cf0', 23, 0),
-('steam:11000010fe01cf0', 24, 0),
-('steam:11000010fe01cf0', 25, 0),
-('steam:11000010fe01cf0', 26, 0),
-('steam:11000010fe01cf0', 27, 0),
-('steam:11000010fe01cf0', 28, 0),
-('steam:1100001109f4ca8', 1, 0),
-('steam:1100001109f4ca8', 2, 0),
-('steam:1100001109f4ca8', 3, 0),
-('steam:1100001109f4ca8', 4, 0),
-('steam:1100001109f4ca8', 5, 0),
-('steam:1100001109f4ca8', 6, 0),
-('steam:1100001109f4ca8', 7, 0),
-('steam:1100001109f4ca8', 8, 0),
-('steam:1100001109f4ca8', 9, 0),
-('steam:1100001109f4ca8', 10, 0),
-('steam:1100001109f4ca8', 11, 0),
-('steam:1100001109f4ca8', 12, 0),
-('steam:1100001109f4ca8', 13, 0),
-('steam:1100001109f4ca8', 14, 0),
-('steam:1100001109f4ca8', 15, 0),
-('steam:1100001109f4ca8', 16, 0),
-('steam:1100001109f4ca8', 17, 0),
-('steam:1100001109f4ca8', 18, 0),
-('steam:1100001109f4ca8', 19, 0),
-('steam:1100001109f4ca8', 20, 0),
-('steam:1100001109f4ca8', 21, 0),
-('steam:1100001109f4ca8', 22, 0),
-('steam:1100001109f4ca8', 23, 0),
-('steam:1100001109f4ca8', 24, 0),
-('steam:1100001109f4ca8', 25, 0),
-('steam:1100001109f4ca8', 26, 0),
-('steam:1100001109f4ca8', 27, 0),
-('steam:1100001109f4ca8', 28, 0),
-('steam:1100001177d08b1', 1, 0),
-('steam:1100001177d08b1', 2, 0),
-('steam:1100001177d08b1', 3, 0),
-('steam:1100001177d08b1', 4, 0),
-('steam:1100001177d08b1', 5, 0),
-('steam:1100001177d08b1', 6, 0),
-('steam:1100001177d08b1', 7, 0),
-('steam:1100001177d08b1', 8, 0),
-('steam:1100001177d08b1', 9, 0),
-('steam:1100001177d08b1', 10, 0),
-('steam:1100001177d08b1', 11, 0),
-('steam:1100001177d08b1', 12, 0),
-('steam:1100001177d08b1', 13, 0),
-('steam:1100001177d08b1', 14, 0),
-('steam:1100001177d08b1', 15, 0),
-('steam:1100001177d08b1', 16, 0),
-('steam:1100001177d08b1', 17, 0),
-('steam:1100001177d08b1', 18, 0),
-('steam:1100001177d08b1', 19, 0),
-('steam:1100001177d08b1', 20, 0),
-('steam:1100001177d08b1', 21, 0),
-('steam:1100001177d08b1', 22, 0),
-('steam:1100001177d08b1', 23, 0),
-('steam:1100001177d08b1', 24, 0),
-('steam:1100001177d08b1', 25, 0),
-('steam:1100001177d08b1', 26, 0),
-('steam:1100001177d08b1', 27, 0),
-('steam:1100001177d08b1', 28, 0);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `user_message`
---
-
-CREATE TABLE `user_message` (
-  `phone_number` varchar(10) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `user_permis`
---
-
-CREATE TABLE `user_permis` (
-  `id_permis` varchar(50) NOT NULL,
-  `identifier` varchar(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `user_vehicle`
---
-
-CREATE TABLE `user_vehicle` (
-  `ID` int(10) NOT NULL,
-  `identifier` varchar(30) CHARACTER SET utf8mb4 NOT NULL,
-  `vehicle_name` varchar(60) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `vehicle_model` varchar(60) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `vehicle_price` int(60) DEFAULT NULL,
-  `vehicle_plate` varchar(60) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `vehicle_state` varchar(60) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `vehicle_colorprimary` varchar(60) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `vehicle_colorsecondary` varchar(60) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `vehicle_pearlescentcolor` varchar(60) CHARACTER SET utf8mb4 NOT NULL,
-  `vehicle_wheelcolor` varchar(60) CHARACTER SET utf8mb4 NOT NULL,
-  `vehicle_cartegrise` varchar(25) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `user_vehicle`
---
-
-INSERT INTO `user_vehicle` (`ID`, `identifier`, `vehicle_name`, `vehicle_model`, `vehicle_price`, `vehicle_plate`, `vehicle_state`, `vehicle_colorprimary`, `vehicle_colorsecondary`, `vehicle_pearlescentcolor`, `vehicle_wheelcolor`, `vehicle_cartegrise`) VALUES
-(1, 'steam:11000010fe01cf0', 'Faggio', 'faggio', 4000, 'CTZN1CF0', 'Rentré', '4', '0', '111', '156', NULL),
-(2, 'steam:11000010a6c0398', 'Faggio', 'faggio', 4000, 'CTZN0398', 'Rentré', '4', '0', '111', '156', NULL),
-(3, 'steam:1100001109f4ca8', 'Faggio', 'faggio', 4000, 'CTZN4CA8', 'Rentré', '4', '0', '111', '156', NULL),
-(4, 'steam:11000010a7ff44b', 'Faggio', 'faggio', 4000, 'CTZNF44B', 'Rentré', '4', '0', '111', '156', NULL),
-(5, 'steam:11000010cabc803', 'Faggio', 'faggio', 4000, 'CTZNC803', 'Rentré', '4', '0', '111', '156', NULL),
-(6, 'steam:110000103606e04', 'Faggio', 'faggio', 4000, 'CTZN6E04', 'Rentré', '4', '0', '111', '156', NULL),
-(7, 'steam:11000010fe01cf0', 'Sanctus', 'sanctus', 66666, 'CTZN3509', 'Rentré', '0', '120', '2', '1', NULL),
-(8, 'steam:1100001177d08b1', 'Faggio', 'faggio', 4000, 'CTZN08B1', 'Rentré', '4', '0', '111', '156', NULL),
-(9, 'steam:11000010fe01cf0', 'Faggio', 'faggio', 4000, 'CTZN1CF0', 'Rentré', '4', '0', '111', '156', NULL),
-(10, 'steam:11000010881fdbb', 'Faggio', 'faggio', 4000, 'CTZNFDBB', 'Rentré', '4', '0', '111', '156', NULL),
-(11, 'steam:110000106247f6e', 'Faggio', 'faggio', 4000, 'CTZN7F6E', 'Rentré', '4', '0', '111', '156', NULL),
-(12, 'steam:1100001015e828c', 'Faggio', 'faggio', 4000, 'CTZN828C', 'Rentré', '4', '0', '111', '156', NULL),
-(13, 'steam:11000010fe01cf0', 'Kalahari', 'kalahari', 4000, 'CTZN', 'Rentré', '4', '0', '111', '156', NULL),
-(14, 'steam:11000010fe01cf0', 'Kalahari', 'kalahari', 4000, 'CTZN', 'Rentré', '4', '0', '111', '156', NULL),
-(15, 'steam:11000010fe01cf0', 'Kalahari', 'kalahari', 4000, 'CTZN', 'Rentré', '4', '0', '111', '156', NULL),
-(16, 'steam:11000010fe01cf0', 'Kalahari', 'kalahari', 4000, 'CTZN', 'Rentré', '4', '0', '111', '156', NULL),
-(17, 'steam:11000010fe01cf0', 'Kalahari', 'kalahari', 4000, 'CTZN', 'Rentré', '4', '0', '111', '156', NULL),
-(18, 'steam:11000010fe01cf0', 'Kalahari', 'kalahari', 4000, 'CTZN', 'Rentré', '4', '0', '111', '156', NULL),
-(19, 'steam:11000010fe01cf0', 'Kalahari', 'kalahari', 4000, 'CTZN', 'Rentré', '4', '0', '111', '156', NULL),
-(20, 'steam:11000010fe01cf0', 'Kalahari', 'kalahari', 4000, 'CTZN', 'Rentré', '4', '0', '111', '156', NULL),
-(21, 'steam:11000010fe01cf0', 'Kalahari', 'kalahari', 4000, 'CTZN', 'Rentré', '4', '0', '111', '156', NULL);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `user_vehmods`
---
-
-CREATE TABLE `user_vehmods` (
-  `id` int(11) NOT NULL,
-  `plate` varchar(45) NOT NULL,
-  `boosted` varchar(25) NOT NULL,
-  `primary_color` varchar(85) NOT NULL,
-  `second_color` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `user_weapons`
---
-
-CREATE TABLE `user_weapons` (
-  `ID` int(10) NOT NULL,
-  `identifier` varchar(30) CHARACTER SET utf8mb4 NOT NULL,
-  `weapon_model` varchar(60) CHARACTER SET utf8mb4 NOT NULL,
-  `withdraw_cost` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `user_whitelist`
---
-
-CREATE TABLE `user_whitelist` (
-  `identifier` varchar(255) NOT NULL,
-  `whitelisted` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `user_whitelist`
---
-
-INSERT INTO `user_whitelist` (`identifier`, `whitelisted`) VALUES
-('steam:11000010fe01cf0e', 1);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `users`
---
-
-CREATE TABLE `users` (
-  `ID` int(11) NOT NULL,
-  `identifier` varchar(30) CHARACTER SET utf8mb4 NOT NULL DEFAULT '',
-  `group` varchar(50) CHARACTER SET utf8mb4 NOT NULL DEFAULT '0',
-  `permission_level` int(11) NOT NULL DEFAULT '0',
-  `money` double NOT NULL DEFAULT '0',
-  `bankbalance` int(32) DEFAULT '0',
-  `job` int(11) DEFAULT '1',
-  `police` int(11) DEFAULT '0',
-  `enService` int(11) DEFAULT '0',
-  `dirtymoney` double(11,0) NOT NULL DEFAULT '0',
-  `isFirstConnection` int(11) DEFAULT '1',
-  `nom` varchar(30) CHARACTER SET utf8mb4 NOT NULL DEFAULT '',
-  `prenom` varchar(30) CHARACTER SET utf8mb4 NOT NULL DEFAULT '',
-  `telephone` varchar(30) CHARACTER SET utf8mb4 NOT NULL DEFAULT '',
-  `permis` int(11) DEFAULT '0',
-  `permisArme` int(11) DEFAULT '0',
-  `permisBateau` int(11) DEFAULT '0',
-  `permisPilote` int(11) DEFAULT '0',
-  `session_id` int(1) DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `users`
---
-
-INSERT INTO `users` (`ID`, `identifier`, `group`, `permission_level`, `money`, `bankbalance`, `job`, `police`, `enService`, `dirtymoney`, `isFirstConnection`, `nom`, `prenom`, `telephone`, `permis`, `permisArme`, `permisBateau`, `permisPilote`, `session_id`) VALUES
-(1, 'steam:11000010fe01cf0', 'admin', 0, 595000, 595000, 10, 7, 0, 0, 1, 'test', 'test', '010-0100', 0, 0, 0, 0, 4),
-(2, 'steam:11000010a6c0398', 'user', 0, 3000, 0, 1, 0, 0, 0, 1, 'Rick', 'Sam', '893-0601', 0, 0, 0, 0, 0),
-(3, 'steam:1100001109f4ca8', 'user', 0, 3000, 0, 1, 0, 0, 0, 1, 'Citizen', 'Citizen', '849-0110', 0, 0, 0, 0, 0),
-(4, 'steam:11000010a7ff44b', 'user', 0, 3000, 0, 1, 0, 0, 0, 1, 'Terrieur', 'Alain', '447-0100', 0, 0, 0, 0, 0),
-(5, 'steam:11000010cabc803', 'user', 0, 3000, 0, 1, 0, 0, 0, 1, 'Dupont', 'Rayan', '308-0100', 0, 0, 0, 0, 0),
-(6, 'steam:110000103606e04', 'user', 0, 3000, 0, 1, 0, 0, 0, 1, 'Citizen', 'Citizen', '406-0630', 0, 0, 0, 0, 0),
-(7, 'steam:1100001177d08b1', 'user', 0, 3000, 0, 4, 0, 0, 0, 1, 'Rico', 'John', '180-7711', 0, 0, 0, 0, 0),
-(9, 'steam:11000010881fdbb', 'user', 0, 500, 0, 15, 0, 0, 0, 1, 'sasas', 'adsasas', '188-0100', 0, 0, 0, 0, 0),
-(10, 'steam:110000106247f6e', 'user', 0, 0, 0, 1, 0, 0, 0, 1, 'Miller', 'John', '674-2601', 0, 0, 0, 0, 0),
-(11, 'steam:1100001015e828c', 'admin', 0, 0, 0, 13, 0, 0, 0, 1, 'Jay', 'Steph', '828-5101', 0, 0, 0, 0, 1);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `users_chapo`
---
-
-CREATE TABLE `users_chapo` (
-  `identifier` varchar(25) NOT NULL,
-  `chapo` varchar(25) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `users_chapo`
---
-
-INSERT INTO `users_chapo` (`identifier`, `chapo`) VALUES
-('steam:11000010fe01cf0', '0'),
-('steam:11000010a6c0398', '0'),
-('steam:1100001109f4ca8', '0'),
-('steam:11000010a7ff44b', '0'),
-('steam:11000010cabc803', '0'),
-('steam:110000103606e04', '0'),
-('steam:1100001177d08b1', '0'),
-('steam:11000010881fdbb', '0'),
-('steam:110000106247f6e', '0'),
-('steam:1100001015e828c', '0');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `users_mask`
---
-
-CREATE TABLE `users_mask` (
-  `identifier` varchar(100) NOT NULL,
-  `mask` varchar(25) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `users_mask`
---
-
-INSERT INTO `users_mask` (`identifier`, `mask`) VALUES
-('steam:11000010fe01cf0', '0'),
-('steam:11000010a6c0398', '0'),
-('steam:1100001109f4ca8', '0'),
-('steam:11000010a7ff44b', '0'),
-('steam:11000010cabc803', '0'),
-('steam:110000103606e04', '0'),
-('steam:1100001177d08b1', '0'),
-('steam:11000010881fdbb', '0'),
-('steam:110000106247f6e', '0'),
-('steam:1100001015e828c', '0');
-
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `bans`
---
-ALTER TABLE `bans`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `coffre`
---
-ALTER TABLE `coffre`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `coffre_items`
---
-ALTER TABLE `coffre_items`
-  ADD PRIMARY KEY (`id_coffre`,`id_item`);
-
---
--- Index pour la table `coordinates`
---
-ALTER TABLE `coordinates`
-  ADD PRIMARY KEY (`identifier`);
-
---
--- Index pour la table `depanneur`
---
-ALTER TABLE `depanneur`
-  ADD PRIMARY KEY (`identifier`);
-
---
--- Index pour la table `entreprise_compte`
---
-ALTER TABLE `entreprise_compte`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `fbi`
---
-ALTER TABLE `fbi`
-  ADD PRIMARY KEY (`identifier`);
-
---
--- Index pour la table `items`
---
-ALTER TABLE `items`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `jobs`
---
-ALTER TABLE `jobs`
-  ADD PRIMARY KEY (`job_id`);
-
---
--- Index pour la table `outfits`
---
-ALTER TABLE `outfits`
-  ADD PRIMARY KEY (`identifier`);
-
---
--- Index pour la table `permis`
---
-ALTER TABLE `permis`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `phone_messages`
---
-ALTER TABLE `phone_messages`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `phone_users_contacts`
---
-ALTER TABLE `phone_users_contacts`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `phonebook`
---
-ALTER TABLE `phonebook`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `police`
---
-ALTER TABLE `police`
-  ADD PRIMARY KEY (`police_id`);
-
---
--- Index pour la table `user_beard`
---
-ALTER TABLE `user_beard`
-  ADD PRIMARY KEY (`identifier`);
-
---
--- Index pour la table `user_chefentreprise`
---
-ALTER TABLE `user_chefentreprise`
-  ADD PRIMARY KEY (`identifier`);
-
---
--- Index pour la table `user_inventory`
---
-ALTER TABLE `user_inventory`
-  ADD PRIMARY KEY (`user_id`,`item_id`),
-  ADD KEY `item_id` (`item_id`);
-
---
--- Index pour la table `user_permis`
---
-ALTER TABLE `user_permis`
-  ADD PRIMARY KEY (`id_permis`,`identifier`);
-
---
--- Index pour la table `user_vehicle`
---
-ALTER TABLE `user_vehicle`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `user_vehmods`
---
-ALTER TABLE `user_vehmods`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `plate_UNIQUE` (`plate`);
-
---
--- Index pour la table `user_weapons`
---
-ALTER TABLE `user_weapons`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `user_whitelist`
---
-ALTER TABLE `user_whitelist`
-  ADD PRIMARY KEY (`identifier`);
-
---
--- Index pour la table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `users_chapo`
---
-ALTER TABLE `users_chapo`
-  ADD PRIMARY KEY (`identifier`);
-
---
--- Index pour la table `users_mask`
---
-ALTER TABLE `users_mask`
-  ADD PRIMARY KEY (`identifier`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `bans`
---
-ALTER TABLE `bans`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `items`
---
-ALTER TABLE `items`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
---
--- AUTO_INCREMENT pour la table `jobs`
---
-ALTER TABLE `jobs`
-  MODIFY `job_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
---
--- AUTO_INCREMENT pour la table `phone_messages`
---
-ALTER TABLE `phone_messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `phone_users_contacts`
---
-ALTER TABLE `phone_users_contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `phonebook`
---
-ALTER TABLE `phonebook`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `police`
---
-ALTER TABLE `police`
-  MODIFY `police_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
---
--- AUTO_INCREMENT pour la table `user_vehicle`
---
-ALTER TABLE `user_vehicle`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
---
--- AUTO_INCREMENT pour la table `user_vehmods`
---
-ALTER TABLE `user_vehmods`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `user_weapons`
---
-ALTER TABLE `user_weapons`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `users`
---
-ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
---
--- Contraintes pour les tables déchargées
---
-
---
--- Contraintes pour la table `user_inventory`
---
-ALTER TABLE `user_inventory`
-  ADD CONSTRAINT `user_inventory_ibfk_2` FOREIGN KEY (`item_id`) REFERENCES `items` (`id`);
-COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
