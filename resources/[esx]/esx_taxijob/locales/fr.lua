@@ -1,7 +1,7 @@
 Locales['fr'] = {
 
 	['taking_service'] = 'prise de service : ',
-	['spawn_veh'] = 'sortir véhicule',
+	['spawn_veh'] = 'vortir véhicule',
 	['remove_comp_money'] = 'retirer argent société',
 	['deposit_money'] = 'déposer argent',
 	['launder_money'] = 'blanchir argent',
