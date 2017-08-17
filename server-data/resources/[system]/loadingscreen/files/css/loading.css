@@ -1,0 +1,42 @@
+/* LOADING TEXT */
+div.loading {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 3.5px;
+  display: inline-block;
+  padding: 4.5px 15px;
+  position: absolute;
+  right: 55px;
+  bottom: 50px;
+  z-index: 99999;
+}
+
+div.loading p {
+  float: left;
+  font-family: "Open Sans", sans-serif;
+  line-height: 30px;
+  margin: 0 5px 0 0;
+}
+
+/* SPINNER ICON */
+.spinner {
+    margin-left: 5px;
+    margin-bottom: -15px;
+    animation: spin 1.5s infinite linear;
+}
+.spinner stop {
+  stop-color: #fff;
+}
+.spinner stop:last-child {
+  stop-opacity: 0;
+}
+.spinner__path {
+  fill: none;
+  stroke-width: 2;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

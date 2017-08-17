@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/loader.css">
+        <link rel="stylesheet" type="text/css" href="css/loading.css">
+        <link rel="stylesheet" type="text/css" href="css/tips.css">
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+
+    <body>
+        <div id="loader">
+            <transition name="fade">
+                <div v-if="showed">
+                    <img id="loadingCharacter" :src="characterImage" :class="characterClass">
+                    <img id="loadingBackground" :src="backgroundImage" :class="backgroundClass">
+                </div>
+            </transition>
+            <img id="loadingLogo" src="img/logo.png">
+            <audio id="introSound" src="sound/intro.ogg" controls loop />
+        </div>
+
+        <div class="tips">
+            <img id="info" src="img/info.png">
+            <p>Merci de respecter le règlement pour le bien de tous :</p>
+            <ul>
+                <li>Respecter le Staff et les autres joueurs.</li>
+                <li>Ne pas FreeKill et Troll à la GTA Online.</li>
+                <li>Ne pas faire de HRP, d'OOC et de StreamStalk.</li>
+                <li>Jouer un RP réaliste, tout simplement !</li>
+                <li>Le reste du règlement se trouve sur le Discord.</li>
+            </ul>
+
+            <img id="discord" src="img/discord.png">
+            <div id="discord-link">
+                <p id="join-us">Rejoignez-nous sur Discord :</p>
+                <p>discord.gg/HY6D2UZ</p>
+            </div>
+        </div>
+
+        <div class="loading">
+            <p>Passage de la douane...</p>
+            <svg class="spinner" viewBox="0 0 10 10" width="28" height="28">
+                      <defs>
+                            <linearGradient id="g">
+                                  <stop offset="0%"/>
+                                  <stop offset="100%"/>
+                            </linearGradient>
+                      </defs>
+                  <path class="spinner__path" d="M5 5 m-4 0 a4,4 0 1,0 8,0" stroke="url(#g)"></path>
+            </svg>
+        </div>
+
+        <script src="js/loader.js"></script>
+    </body>
+</html>
