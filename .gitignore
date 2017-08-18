@@ -1,5 +1,3 @@
-# Fichier non pris en compte#
-###################
+# ignore all logs
 *.log
-server-data/cache/*
-
+server-data/cache
