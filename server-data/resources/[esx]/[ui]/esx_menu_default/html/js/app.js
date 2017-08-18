@@ -2,12 +2,11 @@
 
 	let MenuTpl =
 		'<div id="menu_{{_namespace}}_{{_name}}" class="menu{{#align}} align-{{align}}{{/align}}">' +
-			'<div class="head"><span>{{{title}}}</span></div>' +
-				'<div class="space"></div>' +
-				'<div class="menu-items">' +
+			'<div class="head"><span>{{title}}</span></div>' +
+				'<div class="menu-items">' + 
 					'{{#elements}}' +
 						'<div class="menu-item {{#selected}}selected{{/selected}}">' +
-							'{{{label}}}{{#isSlider}} : &lt; {{{sliderLabel}}} &gt;{{/isSlider}}' +
+							'{{label}}{{#isSlider}} : &lt;{{sliderLabel}}&gt;{{/isSlider}}' +
 						'</div>' +
 					'{{/elements}}' +
 				'</div>'+
@@ -59,14 +58,14 @@
 			namespace: namespace,
 			name     : name
 		});
-
+		
 		ESX_MENU.render();
 
 		$('#menu_' + namespace + '_' + name).find('.menu-item.selected')[0].scrollIntoView();
 	}
 
 	ESX_MENU.close = function(namespace, name){
-
+		
 		delete ESX_MENU.opened[namespace][name];
 
 		for(let i=0; i<ESX_MENU.focus.length; i++){
@@ -103,7 +102,7 @@
 						case 'default' : break;
 
 						case 'slider' : {
-
+							
 							element.isSlider    = true;
 							element.sliderLabel = (typeof element.options == 'undefined') ? element.value : element.options[element.value];
 
@@ -268,10 +267,8 @@
 							case 'default': break;
 
 							case 'slider' : {
-
-								let min = (typeof elem.min == 'undefined') ? 0 : elem.min;
-
-								if(elem.value > min){
+							
+								if(elem.value > 0){
 									elem.value--;
 									ESX_MENU.change(focused.namespace, focused.name, elem)
 								}
@@ -302,7 +299,7 @@
 							case 'default': break;
 
 							case 'slider' : {
-
+							
 								if(typeof elem.options != 'undefined' && elem.value < elem.options.length - 1){
 									elem.value++;
 									ESX_MENU.change(focused.namespace, focused.name, elem)

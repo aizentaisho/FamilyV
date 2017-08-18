@@ -463,11 +463,11 @@ ESX.Game.GetClosestPlayer = function(coords)
 	local closestPlayer   = -1
 	local coords          = coords
 	local usePlayerPed    = false
-	local playerPed       = nil
+	local playerPed       = GetPlayerPed(-1)
+	local playerId        = PlayerId()
 
 	if coords == nil then
 		usePlayerPed = true
-		playerPed    = GetPlayerPed(-1)
 		coords       = GetEntityCoords(playerPed)
 	end
 
@@ -475,7 +475,7 @@ ESX.Game.GetClosestPlayer = function(coords)
 		
 		local target = GetPlayerPed(players[i])
 		
-		if not usePlayerPed or (usePlayerPed and target ~= playerPed) then
+		if not usePlayerPed or (usePlayerPed and players[i] ~= playerId) then
 			
 			local targetCoords = GetEntityCoords(target)
 			local distance     = GetDistanceBetweenCoords(targetCoords.x, targetCoords.y, targetCoords.z, coords.x, coords.y, coords.z, true)
@@ -608,6 +608,7 @@ ESX.Game.GetVehicleProperties = function(vehicle)
 		},
 
 		neonColor        = table.pack(GetVehicleNeonLightsColour(vehicle)),
+		tyreSmokeColor   = table.pack(GetVehicleTyreSmokeColor(vehicle)),
 		
 		modSpoilers      = GetVehicleMod(vehicle, 0),
 		modFrontBumper   = GetVehicleMod(vehicle, 1),
@@ -629,6 +630,7 @@ ESX.Game.GetVehicleProperties = function(vehicle)
 		modArmor         = GetVehicleMod(vehicle, 16),
 
 		modTurbo         = IsToggleModOn(vehicle,  18),
+		modSmokeEnabled  = IsToggleModOn(vehicle,  20),
 		modXenon         = IsToggleModOn(vehicle,  22),
 
 		modFrontWheels   = GetVehicleMod(vehicle, 23),
@@ -696,6 +698,14 @@ ESX.Game.SetVehicleProperties = function(vehicle, props)
 		SetVehicleNeonLightsColour(vehicle,  props.neonColor[1], props.neonColor[2], props.neonColor[3])
 	end
 
+	if props.modSmokeEnabled ~= nil then	
+		ToggleVehicleMod(vehicle, 20, true)
+	end
+
+	if props.tyreSmokeColor ~= nil then
+		SetVehicleTyreSmokeColor(vehicle,  props.tyreSmokeColor[1], props.tyreSmokeColor[2], props.tyreSmokeColor[3])
+	end
+	
 	if props.modSpoilers ~= nil then
 		SetVehicleMod(vehicle, 0, props.modSpoilers, false)
 	end
@@ -934,7 +944,15 @@ ESX.ShowInventory = function()
 						if data.current.action == 'give' then
 
 							if type == 'item_weapon' then
-								TriggerServerEvent('esx:giveInventoryItem', GetPlayerServerId(closestPlayer), type, item, 1)
+
+								local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
+
+								if closestPlayer == -1 or closestDistance > 3.0 then
+									ESX.ShowNotification(_U('players_nearby'))
+								else
+									TriggerServerEvent('esx:giveInventoryItem', GetPlayerServerId(closestPlayer), type, item, 1)
+								end
+
 							else
 
 								ESX.UI.Menu.Open(

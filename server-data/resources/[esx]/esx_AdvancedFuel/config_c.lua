@@ -1,5 +1,5 @@
+--lang = "fr"
 lang = "fr"
--- lang = "fr"
 
 settings = {}
 settings["en"] = {
@@ -18,18 +18,18 @@ settings["en"] = {
 }
 
 settings["fr"] = {
-	openMenu = "Appuyez sur ~g~E~w~ pour ouvrir le menu.",
-	electricError = "~r~Vous avez une voiture électrique.",
-	fuelError = "~r~Vous n'êtes pas au bon endroit.",
-	buyFuel = "acheter de l'essence",
-	liters = "litres",
-	percent = "pourcent",
+	openMenu = "Appuyez sur ~INPUT_CONTEXT~ pour ~b~ouvrir ~w~le menu.",
+	electricError = "Vous avez une voiture ~r~électrique~w~.",
+	fuelError = "Vous n'êtes pas au ~r~bon endroit~w~.",
+	buyFuel = "Acheter de l'essence",
+	liters = "Litres",
+	percent = "Pourcent",
 	confirm = "Valider",
 	fuelStation = "Station essence",
 	boatFuelStation = "Station d'essence | Bateau",
 	avionFuelStation = "Station d'essence | Avions",
 	heliFuelStation = "Station d'essence | Hélicoptères",
-	price = "prix"
+	price = "Prix"
 }
 
 
