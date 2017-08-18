@@ -401,19 +401,20 @@ end)
 
 -- Create Blips
 Citizen.CreateThread(function()
-		
-	local blip = AddBlipForCoord(Config.Zones.OfficeEnter.Pos.x, Config.Zones.OfficeEnter.Pos.y, Config.Zones.OfficeEnter.Pos.z)
+if PlayerData.job ~= nil and PlayerData.job.name == 'realestateagent' then 
 
-	SetBlipSprite (blip, 357)
-	SetBlipDisplay(blip, 4)
-	SetBlipScale  (blip, 1.0)
-	SetBlipColour (blip, 59)
-	SetBlipAsShortRange(blip, true)
+		local blip = AddBlipForCoord(Config.Zones.OfficeEnter.Pos.x, Config.Zones.OfficeEnter.Pos.y, Config.Zones.OfficeEnter.Pos.z)
 
-	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentString(_U('realtors'))
-	EndTextCommandSetBlipName(blip)
+		SetBlipSprite (blip, 357)
+		SetBlipDisplay(blip, 4)
+		SetBlipScale  (blip, 1.0)
+		SetBlipColour (blip, 59)
+		SetBlipAsShortRange(blip, true)
 
+		BeginTextCommandSetBlipName("STRING")
+		AddTextComponentString(_U('realtors'))
+		EndTextCommandSetBlipName(blip)
+	end 
 end)
 
 -- Display markers

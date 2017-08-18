@@ -1,7 +1,8 @@
 Config.Jobs.lumberjack = {
 	BlipInfos = {
-		Sprite = 237,
-		Color = 4
+		Sprite = 416,
+		Color = 47,
+		Job = "lumberjack"
 	},
 	Vehicles = {
 		Truck = {

@@ -26,6 +26,11 @@ local FirstSpawn              = true
 local PlayerLoaded            = false
 local Instance                = {}
 
+
+
+
+
+
 function DrawSub(text, time)
   ClearPrints()
 	SetTextEntry_2('STRING')
@@ -35,7 +40,7 @@ end
 
 function CreateBlips()
 
-	for i=1, #Config.Properties, 1 do
+		for i=1, #Config.Properties, 1 do
 
 		local property = Config.Properties[i]
 
@@ -52,9 +57,8 @@ function CreateBlips()
 		  AddTextComponentString(_U('free_prop'))
 		  EndTextCommandSetBlipName(Blips[property.name])
 
+			end
 		end
-	end
-
 end
 
 function GetProperties()

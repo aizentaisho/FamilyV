@@ -228,22 +228,26 @@ function refreshBlips()
 	local zones = {}
 	local blipInfo = {}
 	if PlayerData.job ~= nil then
+
 		for jobKey,jobValues in pairs(Config.Jobs) do
 			for zoneKey,zoneValues in pairs(jobValues.Zones) do
 				if zoneValues.Blip then
-					local blip = AddBlipForCoord(zoneValues.Pos.x, zoneValues.Pos.y, zoneValues.Pos.z)
-					SetBlipSprite (blip, jobValues.BlipInfos.Sprite)
-					SetBlipDisplay(blip, 4)
-					SetBlipScale  (blip, 1.2)
-					SetBlipColour (blip, jobValues.BlipInfos.Color)
-					SetBlipAsShortRange(blip, true)
-					BeginTextCommandSetBlipName("STRING")
-					AddTextComponentString(zoneValues.Name)
-					EndTextCommandSetBlipName(blip)
-					table.insert(JobBlips, blip)
+					if PlayerData.job.name == jobValues.BlipInfos.Job then
+						local blip = AddBlipForCoord(zoneValues.Pos.x, zoneValues.Pos.y, zoneValues.Pos.z)
+						SetBlipSprite (blip, jobValues.BlipInfos.Sprite)
+						SetBlipDisplay(blip, 4)
+						SetBlipScale  (blip, 1.2)
+						SetBlipColour (blip, jobValues.BlipInfos.Color)
+						SetBlipAsShortRange(blip, true)
+						BeginTextCommandSetBlipName("STRING")
+						AddTextComponentString(zoneValues.Name)
+						EndTextCommandSetBlipName(blip)
+						table.insert(JobBlips, blip)
+					end
 				end
 			end
 		end
+
 	end
 end
 

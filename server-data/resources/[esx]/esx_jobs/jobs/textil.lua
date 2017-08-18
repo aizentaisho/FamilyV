@@ -1,7 +1,8 @@
 Config.Jobs.textil = {
 	BlipInfos = {
-		Sprite = 366,
-		Color = 4
+		Sprite = 416,
+		Color = 47,
+		Job = "textil"
 	},
 	Vehicles = {
 		Truck = {

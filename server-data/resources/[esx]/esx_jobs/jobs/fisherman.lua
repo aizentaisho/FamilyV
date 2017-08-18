@@ -1,7 +1,8 @@
 Config.Jobs.fisherman = {
 	BlipInfos = {
-		Sprite = 68,
-		Color = 38
+		Sprite = 416,
+		Color = 47,
+		Job = "fisherman"
 	},
 	Vehicles = {
 		Truck = {

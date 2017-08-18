@@ -1,7 +1,8 @@
 Config.Jobs.miner = {
 	BlipInfos = {
-		Sprite = 318,
-		Color = 5
+		Sprite = 416,
+		Color = 47,
+		Job = "miner"
 	},
 	Vehicles = {
 		Truck = {

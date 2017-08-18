@@ -1,7 +1,8 @@
 Config.Jobs.slaughterer = {
 	BlipInfos = {
-		Sprite = 256,
-		Color = 5
+		Sprite = 416,
+		Color = 47,
+		Job = "slaughterer"
 	},
 	Vehicles = {
 		Truck = {

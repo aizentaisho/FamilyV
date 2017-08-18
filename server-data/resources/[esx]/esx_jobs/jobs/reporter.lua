@@ -1,7 +1,8 @@
 Config.Jobs.reporter = {
 	BlipInfos = {
-		Sprite = 184,
-		Color = 1
+		Sprite = 416,
+		Color = 47,
+		Job = "reporter"
 	},
 	Vehicles = {
 		Truck = {

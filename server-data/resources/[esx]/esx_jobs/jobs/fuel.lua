@@ -1,7 +1,8 @@
 Config.Jobs.fuel = {
 	BlipInfos = {
-		Sprite = 436,
-		Color = 5
+		Sprite = 416,
+		Color = 47,
+		Job = "fuel"
 	},
 	Vehicles = {
 		Truck = {
