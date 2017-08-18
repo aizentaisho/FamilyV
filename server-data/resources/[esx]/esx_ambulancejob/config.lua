@@ -6,7 +6,7 @@ Config.RemoveWeaponsAfterRPDeath = true
 Config.RemoveCashAfterRPDeath    = true
 Config.RemoveItemsAfterRPDeath   = true
 Config.EnablePlayerManagement    = false
-Config.Locale                   = GetConvar('esx_locale', 'fr')
+Config.Locale                   = 'fr'
 
 Config.Zones = {
 

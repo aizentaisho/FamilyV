@@ -121,6 +121,7 @@ AddEventHandler('esx_mask:hasEnteredMarker', function(zone)
 end)
 
 AddEventHandler('esx_mask:hasExitedMarker', function(zone)
+	ESX.UI.Menu.CloseAll()
 	CurrentAction = nil
 end)
 

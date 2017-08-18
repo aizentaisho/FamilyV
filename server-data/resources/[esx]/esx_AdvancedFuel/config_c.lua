@@ -1,4 +1,4 @@
-lang = "en"
+lang = "fr"
 -- lang = "fr"
 
 settings = {}
@@ -18,7 +18,7 @@ settings["en"] = {
 }
 
 settings["fr"] = {
-	openMenu = "Appuyez sur ~INPUT_CONTEXT~ pour ouvrir le ~b~menu~w~.",
+	openMenu = "Appuyez sur ~g~E~w~ pour ouvrir le menu.",
 	electricError = "~r~Vous avez une voiture électrique.",
 	fuelError = "~r~Vous n'êtes pas au bon endroit.",
 	buyFuel = "acheter de l'essence",
@@ -35,7 +35,7 @@ settings["fr"] = {
 
 
 hud_form = 1 -- 1 : Vertical | 2 = Horizontal
-hud_x = 0.175
+hud_x = 0.175 
 hud_y = 0.885
 
 text_x = 0.2575

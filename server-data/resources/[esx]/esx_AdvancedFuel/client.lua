@@ -1,6 +1,6 @@
 essence = 0.142
 local stade = 0
-local lastVehicle = 0
+local lastModel = 0
 
 local vehiclesUsed = {}
 
@@ -247,7 +247,6 @@ Citizen.CreateThread(function()
 	end
 end)
 
-
 local wasInAVeh = false
 Citizen.CreateThread(function()
 
@@ -256,11 +255,11 @@ Citizen.CreateThread(function()
 		if(vehiclesUsed ~= nil and IsPedInAnyVehicle(GetPlayerPed(-1)) and GetPedVehicleSeat(GetPlayerPed(-1)) == -1 and not isBlackListedModel()) then
 			wasInAVeh = true
 			local index = getVehIndex()
-			TriggerServerEvent("essence:setToAllPlayerEscense", vehiclesUsed[index].es, GetVehicleNumberPlateText(GetVehiclePedIsUsing(GetPlayerPed(-1))), GetDisplayNameFromVehicleModel(GetEntityModel(GetVehiclePedIsUsing(GetPlayerPed(-1)))))
+			TriggerServerEvent("essence:setToAllPlayerEscense", essence, GetVehicleNumberPlateText(GetVehiclePedIsUsing(GetPlayerPed(-1))), GetDisplayNameFromVehicleModel(GetEntityModel(GetVehiclePedIsUsing(GetPlayerPed(-1)))))
 			Citizen.Wait(1000)
 		else
 			if(wasInAVeh) then
-				TriggerServerEvent("essence:setToAllPlayerEscense", vehiclesUsed[index].es, GetVehicleNumberPlateText(GetVehiclePedIsUsing(GetPlayerPed(-1))), GetDisplayNameFromVehicleModel(GetEntityModel(GetVehiclePedIsUsing(GetPlayerPed(-1)))))
+				TriggerServerEvent("essence:setToAllPlayerEscense", essence, GetVehicleNumberPlateText(GetVehiclePedIsUsing(GetPlayerPed(-1))), GetDisplayNameFromVehicleModel(GetEntityModel(GetVehiclePedIsUsing(GetPlayerPed(-1)))))
 				wasInAVeh = false
 			end
 		end
@@ -301,10 +300,6 @@ Citizen.CreateThread(function()
 				essence = 0
 				SetVehicleUndriveable(GetVehiclePedIsUsing(GetPlayerPed(-1)), true)
 			end
-
-			local index = getVehIndex()
-			vehiclesUsed[index].es = essence
-			print("es = "..vehiclesUsed[index].es)
 		end
 	end
 
@@ -313,22 +308,15 @@ end)
 -- 0.0001 pour 0 à 20, 0.142 = 100%
 -- Donc 0.0001 km en moins toutes les 10 secondes
 
+local lastPlate = 0
 function CheckVeh()
-	if(IsPedInAnyVehicle(GetPlayerPed(-1), -1) and not isBlackListedModel() and not isPlaneModel() and not isHeliModel()) then
+	if(IsPedInAnyVehicle(GetPlayerPed(-1), -1) and not isBlackListedModel()) then
 
-		local finded = false
-
-		if(IsVehInArray()) then
-				if(lastVehicle ~= GetVehiclePedIsUsing(GetPlayerPed(-1))) then
-					local index = getVehIndex()
-					print(vehiclesUsed[index].es)
-					essence = vehiclesUsed[index].es
-					lastVehicle = GetVehiclePedIsUsing(GetPlayerPed(-1))
-				end
-		else
-			essence = (math.random(1,100)/100)*0.142
-			table.insert(vehiclesUsed, {plate = GetVehicleNumberPlateText(GetVehiclePedIsUsing(GetPlayerPed(-1))), model = GetDisplayNameFromVehicleModel(GetEntityModel(GetVehiclePedIsUsing(GetPlayerPed(-1)))), es = essence})
-			vehicle = GetVehiclePedIsUsing(GetPlayerPed(-1))
+		--if((lastPlate == GetVehicleNumberPlateText(GetVehiclePedIsUsing(GetPlayerPed(-1))) and lastModel ~= GetDisplayNameFromVehicleModel(GetEntityModel(GetVehiclePedIsUsing(GetPlayerPed(-1))))) or (lastPlate ~= GetVehicleNumberPlateText(GetVehiclePedIsUsing(GetPlayerPed(-1))) and lastModel == GetDisplayNameFromVehicleModel(GetEntityModel(GetVehiclePedIsUsing(GetPlayerPed(-1))))) or (lastPlate ~= GetVehicleNumberPlateText(GetVehiclePedIsUsing(GetPlayerPed(-1))) and lastModel ~= GetDisplayNameFromVehicleModel(GetEntityModel(GetVehiclePedIsUsing(GetPlayerPed(-1))))) then
+		if(not wasInAVeh) then
+			TriggerServerEvent("vehicule:getFuel", GetVehicleNumberPlateText(GetVehiclePedIsUsing(GetPlayerPed(-1))), GetDisplayNameFromVehicleModel(GetEntityModel(GetVehiclePedIsUsing(GetPlayerPed(-1)))))
+			lastModel = GetDisplayNameFromVehicleModel(GetEntityModel(GetVehiclePedIsUsing(GetPlayerPed(-1))))
+			lastPlate = GetVehicleNumberPlateText(GetVehiclePedIsUsing(GetPlayerPed(-1)))
 		end
 	end
 
@@ -587,14 +575,26 @@ AddEventHandler("essence:hasBuying", function(amount)
 		end
 	end
 
-	local index = getVehIndex()
-	vehiclesUsed[index].es = essence
+	--local index = getVehIndex()
+	--vehiclesUsed[index].es = essence
 
 	SetVehicleUndriveable(GetVehiclePedIsUsing(GetPlayerPed(-1)), false)
 	SetVehicleEngineOn(GetVehiclePedIsUsing(GetPlayerPed(-1)), true, false, false)
 end)
 
 
+RegisterNetEvent("vehicule:sendFuel")
+AddEventHandler("vehicule:sendFuel", function(bool, ess)
+
+	if(bool == 1) then
+		essence = ess
+	else
+		essence = (math.random(1,100)/100)*0.142
+		--table.insert(vehiclesUsed, {plate = GetVehicleNumberPlateText(GetVehiclePedIsUsing(GetPlayerPed(-1))), model = GetDisplayNameFromVehicleModel(GetEntityModel(GetVehiclePedIsUsing(GetPlayerPed(-1)))), es = essence})
+		vehicle = GetVehiclePedIsUsing(GetPlayerPed(-1))
+	end
+
+end)
 
 function GetPedVehicleSeat(ped)
     local vehicle = GetVehiclePedIsIn(ped, false)

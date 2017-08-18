@@ -48,5 +48,5 @@ TriggerEvent('esx_phone:registerCallback', function(source, phoneNumber, message
 			end
 		end
 	end
-	
+
 end)

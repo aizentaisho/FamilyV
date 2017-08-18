@@ -7,4 +7,4 @@ Config.MarkerType             = 1
 Config.Zones                  = {}
 Config.Properties             = {}
 Config.EnablePlayerManagement = false -- If set to true you need esx_realestateagentjob
-Config.Locale = GetConvar('esx_locale', 'fr')
+Config.Locale = 'fr'

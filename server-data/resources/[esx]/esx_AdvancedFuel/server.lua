@@ -7,6 +7,7 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 local players = {}
 local StationsPrice = {}
+local serverEssenceArray = {}
 
 RegisterServerEvent("essence:addPlayer")
 AddEventHandler("essence:addPlayer", function()
@@ -35,24 +36,23 @@ AddEventHandler("essence:playerSpawned", function()
 	local _source = source
 	SetTimeout(2000, function()
 		TriggerClientEvent("essence:sendPrice", _source, StationsPrice)
-		TriggerClientEvent("essence:sendEssence", _source, serverEssenceArray)
+		--TriggerClientEvent("essence:sendEssence", _source, serverEssenceArray)
 	end)
 end)
 
+
 RegisterServerEvent("essence:setToAllPlayerEscense")
 AddEventHandler("essence:setToAllPlayerEscense", function(essence, vplate, vmodel)
+	local _source = source
 	local bool, ind = searchByModelAndPlate(vplate, vmodel)
-	if(vplate ~=nil and vmodel~=nil and essence ~=nil and bool and ind ~= nil) then
+	if(bool and ind ~= nil) then
 		serverEssenceArray[ind].es = essence
 	else
-		table.insert(serverEssenceArray,{plate=vplate,model=vmodel,es=essence})
+		if(vplate ~=nil and vmodel~=nil and essence ~=nil) then
+			table.insert(serverEssenceArray,{plate=vplate,model=vmodel,es=essence})
+		end
 	end
-	for _,k in pairs(players) do
-		TriggerClientEvent("essence:setEssence", k, essence, vplate,vmodel)
-	end
-
 end)
-
 
 RegisterServerEvent("essence:buy")
 AddEventHandler("essence:buy", function(amount, index,e)
@@ -80,6 +80,18 @@ AddEventHandler("essence:requestPrice",function()
 	TriggerClientEvent("essence:sendPrice", source, StationsPrice)
 end)
 
+RegisterServerEvent("vehicule:getFuel")
+AddEventHandler("vehicule:getFuel", function(plate,model)
+	local _source = source
+	local bool, ind = searchByModelAndPlate(plate, model)
+
+	if(bool) then
+		TriggerClientEvent("vehicule:sendFuel", _source, 1, serverEssenceArray[ind].es)
+	else
+		TriggerClientEvent("vehicule:sendFuel", _source, 0, 0)
+	end
+end)
+
 
 function round(num, dec)
   local mult = 10^(dec or 0)
@@ -101,6 +113,7 @@ end
 renderPrice()
 
 
+
 function searchByModelAndPlate(plate, model)
 
 	for i,k in pairs(serverEssenceArray) do
@@ -109,5 +122,6 @@ function searchByModelAndPlate(plate, model)
 		end
 	end
 
-	return false, nil
+	return false, -1
 end
+

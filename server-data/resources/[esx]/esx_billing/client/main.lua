@@ -36,7 +36,7 @@ function ShowBillsMenu()
 		ESX.UI.Menu.Open(
 			'default', GetCurrentResourceName(), 'billing',
 			{
-				title    =  _U('invoices'),
+				title    = _U('invoices'),
 				elements = elements
 			},
 			function(data, menu)
