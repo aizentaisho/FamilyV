@@ -5,7 +5,7 @@ Config.RespawnDelayAfterRPDeath  = 10 * 60 * 1000
 Config.RemoveWeaponsAfterRPDeath = true
 Config.RemoveCashAfterRPDeath    = true
 Config.RemoveItemsAfterRPDeath   = true
-Config.EnablePlayerManagement    = false
+Config.EnablePlayerManagement    = true
 Config.Locale                   = 'fr'
 
 Config.Zones = {
