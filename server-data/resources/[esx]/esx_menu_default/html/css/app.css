@@ -26,18 +26,18 @@ span {
 
 .menu.align-top-left {
   left: 40;
-  top : 40;
+  top : 90;
 }
 
 .menu.align-top {
   left: 50%;
-  top : 40;
+  top : 90;
   transform: translate(-50%, 0);
 }
 
 .menu.align-top-right {
   right: 10;
-  top  : 40;
+  top  : 90;
 }
 
 .menu.align-right {
