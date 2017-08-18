@@ -1,0 +1,5 @@
+# Fichier non pris en compte#
+###################
+*.log
+server-data/cache/*
+
