@@ -4,8 +4,8 @@
 		'<div id="menu_{{_namespace}}_{{_name}}" class="dialog {{#isBig}}big{{/isBig}}">' +
 			'<div class="head"><span>{{title}}</span></div>' +
 				'{{#isDefault}}<input type="text" name="value"/>{{/isDefault}}' +
-				'{{#isBig}}<textarea name="value"/>{{/isBig}}' +
-				'<button type="button" name="submit">Envoyer</button>' +
+				'{{#isBig}}<textarea spellcheck="false" name="value"/>{{/isBig}}' +
+				'<button type="button" name="submit">Valider</button>' +
 				'<button type="button" name="cancel">Annuler</button>'
 			'</div>' +
 		'</div>'
@@ -45,12 +45,12 @@
 			namespace: namespace,
 			name     : name
 		});
-		
+
 		ESX_MENU.render();
 	}
 
 	ESX_MENU.close = function(namespace, name){
-		
+
 		delete ESX_MENU.opened[namespace][name];
 
 		for(let i=0; i<ESX_MENU.focus.length; i++){
@@ -66,7 +66,7 @@
 	ESX_MENU.render = function(){
 
 		let menuContainer = $('#menus')[0];
-		
+
 		$(menuContainer).find('button[name="submit"]').unbind('click');
 		$(menuContainer).find('button[name="cancel"]').unbind('click');
 		$(menuContainer).find('[name="value"]')       .unbind('input propertychange');
