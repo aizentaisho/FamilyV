@@ -6,7 +6,7 @@ Config.MarkerColor            = {r = 50, g = 50, b = 204}
 Config.EnablePlayerManagement = false
 Config.EnableArmoryManagement = false
 Config.MaxInService           = -1
-Config.Locale       		      = 'fr'
+Config.Locale = GetConvar('esx_locale', 'fr')
 
 Config.PoliceStations = {
 	

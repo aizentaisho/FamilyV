@@ -1,5 +1,5 @@
 Config = {}
-Config.Locale = 'fr'
++Config.Locale = GetConvar('esx_locale', 'fr')
 
 Stores = {
 	--[["paleto_twentyfourseven"] = {
