@@ -441,7 +441,7 @@ function OpenPoliceActionsMenu()
 							x = x,
 							y = y,
 							z = z
-						}, 3.0, function(obj)
+						}, function(obj)
 							SetEntityHeading(obj, GetEntityHeading(playerPed))
 							PlaceObjectOnGroundProperly(obj)
 						end)
@@ -1131,9 +1131,7 @@ Citizen.CreateThread(function()
 		BeginTextCommandSetBlipName("STRING")
 	  AddTextComponentString(_U('map_blip'))
 	  EndTextCommandSetBlipName(blip)
-
-	end
-
+	end 
 end)
 
 -- Display markers

@@ -511,7 +511,8 @@ function OpenMobileMecanoActionsMenu()
 							x = x,
 							y = y,
 							z = z
-						}, 3.0, function(obj)
+						}, function(obj)
+
 							SetEntityHeading(obj, GetEntityHeading(playerPed))
 							PlaceObjectOnGroundProperly(obj)
 						end)
