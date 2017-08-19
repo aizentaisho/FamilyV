@@ -293,7 +293,6 @@ ESX.Game.SpawnObject = function(model, coords, cb)
 
 end
 
-
 ESX.Game.SpawnLocalObject = function(model, coords, cb)
 
 	local model = (type(model) == 'number' and model or GetHashKey(model))
@@ -304,7 +303,6 @@ ESX.Game.SpawnLocalObject = function(model, coords, cb)
 
 		while not HasModelLoaded(model) do
 			Citizen.Wait(0)
-
 		end
 
 		local obj = CreateObject(model, coords.x, coords.y, coords.z, false, true, true)
@@ -316,9 +314,6 @@ ESX.Game.SpawnLocalObject = function(model, coords, cb)
 	end)
 
 end
-
-
-
 
 ESX.Game.DeleteVehicle = function(vehicle)
 	SetEntityAsMissionEntity(vehicle,  false,  true)
@@ -662,31 +657,31 @@ ESX.Game.GetVehicleProperties = function(vehicle)
 
 		modFrontWheels   = GetVehicleMod(vehicle, 23),
 		modBackWheels    = GetVehicleMod(vehicle, 24),
- 
- 		modPlateHolder   	= GetVehicleMod(vehicle, 25),
- 		modVanityPlate   	= GetVehicleMod(vehicle, 26),
- 		modTrimA    		= GetVehicleMod(vehicle, 27),
- 		modOrnaments    	= GetVehicleMod(vehicle, 28),
- 		modDashboard    	= GetVehicleMod(vehicle, 29),
- 		modDial    			= GetVehicleMod(vehicle, 30),
- 		modDoorSpeaker    	= GetVehicleMod(vehicle, 31),
- 		modSeats    		= GetVehicleMod(vehicle, 32),
- 		modSteeringWheel    = GetVehicleMod(vehicle, 33),
- 		modShifterLeavers   = GetVehicleMod(vehicle, 34),
- 		modAPlate    		= GetVehicleMod(vehicle, 35),
- 		modSpeakers    		= GetVehicleMod(vehicle, 36),
- 		modTrunk    		= GetVehicleMod(vehicle, 37),
-    	modHydrolic    		= GetVehicleMod(vehicle, 38),
- 		modEngineBlock    	= GetVehicleMod(vehicle, 39),
- 		modAirFilter    	= GetVehicleMod(vehicle, 40),
- 		modStruts    		= GetVehicleMod(vehicle, 41),
- 		modArchCover    	= GetVehicleMod(vehicle, 42),
- 		modAerials    		= GetVehicleMod(vehicle, 43),
- 		modTrimB    		= GetVehicleMod(vehicle, 44),
- 		modTank    			= GetVehicleMod(vehicle, 45),
- 		modWindows    		= GetVehicleMod(vehicle, 46),
- 		modLivery    		= GetVehicleMod(vehicle, 48)
-  	}
+
+		modPlateHolder   	= GetVehicleMod(vehicle, 25),
+		modVanityPlate   	= GetVehicleMod(vehicle, 26),
+		modTrimA    		= GetVehicleMod(vehicle, 27),
+		modOrnaments    	= GetVehicleMod(vehicle, 28),
+		modDashboard    	= GetVehicleMod(vehicle, 29),
+		modDial    			= GetVehicleMod(vehicle, 30),
+		modDoorSpeaker    	= GetVehicleMod(vehicle, 31),
+		modSeats    		= GetVehicleMod(vehicle, 32),
+		modSteeringWheel    = GetVehicleMod(vehicle, 33),
+		modShifterLeavers   = GetVehicleMod(vehicle, 34),
+		modAPlate    		= GetVehicleMod(vehicle, 35),
+		modSpeakers    		= GetVehicleMod(vehicle, 36),
+		modTrunk    		= GetVehicleMod(vehicle, 37),
+		modHydrolic    		= GetVehicleMod(vehicle, 38),
+		modEngineBlock    	= GetVehicleMod(vehicle, 39),
+		modAirFilter    	= GetVehicleMod(vehicle, 40),
+		modStruts    		= GetVehicleMod(vehicle, 41),
+		modArchCover    	= GetVehicleMod(vehicle, 42),
+		modAerials    		= GetVehicleMod(vehicle, 43),
+		modTrimB    		= GetVehicleMod(vehicle, 44),
+		modTank    			= GetVehicleMod(vehicle, 45),
+		modWindows    		= GetVehicleMod(vehicle, 46),
+		modLivery    		= GetVehicleMod(vehicle, 48)
+	}
 
 end
 
@@ -840,101 +835,102 @@ ESX.Game.SetVehicleProperties = function(vehicle, props)
 	if props.modBackWheels ~= nil then
 		SetVehicleMod(vehicle, 24, props.modBackWheels, false)
 	end
-	if props.modPlateHolder ~= nil then
- 		SetVehicleMod(vehicle, 25, props.modPlateHolder , false)
- 	end
- 
- 	if props.modVanityPlate ~= nil then
- 		SetVehicleMod(vehicle, 26, props.modVanityPlate , false)
- 	end
- 
- 	if props.modTrimA ~= nil then
- 		SetVehicleMod(vehicle, 27, props.modTrimA , false)
- 	end
- 
- 	if props.modOrnaments ~= nil then
- 		SetVehicleMod(vehicle, 28, props.modOrnaments , false)
- 	end
- 
- 	if props.modDashboard ~= nil then
- 		SetVehicleMod(vehicle, 29, props.modDashboard , false)
- 	end
- 
- 	if props.modDial ~= nil then
- 		SetVehicleMod(vehicle, 30, props.modDial , false)
- 	end
- 
- 	if props.modDoorSpeaker ~= nil then
- 		SetVehicleMod(vehicle, 31, props.modDoorSpeaker , false)
- 	end
- 
- 	if props.modSeats ~= nil then
- 		SetVehicleMod(vehicle, 32, props.modSeats , false)
- 	end
- 
- 	if props.modSteeringWheel ~= nil then
- 		SetVehicleMod(vehicle, 33, props.modSteeringWheel , false)
- 	end
- 
- 	if props.modShifterLeavers ~= nil then
- 		SetVehicleMod(vehicle, 34, props.modShifterLeavers , false)
- 	end
- 
- 	if props.modAPlate ~= nil then
-		SetVehicleMod(vehicle, 35, props.modAPlate , false)
- 	end
- 
- 	if props.modSpeakers ~= nil then
- 		SetVehicleMod(vehicle, 36, props.modSpeakers , false)
- 	end
- 
- 	if props.modTrunk ~= nil then
- 		SetVehicleMod(vehicle, 37, props.modTrunk , false)
- 	end
- 
- 	if props.modHydrolic ~= nil then
- 		SetVehicleMod(vehicle, 38, props.modHydrolic , false)
- 	end
- 
- 	if props.modEngineBlock ~= nil then
- 		SetVehicleMod(vehicle, 39, props.modEngineBlock , false)
- 	end
- 
- 	if props.modAirFilter ~= nil then
- 		SetVehicleMod(vehicle, 40, props.modAirFilter , false)
- 	end
- 
- 	if props.modStruts ~= nil then
- 		SetVehicleMod(vehicle, 41, props.modStruts , false)
- 	end
- 
- 	if props.modArchCover ~= nil then
- 		SetVehicleMod(vehicle, 42, props.modArchCover , false)
- 	end
- 
- 	if props.modAerials ~= nil then
- 		SetVehicleMod(vehicle, 43, props.modAerials , false)
- 	end
- 
- 	if props.modTrimB ~= nil then
- 		SetVehicleMod(vehicle, 44, props.modTrimB , false)
- 	end
- 
- 	if props.modTank ~= nil then
- 		SetVehicleMod(vehicle, 45, props.modTank , false)
- 	end
- 
- 	if props.modWindows ~= nil then
- 		SetVehicleMod(vehicle, 46, props.modWindows , false)
- 	end
- 	
- 	if props.modLivery ~= nil then
- 		SetVehicleMod(vehicle, 48, props.modLivery , false)
- 	end
- 
-  end
 
-	ESX.Game.TeleportEntity = function(entity, coords, cb)
+	if props.modPlateHolder ~= nil then
+		SetVehicleMod(vehicle, 25, props.modPlateHolder , false)
+	end
+
+	if props.modVanityPlate ~= nil then
+		SetVehicleMod(vehicle, 26, props.modVanityPlate , false)
+	end
+
+	if props.modTrimA ~= nil then
+		SetVehicleMod(vehicle, 27, props.modTrimA , false)
+	end
+
+	if props.modOrnaments ~= nil then
+		SetVehicleMod(vehicle, 28, props.modOrnaments , false)
+	end
+
+	if props.modDashboard ~= nil then
+		SetVehicleMod(vehicle, 29, props.modDashboard , false)
+	end
+
+	if props.modDial ~= nil then
+		SetVehicleMod(vehicle, 30, props.modDial , false)
+	end
+
+	if props.modDoorSpeaker ~= nil then
+		SetVehicleMod(vehicle, 31, props.modDoorSpeaker , false)
+	end
+
+	if props.modSeats ~= nil then
+		SetVehicleMod(vehicle, 32, props.modSeats , false)
+	end
+
+	if props.modSteeringWheel ~= nil then
+		SetVehicleMod(vehicle, 33, props.modSteeringWheel , false)
+	end
+
+	if props.modShifterLeavers ~= nil then
+		SetVehicleMod(vehicle, 34, props.modShifterLeavers , false)
+	end
+
+	if props.modAPlate ~= nil then
+		SetVehicleMod(vehicle, 35, props.modAPlate , false)
+	end
+
+	if props.modSpeakers ~= nil then
+		SetVehicleMod(vehicle, 36, props.modSpeakers , false)
+	end
+
+	if props.modTrunk ~= nil then
+		SetVehicleMod(vehicle, 37, props.modTrunk , false)
+	end
+
+	if props.modHydrolic ~= nil then
+		SetVehicleMod(vehicle, 38, props.modHydrolic , false)
+	end
+
+	if props.modEngineBlock ~= nil then
+		SetVehicleMod(vehicle, 39, props.modEngineBlock , false)
+	end
+
+	if props.modAirFilter ~= nil then
+		SetVehicleMod(vehicle, 40, props.modAirFilter , false)
+	end
+
+	if props.modStruts ~= nil then
+		SetVehicleMod(vehicle, 41, props.modStruts , false)
+	end
+
+	if props.modArchCover ~= nil then
+		SetVehicleMod(vehicle, 42, props.modArchCover , false)
+	end
+
+	if props.modAerials ~= nil then
+		SetVehicleMod(vehicle, 43, props.modAerials , false)
+	end
+
+	if props.modTrimB ~= nil then
+		SetVehicleMod(vehicle, 44, props.modTrimB , false)
+	end
+
+	if props.modTank ~= nil then
+		SetVehicleMod(vehicle, 45, props.modTank , false)
+	end
+
+	if props.modWindows ~= nil then
+		SetVehicleMod(vehicle, 46, props.modWindows , false)
+	end
+	
+	if props.modLivery ~= nil then
+		SetVehicleMod(vehicle, 48, props.modLivery , false)
+	end
+
+end
+
+ESX.Game.TeleportEntity = function(entity, coords, cb)
 
 	Citizen.CreateThread(function()
 
@@ -998,20 +994,24 @@ ESX.ShowInventory = function()
 		local elements  = {}
 
 		table.insert(elements, {
-			label  = '[Cash] $' .. data.money,
-			count  = data.money,
-			type   = 'item_money',
-			value  = 'money',
-			usable = false
+			label     = '[Cash] $' .. data.money,
+			count     = data.money,
+			type      = 'item_money',
+			value     = 'money',
+			usable    = false,
+			rare      = false,
+			canRemove = true
 		})
 
 		for i=1, #data.accounts, 1 do
 			table.insert(elements, {
-				label  = '[' .. data.accounts[i].label .. '] $' .. data.accounts[i].money,
-				count  = data.accounts[i].money,
-				type   = 'item_account',
-				value  =  data.accounts[i].name,
-				usable = false
+				label     = '[' .. data.accounts[i].label .. '] $' .. data.accounts[i].money,
+				count     = data.accounts[i].money,
+				type      = 'item_account',
+				value     =  data.accounts[i].name,
+				usable    = false,
+				rare      = false,
+				canRemove = true
 			})
 		end
 
@@ -1019,11 +1019,13 @@ ESX.ShowInventory = function()
 
 			if data.inventory[i].count > 0 then
 				table.insert(elements, {
-					label  = data.inventory[i].label .. ' x' .. data.inventory[i].count,
-					count  = data.inventory[i].count,
-					type   = 'item_standard',
-					value  = data.inventory[i].name,
-					usable = data.inventory[i].usable
+					label     = data.inventory[i].label .. ' x' .. data.inventory[i].count,
+					count     = data.inventory[i].count,
+					type      = 'item_standard',
+					value     = data.inventory[i].name,
+					usable    = data.inventory[i].usable,
+					rare      = data.inventory[i].rare,
+					canRemove = data.inventory[i].canRemove,
 				})
 			end
 
@@ -1038,11 +1040,13 @@ ESX.ShowInventory = function()
 				local ammo = GetAmmoInPedWeapon(playerPed, weaponHash)
 				
 				table.insert(elements, {
-					label  = Config.Weapons[i].label .. ' x1 [' .. ammo .. ']',
-					count  = 1,
-					type   = 'item_weapon',
-					value  = Config.Weapons[i].name,
-					usable = false
+					label     = Config.Weapons[i].label .. ' x1 [' .. ammo .. ']',
+					count     = 1,
+					type      = 'item_weapon',
+					value     = Config.Weapons[i].name,
+					usable    = false,
+					rare      = false,
+					canRemove = true
 				})
 
 			end
@@ -1067,8 +1071,11 @@ ESX.ShowInventory = function()
 					table.insert(elements, {label = _U('use'), action = 'use', type = data.current.type, value = data.current.value})
 				end
 
-				table.insert(elements, {label = _U('give'),   action = 'give',   type = data.current.type, value = data.current.value})
-				table.insert(elements, {label = _U('remove'), action = 'remove', type = data.current.type, value = data.current.value})
+				if data.current.canRemove then
+					table.insert(elements, {label = _U('give'),   action = 'give',   type = data.current.type, value = data.current.value})
+					table.insert(elements, {label = _U('remove'), action = 'remove', type = data.current.type, value = data.current.value})
+				end
+
 				table.insert(elements, {label = _U('return'), action = 'return'})
 
 				ESX.UI.Menu.Open(

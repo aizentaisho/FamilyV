@@ -1,7 +1,3 @@
-randomPrice = true --Random the price of each stations
-price = 1 --If random price is on False, set the price here for 1 liter
-
-
 ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 

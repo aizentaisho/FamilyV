@@ -47,7 +47,7 @@ Config.Jobs.miner = {
 				}
 			},
 			Hint  = "Appuyez sur ~INPUT_PICKUP~ pour récupérer des rochers.",
-			GPS = {x = 289.244, y = 2862.9, z = 42.6424}
+			GPS = {x = 2962.244, y = 2862.9, z = 42.6424}
 		},
 
 		StoneWash = {

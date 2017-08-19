@@ -1,11 +1,13 @@
+client_script 'config.lua'
+server_script 'config.lua'
+
 client_scripts {
-	'@es_extended/locale.lua',
-	'config_c.lua',
+	'map.lua',
 	'client.lua',
 	'GUI.lua',
-	'map.lua',
 	'models_c.lua'
 }
 
-server_script 'server.lua'
-server_script '@es_extended/locale.lua'
+server_scripts {
+	'server.lua'
+}
