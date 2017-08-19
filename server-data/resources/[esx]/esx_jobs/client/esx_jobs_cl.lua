@@ -62,9 +62,16 @@ AddEventHandler('esx:playerLoaded', function(xPlayer)
     refreshBlips()
 end)
 
+RegisterNetEvent('esx:reloadblips')
+AddEventHandler('esx:reloadblips', function()
+    refreshBlips()
+end)
+
+
 AddEventHandler('esx_jobs:publicTeleports', function(position)
 	SetEntityCoords(GetPlayerPed(-1), position.x, position.y, position.z)
 end)
+
 
 AddEventHandler('esx_jobs:action', function(job, zone)
 	menuIsShowed = true

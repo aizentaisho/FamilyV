@@ -2,7 +2,7 @@ Config = {}
 
 Config.DrawDistance = 100
 Config.Size         = {x = 1.5, y = 1.5, z = 1.5}
-Config.Color        = {r = 0, g = 128, b = 255}
+Config.Color        = {r = 250, g = 100, b = 100}
 Config.Type         = 1
 Config.Locale       = 'fr'
 
@@ -12,7 +12,7 @@ Config.Zones = {
 		legal=0,
         Items = {},
         Pos = {
-            {x = -662.180053710938,   y =-934.961120605469,  z = 20.8292293548584}
+            {x = 21.37,   y =-1106.9,  z = 29.78}
             
         }
     },

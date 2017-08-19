@@ -640,7 +640,7 @@ Citizen.CreateThread(function()
 
   SetBlipSprite (blip, 61)
   SetBlipDisplay(blip, 4)
-  SetBlipScale  (blip, 1.2)
+  SetBlipColour (blip, 15)
   SetBlipAsShortRange(blip, true)
 
 	BeginTextCommandSetBlipName("STRING")

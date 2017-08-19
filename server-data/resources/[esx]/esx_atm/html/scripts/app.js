@@ -23,6 +23,7 @@ $(document).mousemove(function(event) {
 
 window.onload = function(e){
 	// NUI Callback
+
 	window.addEventListener('message', function(event){		
 		let data = event.data;
 		if(data.showControls){
@@ -43,6 +44,8 @@ window.onload = function(e){
 				$('#withdraw_amount').val(10000)
 			else
 				$('#withdraw_amount').val(bankAmount)
+
+			document.getElementById('account').innerHTML = bankAmount
 		}
 
 		if(data.hideAll){

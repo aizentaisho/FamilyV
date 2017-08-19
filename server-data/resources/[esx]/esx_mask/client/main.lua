@@ -151,10 +151,8 @@ Citizen.CreateThread(function()
 
 		SetBlipSprite (blip, 362)
 		SetBlipDisplay(blip, 4)
-		SetBlipScale  (blip, 1.0)
-		SetBlipColour (blip, 2)
+		SetBlipColour (blip, 3)
 		SetBlipAsShortRange(blip, true)
-
 		BeginTextCommandSetBlipName("STRING")
 		AddTextComponentString(_U('masks_blip'))
 		EndTextCommandSetBlipName(blip)

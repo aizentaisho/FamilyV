@@ -47,11 +47,11 @@ end)
 
 RegisterNetEvent('esx_holdup:setblip')
 AddEventHandler('esx_holdup:setblip', function(position)
-    blipRobbery = AddBlipForCoord(position.x, position.y, position.z)
-    SetBlipSprite(blipRobbery , 161)
-    SetBlipScale(blipRobbery , 2.0)
-    SetBlipColour(blipRobbery, 3)
-    PulseBlip(blipRobbery)
+    --blipRobbery = AddBlipForCoord(position.x, position.y, position.z)
+    --SetBlipSprite(blipRobbery , 161)
+    --SetBlipScale(blipRobbery , 2.0)
+    --SetBlipColour(blipRobbery, 3)
+    --PulseBlip(blipRobbery)
 end)
 
 RegisterNetEvent('esx_holdup:toofarlocal')
@@ -86,17 +86,17 @@ Citizen.CreateThread(function()
 end)
 
 Citizen.CreateThread(function()
-	for k,v in pairs(Stores)do
-		local ve = v.position
+	--for k,v in pairs(Stores)do
+		--local ve = v.position
 
-		local blip = AddBlipForCoord(ve.x, ve.y, ve.z)
-		SetBlipSprite(blip, 156)
-		SetBlipScale(blip, 0.8)
-		SetBlipAsShortRange(blip, true)
-		BeginTextCommandSetBlipName("STRING")
-		AddTextComponentString(_U('shop_robbery'))
-		EndTextCommandSetBlipName(blip)
-	end
+		--local blip = AddBlipForCoord(ve.x, ve.y, ve.z)
+		--SetBlipSprite(blip, 156)
+		--SetBlipScale(blip, 0.8)
+		--SetBlipAsShortRange(blip, true)
+		--BeginTextCommandSetBlipName("STRING")
+		--AddTextComponentString(_U('shop_robbery'))
+		--EndTextCommandSetBlipName(blip)
+	--end
 end)
 incircle = false
 
@@ -109,7 +109,7 @@ Citizen.CreateThread(function()
 
 			if(Vdist(pos.x, pos.y, pos.z, pos2.x, pos2.y, pos2.z) < 15.0)then
 				if not holdingup then
-					DrawMarker(1, v.position.x, v.position.y, v.position.z - 1, 0, 0, 0, 0, 0, 0, 1.0001, 1.0001, 1.5001, 1555, 0, 0,255, 0, 0, 0,0)
+					--DrawMarker(1, v.position.x, v.position.y, v.position.z - 1, 0, 0, 0, 0, 0, 0, 1.0001, 1.0001, 1.5001, 1555, 0, 0,255, 0, 0, 0,0)
 
 					if(Vdist(pos.x, pos.y, pos.z, pos2.x, pos2.y, pos2.z) < 1.0)then
 						if (incircle == false) then

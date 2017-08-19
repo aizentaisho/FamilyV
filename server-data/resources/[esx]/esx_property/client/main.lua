@@ -11,6 +11,7 @@ local Keys = {
 }
 
 ESX                           = nil
+local PlayerData                = {}
 local GUI                     = {}
 GUI.Time                      = 0
 local OwnedProperties         = {}
@@ -26,8 +27,21 @@ local FirstSpawn              = true
 local PlayerLoaded            = false
 local Instance                = {}
 
+Citizen.CreateThread(function()
+	while ESX == nil do
+		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+		Citizen.Wait(0)
+	end
+end)
+RegisterNetEvent('esx:playerLoaded')
+AddEventHandler('esx:playerLoaded', function(xPlayer)
+	PlayerData = xPlayer
+end)
 
-
+RegisterNetEvent('esx:setJob')
+AddEventHandler('esx:setJob', function(job)
+  PlayerData.job = job
+end)
 
 
 
@@ -46,16 +60,18 @@ function CreateBlips()
 
 		if property.entering ~= nil then
 
-			Blips[property.name] = AddBlipForCoord(property.entering.x, property.entering.y, property.entering.z)
+			if PlayerData.job ~= nil and PlayerData.job.name == 'realestateagent'then
+				 Blips[property.name] = AddBlipForCoord(property.entering.x, property.entering.y, property.entering.z)
 
-		  SetBlipSprite (Blips[property.name], 369)
-		  SetBlipDisplay(Blips[property.name], 4)
-		  SetBlipScale  (Blips[property.name], 1.0)
-		  SetBlipAsShortRange(Blips[property.name], true)
+				  SetBlipSprite (Blips[property.name], 369)
+				  SetBlipDisplay(Blips[property.name], 4)
+				  SetBlipScale  (Blips[property.name], 1.0)
+				  SetBlipAsShortRange(Blips[property.name], true)
 
-			BeginTextCommandSetBlipName("STRING")
-		  AddTextComponentString(_U('free_prop'))
-		  EndTextCommandSetBlipName(Blips[property.name])
+					BeginTextCommandSetBlipName("STRING")
+				  AddTextComponentString(_U('free_prop'))
+				  EndTextCommandSetBlipName(Blips[property.name])
+			end
 
 			end
 		end
@@ -208,6 +224,7 @@ function SetPropertyOwned(name, owned)
 
 		SetBlipSprite(Blips[enteringName], 357)
 		SetBlipAsShortRange(Blips[enteringName], true)
+	    SetBlipColour(Blips[enteringName], 6)
 
 		BeginTextCommandSetBlipName("STRING")
 	  AddTextComponentString(_U('property'))
@@ -237,13 +254,11 @@ function SetPropertyOwned(name, owned)
 		if not found then
 
 			RemoveBlip(Blips[enteringName])
-
 			Blips[enteringName] = AddBlipForCoord(entering.x,  entering.y,  entering.z)
-
 			SetBlipSprite(Blips[enteringName], 369)
 			SetBlipAsShortRange(Blips[enteringName], true)
 
-			BeginTextCommandSetBlipName("STRING")
+		  BeginTextCommandSetBlipName("STRING")
 		  AddTextComponentString(_U('free_prop'))
 		  EndTextCommandSetBlipName(Blips[enteringName])
 

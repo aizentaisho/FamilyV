@@ -18,12 +18,15 @@ AddEventHandler('esx:playerDropped', function(source)
 	end)
 end)
 
+
 RegisterServerEvent('esx_jobs:setCautionInCaseOfDrop')
 AddEventHandler('esx_jobs:setCautionInCaseOfDrop', function(caution)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	xPlayer.set('caution', caution)
 end)
+
+
 
 RegisterServerEvent('esx_jobs:giveBackCautionInCaseOfDrop')
 AddEventHandler('esx_jobs:giveBackCautionInCaseOfDrop', function()
