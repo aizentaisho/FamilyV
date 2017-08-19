@@ -17,5 +17,6 @@ git clone https://github.com/FXServer-ESX/fxserver-esx_mask esx_mask
 4) Add this in your server.cfg :
 
 ```
+start baseevents
 start esx_mask
 ```

@@ -19,6 +19,7 @@ local CurrentAction           = nil
 local CurrentActionMsg        = ''
 local CurrentActionData       = {}
 local UseMask                 = false
+local IsDead                  = false
 
 Citizen.CreateThread(function()
 
@@ -113,6 +114,22 @@ function OpenShopMenu()
 	})
 
 end
+
+AddEventHandler('playerSpawned', function()
+	IsDead = false
+end)
+
+AddEventHandler('baseevents:onPlayerDied', function(killerType, coords)
+	TriggerEvent('esx_ambulancejob:onPlayerDeath')
+end)
+
+AddEventHandler('baseevents:onPlayerKilled', function(killerId, data)
+	TriggerEvent('esx_ambulancejob:onPlayerDeath')
+end)
+
+AddEventHandler('esx_ambulancejob:onPlayerDeath', function()
+	IsDead = true
+end)
 
 AddEventHandler('esx_mask:hasEnteredMarker', function(zone)
 	CurrentAction     = 'shop_menu'
@@ -218,11 +235,11 @@ Citizen.CreateThread(function()
 
 		end
 
-		if IsControlPressed(0,  Keys['LEFTSHIFT']) and IsControlPressed(0,  Keys['M']) and (GetGameTimer() - GUI.Time) > 300 then
-			
+		if IsControlPressed(0,  Keys['LEFTSHIFT']) and IsControlPressed(0,  Keys['M']) and not IsDead and (GetGameTimer() - GUI.Time) > 300 then
+
 			if UseMask then
 
-				ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin)
+				TriggerEvent('skinchanger:getSkin', function(skin)
 
 					TriggerEvent('skinchanger:loadClothes', skin, {
 						mask_1 = 0,
@@ -233,15 +250,15 @@ Citizen.CreateThread(function()
 
 			else
 
-				ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(playerSkin)
+				TriggerEvent('skinchanger:getSkin', function(skin)
 
-					ESX.TriggerServerCallback('esx_mask:getMask', function(hasMask, skin)
+					ESX.TriggerServerCallback('esx_mask:getMask', function(hasMask, maskSkin)
 
 						if hasMask then
 
-							TriggerEvent('skinchanger:loadClothes', playerSkin, {
-								mask_1 = skin.mask_1,
-								mask_2 = skin.mask_2
+							TriggerEvent('skinchanger:loadClothes', skin, {
+								mask_1 = maskSkin.mask_1,
+								mask_2 = maskSkin.mask_2
 							})
 						
 						else
