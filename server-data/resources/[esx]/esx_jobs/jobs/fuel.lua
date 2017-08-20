@@ -110,7 +110,7 @@ Config.Jobs.fuel = {
 			Type  = "vehspawner",
 			Spawner = 1,
 			Hint  = "Appuyez sur ~INPUT_PICKUP~ pour appeler le camion.",
-			Caution = 2000,
+			Caution = 300,
 			GPS = {x = 602.254, y = 2926.62, z = 39.6898}
 		},
 
@@ -136,7 +136,7 @@ Config.Jobs.fuel = {
 			Type  = "vehdelete",
 			Hint  = "Appuyez sur ~INPUT_PICKUP~ pour rendre le véhicule.",
 			Spawner = 1,
-			Caution = 2000,
+			Caution = 300,
 			GPS = 0,
 			Teleport = 0
 		},

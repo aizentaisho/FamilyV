@@ -106,7 +106,7 @@ Config.Jobs.lumberjack = {
 			Type  = "vehspawner",
 			Spawner = 1,
 			Hint  = _U('lj_spawn_veh_button'),
-			Caution = 2000
+			Caution = 300
 		},
 
 		VehicleSpawnPoint = {
@@ -130,7 +130,7 @@ Config.Jobs.lumberjack = {
 			Type  = "vehdelete",
 			Hint  = _U('lj_return_vh_button'),
 			Spawner = 1,
-			Caution = 2000,
+			Caution = 300,
 			GPS = 0,
 			Teleport = 0
 		},

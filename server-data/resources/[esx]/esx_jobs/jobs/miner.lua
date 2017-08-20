@@ -131,7 +131,7 @@ Config.Jobs.miner = {
 			Type  = "vehspawner",
 			Spawner = 1,
 			Hint  = "Appuyez sur ~INPUT_PICKUP~ pour appeler le véhicule de livraison.",
-			Caution = 2000,
+			Caution = 300,
 			GPS = {x = 2962.4, y = 2746.2, z = 42.398}
 		},
 
@@ -157,7 +157,7 @@ Config.Jobs.miner = {
 			Type  = "vehdelete",
 			Hint  = "Appuyez sur ~INPUT_PICKUP~ pour rendre le véhicule.",
 			Spawner = 1,
-			Caution = 2000,
+			Caution = 300,
 			GPS = 0,
 			Teleport = 0
 		},

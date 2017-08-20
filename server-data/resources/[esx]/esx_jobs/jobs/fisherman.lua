@@ -108,7 +108,7 @@ Config.Jobs.fisherman = {
 			Type  = "vehspawner",
 			Spawner = 1,
 			Hint  = "Appuyez sur ~INPUT_PICKUP~ pour appeler le véhicule de livraison.",
-			Caution = 2000,
+			Caution = 300,
 			GPS = {x = 3867.44, y = 4463.62, z = 1.72386}
 		},
 
@@ -134,7 +134,7 @@ Config.Jobs.fisherman = {
 			Type  = "vehdelete",
 			Hint  = "Appuyez sur ~INPUT_PICKUP~ pour rendre le véhicule.",
 			Spawner = 1,
-			Caution = 2000,
+			Caution = 300,
 			GPS = 0,
 			Teleport = 0
 		},
@@ -155,7 +155,7 @@ Config.Jobs.fisherman = {
 					time   = 500,
 					remove = 1,
 					max    = 100, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-					price  = 11,
+					price  = 12,
 					requires = "fish",
 					requires_name = "Poisson",
 					drop   = 100

@@ -106,7 +106,7 @@ Config.Jobs.slaughterer = {
 			Type  = "vehspawner",
 			Spawner = 1,
 			Hint  = "Appuyez sur ~INPUT_PICKUP~ pour appeler le véhicule de livraison.",
-			Caution = 2000
+			Caution = 300
 		},
 
 		VehicleSpawnPoint = {
@@ -130,7 +130,7 @@ Config.Jobs.slaughterer = {
 			Type  = "vehdelete",
 			Hint  = "Appuyez sur ~INPUT_PICKUP~ pour rendre le véhicule.",
 			Spawner = 1,
-			Caution = 2000,
+			Caution = 300,
 			GPS = 0,
 			Teleport = 0
 		},

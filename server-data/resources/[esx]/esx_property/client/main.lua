@@ -60,7 +60,7 @@ function CreateBlips()
 
 		if property.entering ~= nil then
 
-			if PlayerData.job ~= nil and PlayerData.job.name == 'realestateagent'then
+
 				 Blips[property.name] = AddBlipForCoord(property.entering.x, property.entering.y, property.entering.z)
 
 				  SetBlipSprite (Blips[property.name], 369)
@@ -71,7 +71,7 @@ function CreateBlips()
 					BeginTextCommandSetBlipName("STRING")
 				  AddTextComponentString(_U('free_prop'))
 				  EndTextCommandSetBlipName(Blips[property.name])
-			end
+			
 
 			end
 		end

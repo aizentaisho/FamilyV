@@ -23,7 +23,7 @@ Config.Jobs.reporter = {
 			Type  = "vehspawner",
 			Spawner = 1,
 			Hint  = "Appuyez sur ~INPUT_PICKUP~ pour descendre au garage.",
-			Caution = 2000
+			Caution = 300
 		},
 
 		VehicleSpawnPoint = {
@@ -47,7 +47,7 @@ Config.Jobs.reporter = {
 			Type  = "vehdelete",
 			Hint  = "Appuyez sur ~INPUT_PICKUP~ pour rendre le véhicule.",
 			Spawner = 1,
-			Caution = 2000,
+			Caution = 300,
 			GPS = 0,
 			Teleport = { x = -139.09838867188, y = -620.74865722656, z = 167.82052612305 }
 		}

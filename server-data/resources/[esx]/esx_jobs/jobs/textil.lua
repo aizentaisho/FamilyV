@@ -81,7 +81,7 @@ Config.Jobs.textil = {
 			Color = {r = 204, g = 204, b = 0},
 			Marker= 1,
 			Blip  = false,
-			Name  = "Vêtement",
+			Name  = "Vetement",
 			Type  = "work",
 			Item  = {
 				{
@@ -110,7 +110,7 @@ Config.Jobs.textil = {
 			Type  = "vehspawner",
 			Spawner = 1,
 			Hint  = "Appuyez sur ~INPUT_PICKUP~ pour appeler le véhicule de livraison.",
-			Caution = 2000,
+			Caution = 300,
 			GPS = {x = 1978.92407226563, y = 5171.70166015625, z = 46.6391181945801}
 		},
 
@@ -136,7 +136,7 @@ Config.Jobs.textil = {
 			Type  = "vehdelete",
 			Hint  = "Appuyez sur ~INPUT_PICKUP~ pour rendre le véhicule.",
 			Spawner = 1,
-			Caution = 2000,
+			Caution = 300,
 			GPS = 0,
 			Teleport = 0
 		},
@@ -156,7 +156,7 @@ Config.Jobs.textil = {
 					time   = 500,
 					remove = 1,
 					max    = 100, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-					price  = 40,
+					price  = 35,
 					requires = "clothe",
 					requires_name = "Vêtement",
 					drop   = 100
