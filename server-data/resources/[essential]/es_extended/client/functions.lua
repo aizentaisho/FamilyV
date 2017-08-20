@@ -1195,9 +1195,9 @@ ESX.ShowInventory = function()
 end
 
 RegisterNetEvent('esx:serverCallback')
-AddEventHandler('esx:serverCallback', function(requestId, a, b, c, d, e, f, g ,h ,i ,j ,k, l, m, n, o, p, q, r, s, t, u ,v ,w, x ,y ,z)
-	ESX.ServerCallbacks[requestId](a, b, c, d, e, f, g ,h ,i ,j ,k, l, m, n, o, p, q, r, s, t, u ,v ,w, x ,y ,z)
-	ESX.ServerCallbacks[requestId] = nil
+AddEventHandler('esx:serverCallback', function(requestId, ...)
+ 	ESX.ServerCallbacks[requestId](...)
+  	ESX.ServerCallbacks[requestId] = nil
 end)
 
 RegisterNetEvent('esx:showNotification')
