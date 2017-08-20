@@ -1125,13 +1125,16 @@ Citizen.CreateThread(function()
 	  
 	  SetBlipSprite (blip, 60)
 	  SetBlipDisplay(blip, 4)
+	  SetBlipScale  (blip, 1.2)
 	  SetBlipColour (blip, v.Blip.Color)
 	  SetBlipAsShortRange(blip, true)
 		
 		BeginTextCommandSetBlipName("STRING")
 	  AddTextComponentString(_U('map_blip'))
 	  EndTextCommandSetBlipName(blip)
-	end 
+
+	end
+
 end)
 
 -- Display markers
