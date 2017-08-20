@@ -1,6 +1,11 @@
 @font-face {
-  font-family: SignPainter;
-  src: url('../fonts/SignPainter.ttf');
+  font-family: bankgothic;
+  src: url('../fonts/bankgothic.ttf');
+}
+
+@font-face {
+  font-family: pcdown;
+  src: url('../fonts/pdown.ttf');
 }
 
 #cursor {
@@ -10,13 +15,13 @@
 }
 
 #controls {
-  font-family   : Arial;
+  font-family   : pcdown;
   font-size     : 3em;
   color         : #FFF;
   position      : absolute;
   bottom        : 40;
   right         : 40;
-
+  
   text-shadow:
     -1px -1px 0 #000,
      1px -1px 0 #000,
@@ -30,24 +35,18 @@
 }
 
 .dialog {
+
+  font-family     : bankgothic;  
   background-color: #fff;
+  color           : #fff;
+  box-shadow      : 0px 0px 50px 0px #000;
   position        : absolute;
   overflow        : hidden;
   top             : 50%;
   left            : 50%;
   width           : 600px;
-  height          : 144px;
+  height          : 104px;
   transform       : translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-span {
-    font-family: SignPainter;
-    font-size: 50px;
-    color: white;
-    padding: 0 40px 0 40px;
-    position: relative;
-    top: -26px;
 }
 
 .dialog.big {
@@ -55,68 +54,34 @@ span {
 }
 
 .dialog .head {
-    text-align: center;
-    background: linear-gradient(to bottom left, #f47448, #d94442);
-    height          : 80px;
-    line-height     : 40px;
+  background-color: #506be6;
+  text-align      : center;
+  height          : 40px;
 }
 
 .dialog .head span:before {
   content: "";
   display: inline-block;
   height: 100%;
+  vertical-align: middle;
 }
 
 .dialog input[type="text"] {
   width : 100%;
   height: 32px;
-  border: none;
-  background-color: transparent;
-  outline: none;
-  color: white;
-  font-family: Arial;
-  font-size: 20px;
-  padding-left: 8px;
 }
 
 .dialog textarea {
   width : 100%;
   height: 128px;
-
 }
 
 .dialog button[name="submit"] {
-  width : 50%;
+  width : 75%;
   height: 32px;
-  background-color: #f46748;
-  border: none;
-  font-family: Arial;
-  font-size: 20px;
-  color: white;
-  outline: none;
-  opacity: 0.9;
-  transition: opacity 0.3s;
-  border-right: 2px solid rgba(0, 0, 0, 0.8);
-}
-
-.dialog button[name="submit"]:hover {
-    opacity: 1;
 }
 
 .dialog button[name="cancel"] {
-  width : 50%;
+  width : 25%;
   height: 32px;
-  background-color: #f46748;
-  border: none;
-  font-family: Arial;
-  font-size: 20px;
-  color: white;
-  outline: none;
-  opacity: 0.9;
-  transition: opacity 0.3s;
-  border-left: 2px solid rgba(0, 0, 0, 0.8);
-}
-
-.dialog button[name="cancel"]:hover {
-    opacity: 1;
 }
