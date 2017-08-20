@@ -15,7 +15,7 @@ files {
 	'html/css/app.css',
 	'html/js/mustache.min.js',
 	'html/js/app.js',
-	'html/fonts/SignPainter.ttf',
+	'html/fonts/signpainter.ttf',
 	'html/img/cursor.png',
 	'html/img/keys/enter.png',
 	'html/img/keys/return.png',
