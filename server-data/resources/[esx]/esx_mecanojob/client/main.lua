@@ -286,10 +286,10 @@ function OpenMobileMecanoActionsMenu()
 		{
 			title    = 'Mécano',
 			elements = {
-				{label = 'Facuration', value = 'billing'},
+				{label = 'Facturation', value = 'billing'},
 				{label = 'Crocheter', value = 'hijack_vehicle'},
 				{label = 'Réparer', value = 'fix_vehicle'},
-				{label = 'Netoyer', value = 'clean_vehicle'},
+				{label = 'Nettoyer', value = 'clean_vehicle'},
 				{label = 'Fourrière', value = 'del_vehicle'},
 				{label = 'Plateau', value = 'dep_vehicle'},
 				{label = 'Placer objets', value = 'object_spawner'}

@@ -3,7 +3,7 @@ Config.DrawDistance = 100.0
 
 Config.Zones = {	
 	ls1 = {
-		Pos   = { x = -362.7962, y = -132.4005, z = 38.25239},
+		Pos   = { x = 481.265, y = -1317.78, z = 29.52},
 		Size  = {x = 3.0, y = 3.0, z = 0.2},
 		Color = {r = 204, g = 204, b = 0},
 		Marker= 1,

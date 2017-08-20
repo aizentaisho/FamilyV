@@ -8,7 +8,7 @@ Config.Jobs.lumberjack = {
 		Truck = {
 			Spawner = 1,
 			Hash = "phantom",
-			Trailer = "trailers",
+			Trailer = "TrailerLogs",
 			HasCaution = true
 		}
 	},
